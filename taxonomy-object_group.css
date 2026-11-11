@@ -1,0 +1,700 @@
+/* =========================================================
+   INTERWORLD — UNIVERSAL OBJECT GROUP PAGE
+   taxonomy-object_group.php
+   ========================================================= */
+
+.interworld-group-page{
+    --group-cream:#f4f1e9;
+    --group-paper:#f8f6f0;
+    --group-ink:#183348;
+    --group-muted:#68727a;
+    --group-gold:#b49367;
+    --group-gold-dark:#8f7048;
+    --group-line:rgba(24,51,72,.13);
+    --group-dark:#0d2636;
+    margin:0!important;
+    padding:0!important;
+    background:var(--group-cream);
+    color:var(--group-ink);
+}
+
+.interworld-group-page *{box-sizing:border-box}
+.interworld-group-page a{color:inherit}
+
+.interworld-group-page .group-inner{
+    width:min(100%,1320px);
+    margin:0 auto;
+    padding:0 56px;
+}
+
+/* HERO */
+
+.interworld-group-page .group-hero{
+    position:relative;
+    min-height:520px;
+    overflow:hidden;
+    display:flex;
+    align-items:flex-end;
+    background:#102b3e;
+}
+
+.interworld-group-page .group-hero-image{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+}
+
+.interworld-group-page .group-hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(90deg,rgba(9,29,43,.95) 0%,rgba(9,29,43,.84) 34%,rgba(9,29,43,.30) 70%,rgba(9,29,43,.08) 100%),
+        linear-gradient(0deg,rgba(8,27,39,.74) 0%,transparent 48%);
+}
+
+.interworld-group-page .group-hero-content{
+    position:relative;
+    z-index:2;
+    width:min(100%,1320px);
+    margin:0 auto;
+    padding:100px 56px 62px;
+}
+
+.interworld-group-page .group-breadcrumbs{
+    position:absolute;
+    top:28px;
+    left:56px;
+    font:12px/1.4 "Manrope",sans-serif;
+    color:rgba(247,245,239,.72);
+}
+
+.interworld-group-page .group-breadcrumbs a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.interworld-group-page .group-eyebrow,
+.interworld-group-page .group-section-eyebrow{
+    margin-bottom:10px;
+    font:600 10px/1.4 "Manrope",sans-serif;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:#d8bf94;
+}
+
+.interworld-group-page .group-hero h1{
+    max-width:800px;
+    margin:0;
+    font:400 clamp(48px,6vw,76px)/.94 "Cormorant Garamond",serif;
+    letter-spacing:-.025em;
+    color:#f7f4ec;
+}
+
+.interworld-group-page .group-hero-description{
+    max-width:650px;
+    margin:22px 0 0;
+    font:400 15px/1.7 "Manrope",sans-serif;
+    color:rgba(247,245,239,.88);
+}
+
+.interworld-group-page .group-description-empty{
+    color:rgba(247,245,239,.64);
+}
+
+.interworld-group-page .group-stats{
+    display:flex;
+    gap:0;
+    margin-top:34px;
+}
+
+.interworld-group-page .group-stat{
+    min-width:130px;
+    padding-right:28px;
+    margin-right:28px;
+    border-right:1px solid rgba(216,191,148,.35);
+}
+
+.interworld-group-page .group-stat:last-child{
+    border-right:0;
+}
+
+.interworld-group-page .group-stat strong{
+    display:block;
+    font:400 31px/1 "Cormorant Garamond",serif;
+    color:#e2c89b;
+}
+
+.interworld-group-page .group-stat span{
+    display:block;
+    margin-top:5px;
+    font:500 10px/1.4 "Manrope",sans-serif;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    color:rgba(247,245,239,.68);
+}
+
+/* ANCHOR NAV */
+
+.interworld-group-page .group-anchor-nav{
+    position:relative;
+    z-index:5;
+    display:flex;
+    overflow:auto;
+    background:#f8f6f0;
+    border-bottom:1px solid var(--group-line);
+    white-space:nowrap;
+}
+
+.interworld-group-page .group-anchor-inner{
+    display:flex;
+    min-width:max-content;
+    padding-top:0;
+    padding-bottom:0;
+}
+
+.interworld-group-page .group-anchor-nav a{
+    display:block;
+    padding:16px 18px;
+    text-decoration:none;
+    font:500 11px/1.3 "Manrope",sans-serif;
+    color:rgba(24,51,72,.72);
+}
+
+.interworld-group-page .group-anchor-nav a:hover{
+    color:var(--group-ink);
+}
+
+/* GENERAL */
+
+.interworld-group-page .group-section{
+    padding:64px 0;
+}
+
+.interworld-group-page .group-section + .group-section{
+    border-top:1px solid var(--group-line);
+}
+
+.interworld-group-page .group-section-heading{
+    margin-bottom:28px;
+}
+
+.interworld-group-page .group-section h2{
+    margin:0;
+    font:400 clamp(36px,4vw,52px)/1 "Cormorant Garamond",serif;
+    letter-spacing:-.02em;
+    color:var(--group-ink);
+}
+
+.interworld-group-page .group-section-heading > p{
+    max-width:820px;
+    margin:14px 0 0;
+    font:400 14px/1.75 "Manrope",sans-serif;
+    color:var(--group-muted);
+}
+
+/* INTRO */
+
+.interworld-group-page .group-intro-grid{
+    display:grid;
+    grid-template-columns:minmax(240px,.8fr) minmax(0,1.7fr);
+    gap:60px;
+    align-items:start;
+}
+
+.interworld-group-page .group-intro-grid h2{
+    font-size:44px;
+    line-height:.95;
+}
+
+.interworld-group-page .group-intro-copy p{
+    margin:0 0 15px;
+    font:400 14px/1.8 "Manrope",sans-serif;
+    color:#52616b;
+}
+
+.interworld-group-page .group-text-link{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:5px;
+    text-decoration:none;
+    font:600 11px/1.3 "Manrope",sans-serif;
+    color:var(--group-gold-dark);
+}
+
+.interworld-group-page .group-text-link::after{
+    content:">";
+    font-size:15px;
+    transition:transform .2s ease;
+}
+
+.interworld-group-page .group-text-link:hover::after{
+    transform:translateX(4px);
+}
+
+/* STRUCTURE */
+
+.interworld-group-page .group-structure-section{
+    background:#102b3e;
+    color:#f5f1e8;
+}
+
+.interworld-group-page .group-structure-section h2{
+    color:#f5f1e8;
+}
+
+.interworld-group-page .group-structure-section .group-section-heading > p{
+    color:rgba(245,241,232,.68);
+}
+
+.interworld-group-page .group-type-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:28px;
+}
+
+.interworld-group-page .group-type-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+    min-width:220px;
+    padding:16px 18px;
+    border:1px solid rgba(216,191,148,.28);
+    background:rgba(255,255,255,.025);
+    text-decoration:none;
+    color:#f5f1e8;
+    transition:border-color .2s ease,background .2s ease;
+}
+
+.interworld-group-page .group-type-item:hover{
+    border-color:rgba(216,191,148,.55);
+    background:rgba(255,255,255,.05);
+}
+
+.interworld-group-page .group-type-item b,
+.interworld-group-page .group-related-item b{
+    width:11px;
+    height:11px;
+    flex:0 0 11px;
+    border-top:1px solid currentColor;
+    border-right:1px solid currentColor;
+    transform:rotate(45deg);
+    transition:transform .2s ease;
+}
+
+.interworld-group-page .group-type-item:hover b,
+.interworld-group-page .group-related-item:hover b{
+    transform:translateX(4px) rotate(45deg);
+}
+
+/* OBJECT CARDS */
+
+.interworld-group-page .group-card-grid{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:18px;
+}
+
+.interworld-group-page .group-card{
+    display:flex;
+    flex-direction:column;
+    min-width:0;
+    border:1px solid rgba(24,51,72,.12);
+    background:#fbfaf6;
+    transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+}
+
+.interworld-group-page .group-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 28px rgba(24,51,72,.08);
+    border-color:rgba(180,147,103,.45);
+}
+
+.interworld-group-page .group-card-image{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    aspect-ratio:1/1;
+    overflow:hidden;
+    background:#dce2e4;
+    text-decoration:none;
+}
+
+.interworld-group-page .group-card-image img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .35s ease;
+}
+
+.interworld-group-page .group-card:hover .group-card-image img{
+    transform:scale(1.035);
+}
+
+.interworld-group-page .group-card-image-placeholder{
+    font:600 9px/1 "Manrope",sans-serif;
+    letter-spacing:.18em;
+    color:rgba(24,51,72,.42);
+}
+
+.interworld-group-page .group-card-body{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+    min-height:150px;
+    padding:17px 18px 20px;
+}
+
+.interworld-group-page .group-card-type{
+    margin-bottom:5px;
+    font:600 9px/1.4 "Manrope",sans-serif;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--group-gold);
+}
+
+.interworld-group-page .group-card h3{
+    margin:0;
+    padding-right:22px;
+    font:400 24px/1.05 "Cormorant Garamond",serif;
+    color:var(--group-ink);
+}
+
+.interworld-group-page .group-card h3 a{
+    text-decoration:none;
+}
+
+.interworld-group-page .group-card p{
+    margin:7px 0 0;
+    padding-right:18px;
+    font:400 10px/1.5 "Manrope",sans-serif;
+    color:#7a858b;
+}
+
+.interworld-group-page .group-card-link{
+    position:absolute;
+    right:14px;
+    bottom:14px;
+    width:20px;
+    height:20px;
+    display:block;
+    text-decoration:none;
+}
+
+.interworld-group-page .group-card-link span{
+    position:absolute;
+    left:2px;
+    top:5px;
+    width:10px;
+    height:10px;
+    border-top:1.5px solid var(--group-gold);
+    border-right:1.5px solid var(--group-gold);
+    transform:rotate(45deg);
+    transition:transform .2s ease;
+}
+
+.interworld-group-page .group-card:hover .group-card-link span{
+    transform:translateX(3px) rotate(45deg);
+}
+
+/* EMPTY */
+
+.interworld-group-page .group-empty-state{
+    padding:60px 30px;
+    border:1px solid rgba(24,51,72,.12);
+    background:#fbfaf6;
+    text-align:center;
+}
+
+.interworld-group-page .group-empty-mark{
+    margin-bottom:12px;
+    font:400 28px/1 "Cormorant Garamond",serif;
+    color:var(--group-gold);
+}
+
+.interworld-group-page .group-empty-state h3{
+    margin:0;
+    font:400 29px/1.1 "Cormorant Garamond",serif;
+    color:var(--group-ink);
+}
+
+.interworld-group-page .group-empty-state p{
+    max-width:520px;
+    margin:10px auto 0;
+    font:400 12px/1.7 "Manrope",sans-serif;
+    color:var(--group-muted);
+}
+
+/* SOURCES */
+
+.interworld-group-page .group-sources-section{
+    background:#eef1ef;
+}
+
+.interworld-group-page .group-source-grid{
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    gap:14px;
+}
+
+.interworld-group-page .group-source-card{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:20px;
+    border:1px solid rgba(24,51,72,.12);
+    background:#fbfaf6;
+}
+
+.interworld-group-page .group-source-thumb{
+    flex:0 0 82px;
+    width:82px;
+    height:105px;
+    overflow:hidden;
+    background:#e8e4da;
+}
+
+.interworld-group-page .group-source-thumb img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.interworld-group-page .group-source-type{
+    font:600 8px/1.4 "Manrope",sans-serif;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--group-gold);
+}
+
+.interworld-group-page .group-source-card h3{
+    margin:5px 0 0;
+    font:400 24px/1.05 "Cormorant Garamond",serif;
+    color:var(--group-ink);
+}
+
+.interworld-group-page .group-source-card p{
+    max-width:720px;
+    margin:6px 0 0;
+    font:400 11px/1.6 "Manrope",sans-serif;
+    color:#7a858b;
+}
+
+/* RELATED */
+
+.interworld-group-page .group-related-list{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:12px;
+}
+
+.interworld-group-page .group-related-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    min-height:78px;
+    padding:15px 18px;
+    border:1px solid rgba(24,51,72,.12);
+    background:#fbfaf6;
+    text-decoration:none;
+    transition:border-color .2s ease,transform .2s ease;
+}
+
+.interworld-group-page .group-related-item:hover{
+    border-color:rgba(180,147,103,.45);
+    transform:translateY(-2px);
+}
+
+.interworld-group-page .group-related-item small{
+    display:block;
+    margin-bottom:4px;
+    font:600 8px/1.3 "Manrope",sans-serif;
+    letter-spacing:.12em;
+    color:var(--group-gold);
+}
+
+.interworld-group-page .group-related-item span{
+    font:400 20px/1.1 "Cormorant Garamond",serif;
+    color:var(--group-ink);
+}
+
+.interworld-group-page .group-related-types{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:20px;
+}
+
+.interworld-group-page .group-related-types a{
+    padding:10px 14px;
+    border:1px solid rgba(180,147,103,.38);
+    text-decoration:none;
+    font:500 10px/1.2 "Manrope",sans-serif;
+    color:var(--group-gold-dark);
+}
+
+/* FINAL */
+
+.interworld-group-page .group-final-cta{
+    position:relative;
+    overflow:hidden;
+    padding:70px 0;
+    background:#102b3e;
+    color:#fff;
+}
+
+.interworld-group-page .group-final-cta::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:url('https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/karta-meszmiria.webp') center/cover;
+    opacity:.28;
+}
+
+.interworld-group-page .group-final-inner{
+    position:relative;
+    z-index:1;
+    text-align:center;
+}
+
+.interworld-group-page .group-final-inner h2{
+    margin:0;
+    color:#fff;
+    font:400 42px/1 "Cormorant Garamond",serif;
+}
+
+.interworld-group-page .group-final-inner p{
+    max-width:620px;
+    margin:10px auto 24px;
+    font:400 12px/1.6 "Manrope",sans-serif;
+    color:rgba(255,255,255,.7);
+}
+
+.interworld-group-page .group-final-link{
+    display:inline-flex;
+    align-items:center;
+    padding:12px 19px;
+    border:1px solid rgba(216,191,148,.42);
+    text-decoration:none;
+    font:500 10px/1 "Manrope",sans-serif;
+    color:#e2c89b;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+    .interworld-group-page .group-card-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+    }
+
+    .interworld-group-page .group-inner{
+        padding-left:38px;
+        padding-right:38px;
+    }
+
+    .interworld-group-page .group-hero-content{
+        padding-left:38px;
+        padding-right:38px;
+    }
+
+    .interworld-group-page .group-breadcrumbs{
+        left:38px;
+    }
+
+    .interworld-group-page .group-related-list{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+}
+
+@media(max-width:820px){
+    .interworld-group-page .group-inner{
+        padding-left:24px;
+        padding-right:24px;
+    }
+
+    .interworld-group-page .group-hero{
+        min-height:600px;
+    }
+
+    .interworld-group-page .group-hero-content{
+        padding:110px 24px 48px;
+    }
+
+    .interworld-group-page .group-breadcrumbs{
+        left:24px;
+    }
+
+    .interworld-group-page .group-hero::after{
+        background:
+            linear-gradient(90deg,rgba(9,29,43,.91),rgba(9,29,43,.48)),
+            linear-gradient(0deg,rgba(8,27,39,.78),transparent 55%);
+    }
+
+    .interworld-group-page .group-intro-grid{
+        grid-template-columns:1fr;
+        gap:24px;
+    }
+
+    .interworld-group-page .group-card-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .interworld-group-page .group-related-list{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:560px){
+    .interworld-group-page .group-hero{
+        min-height:590px;
+    }
+
+    .interworld-group-page .group-hero h1{
+        font-size:51px;
+    }
+
+    .interworld-group-page .group-hero-description{
+        font-size:13px;
+    }
+
+    .interworld-group-page .group-stat{
+        min-width:95px;
+        padding-right:15px;
+        margin-right:15px;
+    }
+
+    .interworld-group-page .group-stat strong{
+        font-size:27px;
+    }
+
+    .interworld-group-page .group-card-grid{
+        grid-template-columns:1fr;
+    }
+
+    .interworld-group-page .group-section{
+        padding:48px 0;
+    }
+
+    .interworld-group-page .group-section h2{
+        font-size:39px;
+    }
+
+    .interworld-group-page .group-source-card{
+        align-items:flex-start;
+    }
+
+    .interworld-group-page .group-source-card h3{
+        font-size:21px;
+    }
+}
