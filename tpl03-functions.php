@@ -34,6 +34,15 @@ function interworld_term_image_url($term) {
     return '';
 }
 
+function interworld_object_count_word($count) {
+    $last_two = $count % 100;
+    if ($last_two >= 11 && $last_two <= 14) return 'объектов';
+    $last = $count % 10;
+    if ($last === 1) return 'объект';
+    if ($last >= 2 && $last <= 4) return 'объекта';
+    return 'объектов';
+}
+
 function interworld_tpl03_faq($term) {
     $items = array();
     for ($i = 1; $i <= 4; $i++) {

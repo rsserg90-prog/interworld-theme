@@ -203,10 +203,9 @@ get_header();
             <div class="group-inner">
                 <div class="group-section-heading">
                     <div class="group-section-eyebrow">СТРУКТУРА</div>
-                    <h2>Типы объектов в группе</h2>
+                    <h2><?php echo $parent_type ? 'Основной тип группы' : 'Типы объектов в группе'; ?></h2>
                     <p>
-                        Типы определяются автоматически по объектам,
-                        связанным с этой группой.
+                        <?php echo $parent_type ? 'Основной тип указан в настройках этой группы.' : 'Типы определены по опубликованным объектам группы.'; ?>
                     </p>
                 </div>
 
@@ -235,9 +234,7 @@ get_header();
                 <h2>Объекты</h2>
                 <p>
                     <?php if ($object_count > 0) : ?>
-                        В группе сейчас <?php echo esc_html($object_count); ?> <?php echo esc_html(
-                            _n('объект', 'объектов', $object_count, 'interworld')
-                        ); ?>.
+                        В группе сейчас <?php echo esc_html($object_count); ?> <?php echo esc_html(interworld_object_count_word($object_count)); ?>.
                     <?php else : ?>
                         Объекты этой группы пока не добавлены в энциклопедию.
                     <?php endif; ?>
