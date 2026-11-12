@@ -55,6 +55,15 @@ function interworld_tpl03_faq($term) {
 
 function interworld_tpl03_links($term, $kind) {
     $items = array();
+    if ($kind === 'book') {
+        $ids = (array) interworld_term_field('iw_tpl03_library_books', $term);
+        foreach ($ids as $id) {
+            $id = $id instanceof WP_Post ? $id->ID : (int) $id;
+            if (!$id || get_post_type($id) !== 'library_book' || get_post_status($id) !== 'publish') continue;
+            $items[] = array('title' => get_the_title($id), 'url' => get_permalink($id),
+                'description' => get_the_excerpt($id));
+        }
+    }
     for ($i = 1; $i <= 3; $i++) {
         $title = trim((string) interworld_term_field('iw_tpl03_' . $kind . '_title_' . $i, $term));
         $url = trim((string) interworld_term_field('iw_tpl03_' . $kind . '_url_' . $i, $term));
@@ -81,6 +90,8 @@ add_action('acf/init', function() {
     $add('iw_tpl03_intro', 'Вводный текст', 'wysiwyg', array('toolbar' => 'basic', 'media_upload' => 0));
     $add('iw_tpl03_system_title', 'Заголовок блока структуры');
     $add('iw_tpl03_system_intro', 'Вводный текст структуры', 'textarea');
+    $add('iw_tpl03_library_books', 'Связанные книги библиотеки', 'post_object',
+        array('post_type' => array('library_book'), 'return_format' => 'id', 'multiple' => 1, 'ui' => 1));
     for ($i = 1; $i <= 4; $i++) {
         $add('iw_tpl03_faq_q_' . $i, 'FAQ ' . $i . ': вопрос');
         $add('iw_tpl03_faq_a_' . $i, 'FAQ ' . $i . ': ответ', 'textarea');
