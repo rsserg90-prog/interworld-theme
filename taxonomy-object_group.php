@@ -17,7 +17,7 @@ if (!$term || empty($term->term_id)) {
 }
 
 $term_name = $term->name;
-$term_description = term_description($term->term_id, 'object_group');
+$term_description = interworld_term_field('iw_tpl03_hero_description', $term) ?: term_description($term->term_id, 'object_group');
 $term_link = get_term_link($term);
 
 if (is_wp_error($term_link)) {
@@ -29,10 +29,12 @@ if (is_wp_error($term_link)) {
  * Сначала выводим все доступные объекты. Когда объектов станет много,
  * здесь можно добавить пагинацию/AJAX без изменения архитектуры страницы.
  */
+$page = max(1, (int) get_query_var('paged'));
 $objects_query = new WP_Query(array(
     'post_type'      => 'interworld_object',
     'post_status'    => 'publish',
-    'posts_per_page' => -1,
+    'posts_per_page' => 12,
+    'paged'          => $page,
     'orderby'        => 'title',
     'order'          => 'ASC',
     'tax_query'      => array(
@@ -69,15 +71,17 @@ foreach ($objects as $object) {
  * Другие группы — контекстная навигация.
  * Текущую группу исключаем.
  */
-$other_groups = get_terms(array(
-    'taxonomy'   => 'object_group',
-    'hide_empty' => false,
-    'exclude'    => array($term->term_id),
-    'orderby'    => 'name',
-    'order'      => 'ASC',
-));
+$parent_type = interworld_parent_type($term);
+if ($parent_type) $related_types = array($parent_type->term_id => $parent_type);
+$other_groups = $parent_type ? array_values(array_filter(interworld_child_groups($parent_type), function($group) use ($term) {
+    return $group->term_id !== $term->term_id;
+})) : array();
+$intro = interworld_term_field('iw_tpl03_intro', $term);
+$faq = interworld_tpl03_faq($term);
+$sources = interworld_tpl03_links($term, 'source');
+$books = interworld_tpl03_links($term, 'book');
 
-$hero_image = 'https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/karta-meszmiria.webp';
+$hero_image = interworld_term_image_url($term);
 
 get_header();
 ?>
@@ -86,12 +90,12 @@ get_header();
 
     <!-- HERO -->
     <section class="group-hero" id="definition">
-        <img
+        <?php if ($hero_image) : ?><img
             class="group-hero-image"
             src="<?php echo esc_url($hero_image); ?>"
             alt="Карта Межмирья — <?php echo esc_attr($term_name); ?>"
             loading="eager"
-        >
+        ><?php endif; ?>
 
         <div class="group-hero-content">
 <div class="group-breadcrumbs">
@@ -106,11 +110,6 @@ get_header();
      * Поэтому хлебные крошки не зависят от количества
      * объектов внутри группы.
      */
-    $parent_type = get_field(
-        'object_parent_type',
-        'object_group_' . $term->term_id
-    );
-
     if ($parent_type && !is_wp_error($parent_type)) :
 
         $parent_type_link = get_term_link($parent_type);
@@ -132,17 +131,14 @@ get_header();
 
             <div class="group-eyebrow">ГРУППА ОБЪЕКТОВ МЕЖМИРЬЯ</div>
 
-            <h1><?php echo esc_html($term_name); ?></h1>
+            <h1><?php echo esc_html(interworld_term_field('iw_tpl03_title', $term) ?: $term_name); ?></h1>
+
+            <?php if (interworld_term_field('iw_tpl03_subtitle', $term)) : ?><p class="group-hero-description"><?php echo esc_html(interworld_term_field('iw_tpl03_subtitle', $term)); ?></p><?php endif; ?>
 
             <?php if (!empty($term_description)) : ?>
                 <div class="group-hero-description">
                     <?php echo wp_kses_post($term_description); ?>
                 </div>
-            <?php else : ?>
-                <p class="group-hero-description group-description-empty">
-                    Энциклопедическая страница группы. Описание будет дополнено
-                    после подтверждения материала по источникам проекта.
-                </p>
             <?php endif; ?>
 
             <div class="group-stats">
@@ -174,31 +170,24 @@ get_header();
             <?php if (!empty($related_types)) : ?>
                 <a href="#structure">Структура</a>
             <?php endif; ?>
-            <a href="#sources">Источники</a>
-            <a href="#related">Связи</a>
+            <?php if ($faq) : ?><a href="#faq">Вопросы и ответы</a><?php endif; ?>
+            <?php if ($sources) : ?><a href="#sources">Источники</a><?php endif; ?>
+            <?php if ($books) : ?><a href="#books">Книги</a><?php endif; ?>
+            <?php if ($other_groups || $parent_type) : ?><a href="#related">Связи</a><?php endif; ?>
         </div>
     </nav>
 
     <!-- INTRO -->
-    <section class="group-section" id="about-group">
+    <?php if ($intro) : ?><section class="group-section" id="about-group">
         <div class="group-inner">
             <div class="group-intro-grid">
                 <div>
                     <div class="group-section-eyebrow">О ГРУППЕ</div>
-                    <h2>Место группы<br>в Межмирье</h2>
+                    <h2><?php echo esc_html(interworld_term_field('iw_tpl03_intro_title', $term) ?: 'О группе'); ?></h2>
                 </div>
 
                 <div class="group-intro-copy">
-                    <p>
-                        Эта страница объединяет объекты, отнесённые к группе
-                        «<?php echo esc_html($term_name); ?>».
-                    </p>
-
-                    <p>
-                        Здесь постепенно будут собираться определения,
-                        описания объектов, взаимосвязи, источники и материалы
-                        для дальнейшего исследования.
-                    </p>
+                    <?php echo wp_kses_post($intro); ?>
 
                     <a class="group-text-link" href="#objects">
                         Перейти к объектам
@@ -206,7 +195,7 @@ get_header();
                 </div>
             </div>
         </div>
-    </section>
+    </section><?php endif; ?>
 
     <!-- STRUCTURE -->
     <?php if (!empty($related_types)) : ?>
@@ -319,43 +308,37 @@ get_header();
                     </p>
                 </div>
             <?php endif; ?>
+            <?php if ($objects_query->max_num_pages > 1) : ?>
+                <nav class="group-pagination" aria-label="Страницы каталога">
+                    <?php echo wp_kses_post(paginate_links(array('current' => $page, 'total' => $objects_query->max_num_pages, 'type' => 'list', 'prev_text' => '←', 'next_text' => '→'))); ?>
+                </nav>
+            <?php endif; ?>
         </div>
     </section>
 
     <!-- SOURCES -->
-    <section class="group-section group-sources-section" id="sources">
+    <?php if ($faq) : ?><section class="group-section" id="faq"><div class="group-inner"><div class="group-section-heading"><div class="group-section-eyebrow">ЧАСТЫЕ ВОПРОСЫ</div><h2>Вопросы и ответы</h2></div><?php foreach ($faq as $item) : ?><details><summary><?php echo esc_html($item['q']); ?></summary><?php echo wp_kses_post(wpautop($item['a'])); ?></details><?php endforeach; ?></div></section><?php endif; ?>
+    <?php if ($sources) : ?><section class="group-section group-sources-section" id="sources">
         <div class="group-inner">
             <div class="group-section-heading">
                 <div class="group-section-eyebrow">ИСТОЧНИКИ</div>
                 <h2>Материалы для исследования</h2>
-                <p>
-                    Источники будут расширяться по мере наполнения базы знаний.
-                </p>
             </div>
 
             <div class="group-source-grid">
-                <article class="group-source-card">
-                    <div class="group-source-thumb">
-                        <img
-                            src="https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/geografia-mezhmiria-1.webp"
-                            alt="География Межмирья. Том 1. Эоны и Эфиры"
-                            loading="lazy"
-                        >
-                    </div>
+                <?php foreach ($sources as $source) : ?><article class="group-source-card">
                     <div>
-                        <div class="group-source-type">ОСНОВНОЙ ИСТОЧНИК</div>
-                        <h3>География Межмирья. Том 1. Эоны и Эфиры</h3>
-                        <p>
-                            Материал, в котором описывается система Эонов и Эфиров Межмирья.
-                        </p>
+                        <h3><a href="<?php echo esc_url($source['url']); ?>"><?php echo esc_html($source['title']); ?></a></h3>
+                        <?php if ($source['description']) : ?><p><?php echo esc_html($source['description']); ?></p><?php endif; ?>
                     </div>
-                </article>
+                </article><?php endforeach; ?>
             </div>
         </div>
-    </section>
+    </section><?php endif; ?>
+    <?php if ($books) : ?><section class="group-section group-sources-section" id="books"><div class="group-inner"><div class="group-section-heading"><h2>Книги</h2></div><div class="group-source-grid"><?php foreach ($books as $book) : ?><article class="group-source-card"><div><h3><a href="<?php echo esc_url($book['url']); ?>"><?php echo esc_html($book['title']); ?></a></h3><?php if ($book['description']) : ?><p><?php echo esc_html($book['description']); ?></p><?php endif; ?></div></article><?php endforeach; ?></div></div></section><?php endif; ?>
 
     <!-- RELATED -->
-    <section class="group-section group-related-section" id="related">
+    <?php if ($other_groups || $parent_type) : ?><section class="group-section group-related-section" id="related">
         <div class="group-inner">
             <div class="group-section-heading">
                 <div class="group-section-eyebrow">НАВИГАЦИЯ</div>
@@ -399,7 +382,7 @@ get_header();
                 </div>
             <?php endif; ?>
         </div>
-    </section>
+    </section><?php endif; ?>
 
     <!-- FINAL CTA -->
     <section class="group-final-cta">

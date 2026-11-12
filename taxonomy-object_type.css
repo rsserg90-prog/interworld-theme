@@ -183,6 +183,8 @@
     margin-top:34px;
 }
 .interworld-category-page .system-card{
+    display:block;
+    text-decoration:none;
     min-height:220px;
     padding:28px 24px 24px;
     border:1px solid rgba(216,191,148,.28);
@@ -258,6 +260,7 @@
 }
 .interworld-category-page .load-more::after{content:"⌄";font-size:14px}
 .interworld-category-page .pagination{display:flex;justify-content:center;gap:5px;margin-top:22px}
+.interworld-category-page .pagination ul{display:flex;gap:5px;list-style:none;margin:0;padding:0}
 .interworld-category-page .pagination a,.interworld-category-page .pagination span{min-width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(24,51,72,.13);text-decoration:none;font:500 10px/1 "Manrope",sans-serif;color:#52616b;background:#fbfaf6}
 .interworld-category-page .pagination .current{background:#183348;color:#fff;border-color:#183348}
 

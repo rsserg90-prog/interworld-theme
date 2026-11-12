@@ -698,3 +698,6 @@
         font-size:21px;
     }
 }
+.interworld-group-page .group-pagination ul{display:flex;justify-content:center;gap:8px;list-style:none;margin:28px 0 0;padding:0}
+.interworld-group-page .group-pagination a,.interworld-group-page .group-pagination .current{display:inline-flex;min-width:34px;min-height:34px;align-items:center;justify-content:center;padding:4px 8px;border:1px solid rgba(24,51,72,.2);text-decoration:none}
+.interworld-group-page .group-pagination .current{background:#183348;color:#fff}

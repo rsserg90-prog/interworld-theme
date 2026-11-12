@@ -1,5 +1,6 @@
 <?php
 if (!defined('ABSPATH')) exit;
+require_once get_template_directory() . '/tpl03-functions.php';
 function interworld_setup(){
  add_theme_support('title-tag');
  add_theme_support('post-thumbnails');
