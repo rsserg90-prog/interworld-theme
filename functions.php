@@ -3,6 +3,9 @@ if (!defined('ABSPATH')) exit;
 require_once get_template_directory() . '/tpl03-functions.php';
 require_once get_template_directory() . '/tpl03-materials.php';
 require_once get_template_directory() . '/tpl03-sections.php';
+require_once get_template_directory() . '/knowledge-blocks.php';
+require_once get_template_directory() . '/knowledge-admin.php';
+require_once get_template_directory() . '/people-functions.php';
 add_action('wp_enqueue_scripts', function() {
     if (is_tax(array('object_type', 'object_group'))) {
         wp_enqueue_style('interworld-tpl03', get_template_directory_uri() . '/tpl03.css', array(), filemtime(get_template_directory() . '/tpl03.css'));

@@ -4,6 +4,9 @@ if (!defined('ABSPATH')) exit;
 function interworld_library_book_card($book_id) {
   $title = get_the_title($book_id);
   $author = function_exists('get_field') ? get_field('avtor_knigi', $book_id) : get_post_meta($book_id, 'avtor_knigi', true);
+  $author_ids = function_exists('interworld_knowledge_ids') ? interworld_knowledge_ids('iw_book_authors', $book_id) : array();
+  $author_links = array();
+  foreach ($author_ids as $person_id) if (get_post_type($person_id)==='person' && get_post_status($person_id)==='publish') $author_links[] = '<a href="' . esc_url(get_permalink($person_id)) . '">' . esc_html(get_the_title($person_id)) . '</a>';
   $short = function_exists('get_field') ? get_field('kratkoe_opisanie', $book_id) : get_post_meta($book_id, 'kratkoe_opisanie', true);
   $cover = function_exists('get_field') ? get_field('oblozhka_knigi', $book_id) : get_post_meta($book_id, 'oblozhka_knigi', true);
   $cover_url = '';
@@ -13,6 +16,6 @@ function interworld_library_book_card($book_id) {
   if (!$cover_url && has_post_thumbnail($book_id)) $cover_url = get_the_post_thumbnail_url($book_id, 'large');
   $permalink = get_permalink($book_id);
   ob_start(); ?>
-  <article class="iw-book-card"><a class="iw-book-cover" href="<?php echo esc_url($permalink); ?>" aria-label="Открыть книгу: <?php echo esc_attr($title); ?>"><?php if ($cover_url) : ?><img src="<?php echo esc_url($cover_url); ?>" alt="Обложка книги «<?php echo esc_attr($title); ?>" loading="lazy"><?php else : ?><span class="iw-book-cover-placeholder">КНИЖНОЕ<br>СОБРАНИЕ</span><?php endif; ?></a><div class="iw-book-card-body"><h3><a href="<?php echo esc_url($permalink); ?>"><?php echo esc_html($title); ?></a></h3><?php if ($author) : ?><div class="iw-book-author"><?php echo esc_html($author); ?></div><?php endif; ?><?php if ($short) : ?><p><?php echo esc_html(wp_trim_words(wp_strip_all_tags($short), 26)); ?></p><?php endif; ?><a class="iw-book-more" href="<?php echo esc_url($permalink); ?>">О книге <span aria-hidden="true">→</span></a></div></article>
+  <article class="iw-book-card"><a class="iw-book-cover" href="<?php echo esc_url($permalink); ?>" aria-label="Открыть книгу: <?php echo esc_attr($title); ?>"><?php if ($cover_url) : ?><img src="<?php echo esc_url($cover_url); ?>" alt="Обложка книги «<?php echo esc_attr($title); ?>" loading="lazy"><?php else : ?><span class="iw-book-cover-placeholder">КНИЖНОЕ<br>СОБРАНИЕ</span><?php endif; ?></a><div class="iw-book-card-body"><h3><a href="<?php echo esc_url($permalink); ?>"><?php echo esc_html($title); ?></a></h3><?php if ($author_links || $author) : ?><div class="iw-book-author"><?php echo $author_links ? wp_kses_post(implode(', ', $author_links)) : esc_html($author); ?></div><?php endif; ?><?php if ($short) : ?><p><?php echo esc_html(wp_trim_words(wp_strip_all_tags($short), 26)); ?></p><?php endif; ?><a class="iw-book-more" href="<?php echo esc_url($permalink); ?>">О книге <span aria-hidden="true">→</span></a></div></article>
   <?php return ob_get_clean();
 }

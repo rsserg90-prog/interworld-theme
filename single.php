@@ -372,7 +372,7 @@ foreach ($object_external_links as $external_link) {
                 if (!is_array($relation)) continue;
                 $target_id = absint($relation['target_id'] ?? 0);
                 if (!$target_id) $target_id = absint($relation['related_object_id'] ?? $relation['object_id'] ?? $relation['related_id'] ?? 0);
-                if (!$target_id || get_post_type($target_id) !== 'interworld_object') continue;
+                if (!$target_id || !in_array(get_post_type($target_id), array('interworld_object','person'), true)) continue;
                 $target_status = get_post_status($target_id);
                if (!in_array($target_status, array('publish', 'draft'), true)) continue;
                 $type = $normalize_relation_type($relation['type'] ?? 'other');
@@ -389,7 +389,7 @@ foreach ($object_external_links as $external_link) {
         }
         // Находим обратные связи, заданные на страницах других объектов.
         $all_relation_posts = get_posts(array(
-            'post_type' => 'interworld_object',
+            'post_type' => array('interworld_object','person'),
             'post_status' => array('publish', 'private'),
             'posts_per_page' => -1,
             'fields' => 'ids',
@@ -444,7 +444,7 @@ foreach ($object_external_links as $external_link) {
                 if (!is_array($context_item)) continue;
                 $context_target_id = absint($context_item['target_id'] ?? 0);
                 $context_section = sanitize_key($context_item['section'] ?? '');
-                if (!$context_target_id || get_post_type($context_target_id) !== 'interworld_object') continue;
+                if (!$context_target_id || !in_array(get_post_type($context_target_id), array('interworld_object','person'), true)) continue;
                 if (!isset($context_by_section[$context_section])) continue;
                 $context_status = get_post_status($context_target_id);
                 if (!in_array($context_status, array('publish', 'draft'), true)) continue;
@@ -468,7 +468,7 @@ foreach ($object_external_links as $external_link) {
         foreach ($interworld_section_items as $section_item) {
             if (!is_array($section_item)) continue;
             $section_target_id = absint($section_item['target_id'] ?? 0);
-            if (!$section_target_id || get_post_type($section_target_id) !== 'interworld_object') continue;
+            if (!$section_target_id || !in_array(get_post_type($section_target_id), array('interworld_object','person'), true)) continue;
             if (!in_array(get_post_status($section_target_id), array('publish','draft'), true)) continue;
             $section_key = sanitize_key($section_item['section'] ?? '');
             $prepared_item = array('target_id' => $section_target_id, 'label' => sanitize_text_field($section_item['label'] ?? ''), 'explanation' => sanitize_textarea_field($section_item['explanation'] ?? ''), 'order' => absint($section_item['order'] ?? 0));
