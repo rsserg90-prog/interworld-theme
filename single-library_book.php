@@ -1,7 +1,7 @@
 <?php
 /** Single book template for the Library custom post type. */
 if (!defined('ABSPATH')) exit;
-wp_enqueue_style('interworld-library', get_stylesheet_directory_uri() . '/library-templates.css', array('interworld-style'), '1.0.0');
+wp_enqueue_style('interworld-library', get_stylesheet_directory_uri() . '/library-templates.css', array('interworld-style'), filemtime(get_stylesheet_directory() . '/library-templates.css'));
 wp_enqueue_script('interworld-book-contents', get_stylesheet_directory_uri() . '/library-contents.js', array(), '1.1.0', true);
 get_header();
 ?>
@@ -343,3 +343,4 @@ interworld_knowledge_continue($book_id, $book_ends);
 <?php endwhile; ?>
 </main>
 <?php get_footer(); ?>
+
