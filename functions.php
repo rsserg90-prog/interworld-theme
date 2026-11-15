@@ -1,6 +1,13 @@
 <?php
 if (!defined('ABSPATH')) exit;
 require_once get_template_directory() . '/tpl03-functions.php';
+require_once get_template_directory() . '/tpl03-materials.php';
+require_once get_template_directory() . '/tpl03-sections.php';
+add_action('wp_enqueue_scripts', function() {
+    if (is_tax(array('object_type', 'object_group'))) {
+        wp_enqueue_style('interworld-tpl03', get_template_directory_uri() . '/tpl03.css', array(), filemtime(get_template_directory() . '/tpl03.css'));
+    }
+}, 30);
 function interworld_setup(){
  add_theme_support('title-tag');
  add_theme_support('post-thumbnails');
