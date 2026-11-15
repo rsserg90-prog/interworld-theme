@@ -329,3 +329,8 @@
  .interworld-category-page .category-section h2{font-size:39px}
  .interworld-category-page .catalog-group-head{align-items:flex-start;flex-direction:column;gap:6px}
 }
+.interworld-category-page .category-anchor-inner{display:flex;min-width:max-content;padding-top:0;padding-bottom:0}
+.interworld-category-page .system-orb{overflow:hidden}
+.interworld-category-page .system-orb img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.interworld-category-page .system-card small{display:block;margin-top:14px;color:#d8bf94;font:500 11px "Manrope",sans-serif}
+.interworld-category-page .category-card-link{font:600 12px "Manrope",sans-serif}
