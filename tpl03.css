@@ -1,5 +1,5 @@
 .iw-tpl03-section{padding:64px 0;background:#f4f1e9;color:#183348}
-.iw-tpl03-section:nth-of-type(even){background:#f8f6f0}
+.iw-tpl03-section:nth-of-type(even):not(.iw-tpl03-continue){background:#f8f6f0}
 .iw-tpl03-inner{width:min(100%,1320px);margin:auto;padding:0 56px}
 .iw-tpl03-inner h2{margin:0 0 28px;font:400 clamp(32px,4vw,48px)/1.05 "Cormorant Garamond",serif}
 .iw-tpl03-inner h3{font:400 29px/1.1 "Cormorant Garamond",serif}
