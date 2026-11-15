@@ -111,8 +111,10 @@ function interworld_tpl03_links($term, $kind) {
         $title = trim((string) interworld_term_field('iw_tpl03_' . $kind . '_title_' . $i, $term));
         $url = trim((string) interworld_term_field('iw_tpl03_' . $kind . '_url_' . $i, $term));
         if ($title !== '' && wp_http_validate_url($url)) {
+            $image = interworld_term_field('iw_tpl03_' . $kind . '_image_' . $i, $term);
             $items[] = array('title' => $title, 'url' => $url,
-                'description' => (string) interworld_term_field('iw_tpl03_' . $kind . '_description_' . $i, $term));
+                'description' => (string) interworld_term_field('iw_tpl03_' . $kind . '_description_' . $i, $term),
+                'image' => is_numeric($image) ? (wp_get_attachment_image_url((int) $image, 'medium') ?: '') : '');
         }
     }
     return $items;
@@ -156,6 +158,7 @@ add_action('acf/init', function() {
             $add('iw_tpl03_' . $kind . '_title_' . $i, $label . ' ' . $i . ': название');
             $add('iw_tpl03_' . $kind . '_url_' . $i, $label . ' ' . $i . ': URL', 'url');
             $add('iw_tpl03_' . $kind . '_description_' . $i, $label . ' ' . $i . ': пояснение', 'textarea');
+            if ($kind === 'source') $add('iw_tpl03_source_image_' . $i, $label . ' ' . $i . ': изображение', 'image', array('return_format' => 'id'));
         }
     }
     acf_add_local_field_group(array(
