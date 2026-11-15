@@ -2,7 +2,7 @@
 /** Dynamic category archive for the Library taxonomy. */
 if (!defined('ABSPATH')) exit;
 require_once get_stylesheet_directory() . '/library-functions.php';
-wp_enqueue_style('interworld-library', get_stylesheet_directory_uri() . '/library-templates.css', array('interworld-style'), '1.0.0');
+wp_enqueue_style('interworld-library', get_stylesheet_directory_uri() . '/library-templates.css', array('interworld-style'), filemtime(get_stylesheet_directory() . '/library-templates.css'));
 get_header();
 $term = get_queried_object();
 $context = 'library_category_' . (int) $term->term_id;
