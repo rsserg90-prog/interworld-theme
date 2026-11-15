@@ -10,7 +10,7 @@ function interworld_tpl03_anchor_links($term) {
     if (interworld_tpl03_related($term, 'iw_tpl03_people')) $links['people'] = 'Контекст';
     if (interworld_tpl03_materials($term) || interworld_tpl03_links($term, 'source')) $links['sources'] = 'Источники';
     if (interworld_tpl03_links($term, 'book')) $links['books'] = 'Книги';
-    if (interworld_tpl03_related($term, 'iw_tpl03_topics') || interworld_tpl03_related_terms($term)) $links['continue'] = 'Другие темы';
+    if (interworld_tpl03_related($term, 'iw_tpl03_topics') || interworld_tpl03_related_terms($term) || ($term->taxonomy === 'object_group' && interworld_parent_type($term))) $links['continue'] = 'Другие темы';
     foreach ($links as $id => $label) echo '<a href="#' . esc_attr($id) . '">' . esc_html($label) . '</a>';
 }
 
@@ -21,6 +21,11 @@ function interworld_tpl03_render_sections($term) {
     $people = interworld_tpl03_related($term, 'iw_tpl03_people');
     $topics = interworld_tpl03_related($term, 'iw_tpl03_topics');
     $topic_terms = interworld_tpl03_related_terms($term);
+    if ($term->taxonomy === 'object_group') {
+        $parent_type = interworld_parent_type($term);
+        if ($parent_type && !in_array($parent_type->term_id, wp_list_pluck($topic_terms, 'term_id'), true)) $topic_terms[] = $parent_type;
+        if (!$topics) $topics = get_posts(array('post_type' => 'interworld_object', 'post_status' => 'publish', 'numberposts' => 12, 'fields' => 'ids', 'tax_query' => array(array('taxonomy' => 'object_group', 'field' => 'term_id', 'terms' => $term->term_id))));
+    }
     $materials = interworld_tpl03_materials($term);
     foreach (interworld_tpl03_links($term, 'source') as $old) {
         $kind = preg_match('~(?:youtube\.com|youtu\.be|vimeo\.com)~i', $old['url']) ? 'video' : 'article';

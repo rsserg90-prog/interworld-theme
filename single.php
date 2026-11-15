@@ -1,4 +1,5 @@
 <?php
+wp_enqueue_style('interworld-tpl03-object-tags', get_template_directory_uri() . '/tpl03.css', array(), filemtime(get_template_directory() . '/tpl03.css'));
 get_header();
 
 $object_id = get_queried_object_id();
@@ -1265,6 +1266,26 @@ foreach ($object_external_links as $external_link) {
       
 
     </article>
+    <?php
+    $continue_links = array();
+    foreach (array_merge(is_array($object_types) ? $object_types : array(), is_array($object_groups) ? $object_groups : array()) as $related_term) {
+        if (!($related_term instanceof WP_Term)) continue;
+        $url = get_term_link($related_term);
+        if (!is_wp_error($url)) $continue_links[$url] = $related_term->name;
+    }
+    foreach ($relation_items as $related_item) {
+        $target_id = absint($related_item['target_id'] ?? 0);
+        if ($target_id && get_post_status($target_id) === 'publish') $continue_links[get_permalink($target_id)] = get_the_title($target_id);
+    }
+    $continue_background = get_the_post_thumbnail_url($object_id, 'full');
+    ?>
+    <?php if ($continue_links) : ?>
+    <section class="iw-tpl03-section iw-tpl03-continue" id="continue" <?php if ($continue_background) : ?>style="--iw-continue-image:url('<?php echo esc_url($continue_background); ?>')"<?php endif; ?>>
+        <div class="iw-tpl03-inner"><h2>Продолжить исследование Межмирья</h2><div class="iw-tpl03-tags">
+            <?php foreach ($continue_links as $url => $title) : ?><a class="iw-tpl03-tag" href="<?php echo esc_url($url); ?>"><?php echo esc_html($title); ?></a><?php endforeach; ?>
+        </div></div>
+    </section>
+    <?php endif; ?>
 <?php endwhile; ?>
 </main>
 
