@@ -23,6 +23,10 @@ function interworld_tpl03_material_row($row = array()) {
 }
 
 function interworld_tpl03_materials_editor($term) {
+    echo '<tr class="form-field"><th>Взаимосвязи Межмирья</th><td><p>Выберите объект и название вкладки, как в редакторе Эфира TEX.</p><div id="iw-relation-rows">';
+    $relations = get_term_meta($term->term_id, '_iw_tpl03_relations', true);
+    foreach (is_array($relations) ? $relations : array() as $relation) interworld_tpl03_relation_row($relation);
+    echo '</div><button type="button" class="button" id="iw-relation-add">Добавить связь</button><template id="iw-relation-template">'; interworld_tpl03_relation_row(); echo '</template></td></tr>';
     echo '<tr class="form-field"><th><label>Материалы для исследования</label></th><td>';
     wp_nonce_field('iw_tpl03_save_materials', 'iw_tpl03_materials_nonce');
     echo '<p>Добавьте любое число статей, видео и текстовых источников. Строки без названия не сохраняются.</p><div id="iw-material-rows">';
@@ -34,6 +38,15 @@ function interworld_tpl03_materials_editor($term) {
     foreach ((array) $faq as $item) interworld_tpl03_faq_row($item);
     echo '</div><button type="button" class="button" id="iw-faq-add">Добавить вопрос</button><template id="iw-faq-template">'; interworld_tpl03_faq_row(); echo '</template></td></tr>';
 }
+function interworld_tpl03_relation_row($row = array()) {
+    $selected_id = absint($row['id'] ?? 0);
+    $selected_type = sanitize_key($row['type'] ?? 'other');
+    echo '<div class="iw-relation-row" style="padding:12px;margin:8px 0;border:1px solid #ccd0d4;background:#fff"><p><label>Связанный объект <select name="iw_relations[id][]"><option value="0">Выберите объект</option>';
+    foreach (get_posts(array('post_type' => 'interworld_object', 'post_status' => 'publish', 'posts_per_page' => -1, 'orderby' => 'title', 'order' => 'ASC')) as $post) echo '<option value="' . (int) $post->ID . '" ' . selected($selected_id, $post->ID, false) . '>' . esc_html($post->post_title) . '</option>';
+    echo '</select></label></p><p><label>Вкладка <select name="iw_relations[type][]">';
+    foreach (interworld_tpl03_relation_labels() as $key => $label) echo '<option value="' . esc_attr($key) . '" ' . selected($selected_type, $key, false) . '>' . esc_html($label) . '</option>';
+    echo '</select></label></p><button type="button" class="button iw-relation-remove">Убрать связь</button></div>';
+}
 function interworld_tpl03_faq_row($item = array()) {
     echo '<div class="iw-faq-row" style="padding:12px;margin:8px 0;border:1px solid #ccd0d4"><p><label>Вопрос <input class="large-text" name="iw_faq_q[]" value="' . esc_attr($item['q'] ?? '') . '"></label></p><p><label>Ответ <textarea class="large-text" rows="3" name="iw_faq_a[]">' . esc_textarea($item['a'] ?? '') . '</textarea></label></p><button type="button" class="button iw-faq-remove">Убрать вопрос</button></div>';
 }
@@ -42,6 +55,13 @@ add_action('object_group_edit_form_fields', 'interworld_tpl03_materials_editor')
 
 function interworld_tpl03_save_materials($term_id) {
     if (!current_user_can('manage_categories') || !isset($_POST['iw_tpl03_materials_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['iw_tpl03_materials_nonce'])), 'iw_tpl03_save_materials')) return;
+    $relation_raw = isset($_POST['iw_relations']) && is_array($_POST['iw_relations']) ? wp_unslash($_POST['iw_relations']) : array();
+    $relations = array(); $relation_labels = interworld_tpl03_relation_labels();
+    foreach ((array) ($relation_raw['id'] ?? array()) as $i => $value) {
+        $id = absint($value); $type = sanitize_key($relation_raw['type'][$i] ?? 'other');
+        if ($id && get_post_type($id) === 'interworld_object' && isset($relation_labels[$type])) $relations[] = array('id' => $id, 'type' => $type);
+    }
+    update_term_meta($term_id, '_iw_tpl03_relations', $relations);
     $raw = isset($_POST['iw_materials']) && is_array($_POST['iw_materials']) ? wp_unslash($_POST['iw_materials']) : array();
     $rows = array();
     foreach ((array) ($raw['title'] ?? array()) as $i => $title) {
@@ -72,6 +92,8 @@ add_action('admin_enqueue_scripts', function($hook) {
     wp_enqueue_media();
     wp_add_inline_script('jquery-core', <<<'JS'
 document.addEventListener('DOMContentLoaded', function(){
+  const relationRows=document.getElementById('iw-relation-rows'),relationTemplate=document.getElementById('iw-relation-template');
+  if(relationRows&&relationTemplate){document.getElementById('iw-relation-add').addEventListener('click',function(){relationRows.append(relationTemplate.content.cloneNode(true));});relationRows.addEventListener('click',function(event){if(event.target.classList.contains('iw-relation-remove'))event.target.closest('.iw-relation-row').remove();});}
   const rows=document.getElementById('iw-material-rows'), template=document.getElementById('iw-material-template');
   if(!rows||!template)return;
   document.getElementById('iw-material-add').addEventListener('click', function(){rows.append(template.content.cloneNode(true));});

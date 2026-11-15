@@ -75,6 +75,40 @@ function interworld_tpl03_related_terms($term) {
     return array_values($terms);
 }
 
+function interworld_tpl03_relation_labels() {
+    return array('aeon' => 'Эоны', 'ether' => 'Эфиры', 'archon' => 'Архонты',
+        'deity' => 'Боги | Божества', 'space' => 'Пространства Межмирья',
+        'symbol' => 'Символы и атрибуты', 'creature' => 'Существа Промежутка',
+        'fairy' => 'Фейри', 'city' => 'Города Межмирья', 'book' => 'Книги',
+        'afterlife' => 'Посмертие (Дуат)', 'other' => 'Другие связи');
+}
+
+function interworld_tpl03_relations($term) {
+    $groups = array();
+    $labels = interworld_tpl03_relation_labels();
+    $rows = get_term_meta($term->term_id, '_iw_tpl03_relations', true);
+    foreach (is_array($rows) ? $rows : array() as $row) {
+        $id = absint($row['id'] ?? 0);
+        $type = sanitize_key($row['type'] ?? 'other');
+        if ($id && get_post_type($id) === 'interworld_object' && get_post_status($id) === 'publish' && isset($labels[$type])) $groups[$type][$id] = $id;
+    }
+    // Earlier fields remain readable until their contents are moved into the new editor.
+    foreach (array('iw_tpl03_creatures' => 'creature', 'iw_tpl03_spaces' => 'space') as $field => $fallback) {
+        foreach (interworld_tpl03_related($term, $field) as $id) {
+            $types = get_the_terms($id, 'object_type');
+            $type = $fallback;
+            if (is_array($types) && $types) {
+                $name = reset($types)->name;
+                foreach ($labels as $key => $label) if ($name === $label) { $type = $key; break; }
+            }
+            $groups[$type][$id] = $id;
+        }
+    }
+    $ordered = array();
+    foreach ($labels as $key => $label) if (!empty($groups[$key])) $ordered[$key] = array($label, array_values($groups[$key]));
+    return $ordered;
+}
+
 function interworld_tpl03_faq($term) {
     $items = array();
     for ($i = 1; $i <= 4; $i++) {
