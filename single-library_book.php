@@ -10,6 +10,8 @@ get_header();
   $book_id = get_the_ID();
   $field = function($name) use ($book_id) { return function_exists('get_field') ? get_field($name, $book_id) : get_post_meta($book_id, $name, true); };
   $author = $field('avtor_knigi'); $short = $field('kratkoe_opisanie'); $full = $field('polnoe_opisanie'); $contents = $field('soderzhanie_knigi'); $cover = $field('oblozhka_knigi'); $year = $field('god_izdania'); $publisher = $field('izdatelstvo'); $isbn = $field('isbn'); $reading = $field('url_chtenie');
+  $author_links = array();
+  foreach (interworld_knowledge_ids('iw_book_authors', $book_id) as $person_id) if (get_post_type($person_id)==='person' && get_post_status($person_id)==='publish') $author_links[] = '<a href="' . esc_url(get_permalink($person_id)) . '">' . esc_html(get_the_title($person_id)) . '</a>';
   $cover_url = '';
   if (is_array($cover)) $cover_url = !empty($cover['url']) ? $cover['url'] : (!empty($cover['ID']) ? wp_get_attachment_image_url($cover['ID'], 'large') : '');
   elseif (is_numeric($cover)) $cover_url = wp_get_attachment_image_url((int)$cover, 'large');
@@ -17,7 +19,7 @@ get_header();
   if (!$cover_url && has_post_thumbnail()) $cover_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
   $categories = get_the_terms($book_id, 'library_category');
 ?>
-<section class="iw-book-detail-hero"><div class="iw-library-wrap"><div class="iw-library-breadcrumbs"><a href="<?php echo esc_url(home_url('/')); ?>">Главная</a><span> / </span><a href="<?php echo esc_url(home_url('/biblioteka/')); ?>">Библиотека</a><span> / </span><span><?php the_title(); ?></span></div><div class="iw-book-detail-grid"><div class="iw-book-detail-cover"><?php if ($cover_url) : ?><img src="<?php echo esc_url($cover_url); ?>" alt="Обложка книги «<?php echo esc_attr(get_the_title()); ?>"><?php else : ?><div class="iw-book-cover-placeholder">КНИЖНОЕ<br>СОБРАНИЕ</div><?php endif; ?></div><div class="iw-book-detail-copy"><div class="iw-library-eyebrow">КНИЖНОЕ СОБРАНИЕ МЕЖМИРЬЯ</div><h1><?php the_title(); ?></h1><?php if ($author) : ?><p class="iw-book-detail-author"><?php echo esc_html($author); ?></p><?php endif; ?><?php if ($short) : ?><div class="iw-book-detail-short"><?php echo wp_kses_post(wpautop($short)); ?></div><?php endif; ?><div class="iw-book-actions"><?php if ($reading && is_string($reading) && filter_var($reading, FILTER_VALIDATE_URL)) : ?><a class="iw-library-button" href="<?php echo esc_url($reading); ?>" target="_blank" rel="noopener noreferrer">Перейти к чтению <span aria-hidden="true">↗</span></a><?php endif; ?>
+<section class="iw-book-detail-hero"><div class="iw-library-wrap"><div class="iw-library-breadcrumbs"><a href="<?php echo esc_url(home_url('/')); ?>">Главная</a><span> / </span><a href="<?php echo esc_url(home_url('/biblioteka/')); ?>">Библиотека</a><span> / </span><span><?php the_title(); ?></span></div><div class="iw-book-detail-grid"><div class="iw-book-detail-cover"><?php if ($cover_url) : ?><img src="<?php echo esc_url($cover_url); ?>" alt="Обложка книги «<?php echo esc_attr(get_the_title()); ?>"><?php else : ?><div class="iw-book-cover-placeholder">КНИЖНОЕ<br>СОБРАНИЕ</div><?php endif; ?></div><div class="iw-book-detail-copy"><div class="iw-library-eyebrow">КНИЖНОЕ СОБРАНИЕ МЕЖМИРЬЯ</div><h1><?php the_title(); ?></h1><?php if ($author_links || $author) : ?><p class="iw-book-detail-author"><?php echo $author_links ? wp_kses_post(implode(', ', $author_links)) : esc_html($author); ?></p><?php endif; ?><?php if ($short) : ?><div class="iw-book-detail-short"><?php echo wp_kses_post(wpautop($short)); ?></div><?php endif; ?><div class="iw-book-actions"><?php if ($reading && is_string($reading) && filter_var($reading, FILTER_VALIDATE_URL)) : ?><a class="iw-library-button" href="<?php echo esc_url($reading); ?>" target="_blank" rel="noopener noreferrer">Перейти к чтению <span aria-hidden="true">↗</span></a><?php endif; ?>
 <?php if (is_string($contents) && trim($contents) !== '') : ?><details class="iw-book-contents"><summary>Содержание</summary><div class="iw-book-contents-panel"><?php echo wp_kses_post(wpautop($contents)); ?></div></details><?php endif; ?></div>
 <?php if ($year || $publisher || $isbn) : ?><dl class="iw-book-meta"><?php if ($year) : ?><div><dt>Год издания</dt><dd><?php echo esc_html($year); ?></dd></div><?php endif; ?><?php if ($publisher) : ?><div><dt>Издательство</dt><dd><?php echo esc_html($publisher); ?></dd></div><?php endif; ?><?php if ($isbn) : ?><div><dt>ISBN</dt><dd><?php echo esc_html($isbn); ?></dd></div><?php endif; ?></dl><?php endif; ?>
 <?php if ($categories && !is_wp_error($categories)) : ?><div class="iw-book-tags"><span>Категории:</span><?php foreach ($categories as $cat) : $link = get_term_link($cat); if (!is_wp_error($link)) : ?><a href="<?php echo esc_url($link); ?>"><?php echo esc_html($cat->name); ?></a><?php endif; endforeach; ?></div><?php endif; ?></div></div></div></section>
@@ -287,9 +289,11 @@ if ($iw_book_quotes_count > 0) :
 })();
 </script>
 <?php endif; ?>
+<?php interworld_knowledge_relations($book_id); ?>
 
 <?php
 // Вопросы и ответы о книге.
+// Legacy book links remain visible until the new editorial links are selected.
 $iw_book_faq = get_post_meta($book_id, '_iw_book_faq_items', true);
 
 if (is_array($iw_book_faq)) {
@@ -327,6 +331,15 @@ if (is_array($iw_book_faq)) {
     </div>
 </section>
 <?php endif; ?>
+<?php
+interworld_knowledge_sources($book_id);
+$book_ends = array(home_url('/biblioteka/') => 'Библиотека');
+if ($categories && !is_wp_error($categories)) foreach ($categories as $category) {
+    $category_url = get_term_link($category);
+    if (!is_wp_error($category_url)) $book_ends[$category_url] = $category->name;
+}
+interworld_knowledge_continue($book_id, $book_ends);
+?>
 <?php endwhile; ?>
 </main>
 <?php get_footer(); ?>
