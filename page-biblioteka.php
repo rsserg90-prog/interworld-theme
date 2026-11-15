@@ -6,7 +6,7 @@
  */
 if (!defined('ABSPATH')) exit;
 require_once get_stylesheet_directory() . '/library-functions.php';
-wp_enqueue_style('interworld-library', get_stylesheet_directory_uri() . '/library-templates.css', array('interworld-style'), '1.0.0');
+wp_enqueue_style('interworld-library', get_stylesheet_directory_uri() . '/library-templates.css', array('interworld-style'), filemtime(get_stylesheet_directory() . '/library-templates.css'));
 get_header();
 $categories = get_terms(array('taxonomy'=>'library_category','parent'=>0,'hide_empty'=>false,'orderby'=>'name','order'=>'ASC'));
 $hub_id = get_queried_object_id();
