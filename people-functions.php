@@ -18,6 +18,66 @@ add_action('init', function() {
     else register_taxonomy_for_object_type('person_category', 'person');
 }, 15);
 
+// The existing Enmerkar record keeps its public URL after its post type changes.
+add_action('init', function() {
+    if (get_post_type(117) === 'person' && get_post_field('post_name', 117) === 'enmerkar') {
+        add_rewrite_rule('^enmerkar/?$', 'index.php?person=enmerkar', 'top');
+    }
+}, 30);
+add_filter('post_type_link', function($url, $post) {
+    if ($post->post_type === 'person' && $post->post_name === 'enmerkar') return home_url('/enmerkar/');
+    return $url;
+}, 20, 2);
+
+add_action('admin_menu', function() {
+    add_submenu_page('edit.php?post_type=person', 'Перенос Энмеркара', 'Перенос Энмеркара', 'manage_options', 'iw-migrate-enmerkar', function() {
+        if (!current_user_can('manage_options')) return;
+        $post = get_post(117);
+        echo '<div class="wrap"><h1>Перенос Энмеркара</h1>';
+        if (!$post || $post->post_name !== 'enmerkar') { echo '<p>Исходная запись не найдена. Перенос не выполнялся.</p></div>'; return; }
+        if ($post->post_type === 'person') { echo '<p>Запись уже перенесена. Адрес: <a href="' . esc_url(get_permalink($post)) . '">/enmerkar/</a>.</p></div>'; return; }
+        echo '<p>Запись №117 будет переведена из «Объектов Межмирья» в «Личности». ID, содержимое, изображение и метаполя сохранятся. Перед действием нужна свежая резервная копия WordPress.</p>';
+        echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '"><input type="hidden" name="action" value="iw_migrate_enmerkar">';
+        wp_nonce_field('iw_migrate_enmerkar'); submit_button('Перенести запись'); echo '</form></div>';
+    });
+});
+add_action('admin_post_iw_migrate_enmerkar', function() {
+    if (!current_user_can('manage_options')) wp_die('Недостаточно прав.');
+    check_admin_referer('iw_migrate_enmerkar');
+    $post = get_post(117);
+    if (!$post || $post->post_type !== 'interworld_object' || $post->post_name !== 'enmerkar') wp_die('Исходная запись изменилась. Перенос отменён.');
+    $duplicate = get_page_by_path('enmerkar', OBJECT, 'person');
+    if ($duplicate) wp_die('Карточка личности с таким адресом уже существует. Перенос отменён.');
+    $result = wp_update_post(array('ID'=>117,'post_type'=>'person'), true);
+    if (is_wp_error($result)) wp_die(esc_html($result->get_error_message()));
+    $role_ids = array();
+    foreach (array('Авторы'=>'avtory','Маги'=>'magi','Исследователи'=>'issledovateli') as $name=>$slug) {
+        $existing = term_exists($slug, 'person_category');
+        if (!$existing) $existing = wp_insert_term($name, 'person_category', array('slug'=>$slug));
+        if (!is_wp_error($existing)) $role_ids[$slug] = (int)(is_array($existing) ? $existing['term_id'] : $existing);
+    }
+    if ($role_ids) wp_set_object_terms(117, array_values($role_ids), 'person_category', false);
+    if (!empty($role_ids['avtory'])) {
+        if (function_exists('update_field')) update_field('field_iw_person_primary_category', $role_ids['avtory'], 117);
+        else update_post_meta(117, 'iw_person_primary_category', $role_ids['avtory']);
+    }
+    if (get_post_type(138) === 'library_book') {
+        $authors = interworld_knowledge_ids('iw_book_authors', 138);
+        $authors[] = 117;
+        $authors = array_values(array_unique($authors));
+        if (function_exists('update_field')) update_field('field_iw_book_authors', $authors, 138);
+        else update_post_meta(138, 'iw_book_authors', $authors);
+        update_post_meta(138, '_iw_book_author_index', $authors);
+        $books = array_map('absint', (array)get_post_meta(117, '_iw_person_authored_book_ids', true));
+        $books[] = 138;
+        update_post_meta(117, '_iw_person_authored_book_ids', array_values(array_unique($books)));
+    }
+    add_rewrite_rule('^enmerkar/?$', 'index.php?person=enmerkar', 'top');
+    flush_rewrite_rules(false);
+    wp_safe_redirect(admin_url('edit.php?post_type=person&page=iw-migrate-enmerkar'));
+    exit;
+});
+
 add_action('admin_init', function() {
     if (get_option('iw_person_rewrite_version') === '1') return;
     flush_rewrite_rules(false);

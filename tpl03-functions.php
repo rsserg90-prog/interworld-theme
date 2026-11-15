@@ -90,7 +90,7 @@ function interworld_tpl03_relations($term) {
     foreach (is_array($rows) ? $rows : array() as $row) {
         $id = absint($row['id'] ?? 0);
         $type = sanitize_key($row['type'] ?? 'other');
-        if ($id && get_post_type($id) === 'interworld_object' && get_post_status($id) === 'publish' && isset($labels[$type])) $groups[$type][$id] = $id;
+        if ($id && in_array(get_post_type($id), array('interworld_object','person'), true) && get_post_status($id) === 'publish' && isset($labels[$type])) $groups[$type][$id] = $id;
     }
     // Earlier fields remain readable until their contents are moved into the new editor.
     foreach (array('iw_tpl03_creatures' => 'creature', 'iw_tpl03_spaces' => 'space') as $field => $fallback) {
@@ -177,7 +177,7 @@ add_action('acf/init', function() {
     $add('iw_tpl03_seo_text', 'Развёрнутое описание', 'wysiwyg', array('toolbar' => 'full', 'media_upload' => 0));
     $add('iw_tpl03_faq_title', 'Заголовок вопросов и ответов');
     foreach (array('creatures' => 'Связанные существа', 'spaces' => 'Связанные пространства', 'people' => 'Личности и контекст', 'topics' => 'Темы для продолжения') as $key => $label) {
-        $add('iw_tpl03_' . $key, $label, 'post_object', array('post_type' => array('interworld_object', 'page', 'post'), 'return_format' => 'id', 'multiple' => 1, 'ui' => 1));
+        $add('iw_tpl03_' . $key, $label, 'post_object', array('post_type' => array('interworld_object', 'person', 'page', 'post'), 'return_format' => 'id', 'multiple' => 1, 'ui' => 1));
     }
     $add('iw_tpl03_topic_types', 'Связанные категории', 'taxonomy', array('taxonomy' => 'object_type', 'field_type' => 'multi_select', 'return_format' => 'id', 'save_terms' => 0, 'load_terms' => 0));
     $add('iw_tpl03_topic_groups', 'Связанные группы', 'taxonomy', array('taxonomy' => 'object_group', 'field_type' => 'multi_select', 'return_format' => 'id', 'save_terms' => 0, 'load_terms' => 0));
