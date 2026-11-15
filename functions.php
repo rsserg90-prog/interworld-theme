@@ -6,6 +6,15 @@ require_once get_template_directory() . '/tpl03-sections.php';
 require_once get_template_directory() . '/knowledge-blocks.php';
 require_once get_template_directory() . '/knowledge-admin.php';
 require_once get_template_directory() . '/people-functions.php';
+// The Library taxonomy is registered by a plugin. Keep its URLs, but allow child terms.
+add_filter('register_taxonomy_args', function($args, $taxonomy) {
+    if ($taxonomy === 'library_category') $args['hierarchical'] = true;
+    return $args;
+}, 10, 2);
+add_action('init', function() {
+    $taxonomy = get_taxonomy('library_category');
+    if ($taxonomy && !$taxonomy->hierarchical) $taxonomy->hierarchical = true;
+}, 99);
 add_action('wp_enqueue_scripts', function() {
     if (is_tax(array('object_type', 'object_group'))) {
         wp_enqueue_style('interworld-tpl03', get_template_directory_uri() . '/tpl03.css', array(), filemtime(get_template_directory() . '/tpl03.css'));
