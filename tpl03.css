@@ -7,6 +7,9 @@
 .iw-tpl03-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:18px;margin:18px 0 32px}
 .iw-tpl03-card{display:block;border:1px solid rgba(24,51,72,.14);background:#fff;text-decoration:none;color:inherit;overflow:hidden}
 .iw-tpl03-card img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.iw-tpl03-book-card{display:flex;align-items:flex-start;min-height:160px}
+.iw-tpl03-book-card img{flex:none;width:96px;max-width:28%;height:136px;margin:16px 0 16px 16px;aspect-ratio:auto;object-fit:contain}
+.iw-tpl03-book-card>div{min-width:0;align-self:center}
 .iw-tpl03-card>div{padding:18px}.iw-tpl03-card h3,.iw-tpl03-card h4{margin:0 0 8px;color:#183348}
 .iw-tpl03-card p{margin:0 0 12px;font:400 13px/1.6 "Manrope",sans-serif;color:#52616b}
 .iw-tpl03-card small{font:600 11px/1.5 "Manrope",sans-serif;color:#68727a}
