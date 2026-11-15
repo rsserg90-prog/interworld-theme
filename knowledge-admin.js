@@ -1,3 +1,4 @@
+// Capture clicks in Gutenberg meta boxes before its handlers stop bubbling.
 document.addEventListener('click', event => {
   const pick = event.target.closest('.iw-knowledge-pick-image');
   if (pick && window.wp?.media) {
@@ -16,4 +17,4 @@ document.addEventListener('click', event => {
   }
   const remove = event.target.closest('.iw-knowledge-source-remove');
   if (remove) remove.closest('.iw-knowledge-source-row').remove();
-});
+}, true);
