@@ -6,6 +6,7 @@ require_once get_template_directory() . '/tpl03-sections.php';
 require_once get_template_directory() . '/knowledge-blocks.php';
 require_once get_template_directory() . '/knowledge-admin.php';
 require_once get_template_directory() . '/people-functions.php';
+require_once get_template_directory() . '/interworld-content.php';
 // The Library taxonomy is registered by a plugin. Allow nested terms and URLs.
 add_filter('register_taxonomy_args', function($args, $taxonomy) {
     if ($taxonomy === 'library_category') {
@@ -36,7 +37,7 @@ function interworld_setup(){
  add_theme_support('title-tag');
  add_theme_support('post-thumbnails');
  add_theme_support('html5', array('search-form','comment-form','comment-list','gallery','caption','style','script'));
- register_nav_menus(array('primary'=>__('Верхнее меню','interworld')));
+ register_nav_menus(array('primary'=>__('Верхнее меню','interworld'),'footer'=>__('Меню в подвале','interworld')));
 }
 add_action('after_setup_theme','interworld_setup');
 function interworld_assets(){wp_enqueue_style('interworld-style',get_stylesheet_uri(),array(),'0.2.0');}
@@ -54,9 +55,6 @@ function interworld_category_assets() {
 }
 
 add_action('wp_enqueue_scripts', 'interworld_category_assets', 20);
-function interworld_fallback_menu(){
- echo '<ul><li><a href="#explore">Эоны и Эфиры</a></li><li><a href="#creatures">Существа</a></li><li><a href="#spaces">Пространства</a></li><li><a href="#afterlife">Посмертие</a></li><li><a href="#library">Библиотека</a></li></ul>';
-}
 function interworld_widgets(){register_sidebar(array('name'=>__('Сайтбар','interworld'),'id'=>'sidebar-1','before_widget'=>'<section>','after_widget'=>'</section>','before_title'=>'<h3>','after_title'=>'</h3>'));}
 add_action('widgets_init','interworld_widgets');
 /* Объекты Межмирья */

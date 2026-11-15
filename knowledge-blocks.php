@@ -20,15 +20,16 @@ function interworld_knowledge_ids($name, $context) {
 
 function interworld_knowledge_links($context) {
     $groups = array();
+    $current_id = is_numeric($context) ? absint($context) : 0;
     foreach (interworld_knowledge_ids('iw_knowledge_objects', $context) as $id) {
-        if (get_post_type($id) !== 'interworld_object' || get_post_status($id) !== 'publish') continue;
+        if ($id === $current_id || get_post_type($id) !== 'interworld_object' || get_post_status($id) !== 'publish') continue;
         $types = get_the_terms($id, 'object_type');
         $label = ($types && !is_wp_error($types)) ? $types[0]->name : 'Объекты Межмирья';
         $groups[$label][$id] = $id;
     }
     foreach (array('iw_knowledge_books' => array('library_book', 'Книги'), 'iw_knowledge_people' => array('person', 'Личности')) as $field => $config) {
         foreach (interworld_knowledge_ids($field, $context) as $id) {
-            if (get_post_type($id) === $config[0] && get_post_status($id) === 'publish') $groups[$config[1]][$id] = $id;
+            if ($id !== $current_id && get_post_type($id) === $config[0] && get_post_status($id) === 'publish') $groups[$config[1]][$id] = $id;
         }
     }
     return array_filter($groups);

@@ -20,14 +20,13 @@
 </div>
   </div>
   <nav class="side-nav" aria-label="Разделы энциклопедии">
-  <a href="#explore"><span>Эоны</span></a>
- <a href="#explore"><span>Эфиры</span></a>
-  <a href="#creatures"><span>Существа</span></a>
-  <a href="#spaces"><span>Пространства</span></a>
-  <a href="#afterlife"><span>Посмертие</span></a>
-  <a href="#fairies"><span>Фейри</span></a>
-  <a href="#archons"><span>Архонты</span></a>
-  <a href="#library"><span>Библиотека</span></a>
+  <a href="<?php echo esc_url(interworld_content_section_url('zones')); ?>"><span>Зоны и Эфиры</span></a>
+  <a href="<?php echo esc_url(interworld_content_section_url('creatures')); ?>"><span>Существа</span></a>
+  <a href="<?php echo esc_url(interworld_content_section_url('spaces')); ?>"><span>Пространства</span></a>
+  <a href="<?php echo esc_url(interworld_content_section_url('afterlife')); ?>"><span>Посмертие</span></a>
+  <a href="<?php echo esc_url(interworld_content_section_url('fairies')); ?>"><span>Фейри</span></a>
+  <a href="<?php echo esc_url(interworld_content_section_url('archons')); ?>"><span>Архонты</span></a>
+  <a href="<?php echo esc_url(interworld_content_section_url('library')); ?>"><span>Библиотека</span></a>
 </nav>
 
 <div class="sidebar-search-block">
@@ -50,10 +49,13 @@
 
 <nav class="side-secondary" aria-label="Дополнительные разделы">
 
-  <a href="#map"><span>Карта</span></a>
-  <a href="#articles"><span>Статьи</span></a>
-  <a href="#glossary"><span>Глоссарий</span></a>
-  <a href="#about"><span>О проекте</span></a>
+  <a href="<?php echo esc_url(interworld_content_section_url('map')); ?>"><span>Карта</span></a>
+  <a href="<?php echo esc_url(interworld_content_section_url('articles')); ?>"><span>Статьи</span></a>
+  <a href="<?php echo esc_url(interworld_content_section_url('glossary')); ?>"><span>Глоссарий</span></a>
+  <a href="<?php echo esc_url(interworld_content_section_url('persons')); ?>"><span>Личности</span></a>
+  <a href="<?php echo esc_url(interworld_content_section_url('traditions')); ?>"><span>Традиции</span></a>
+  <a href="<?php echo esc_url(interworld_content_section_url('sources')); ?>"><span>Источники</span></a>
+  <a href="<?php echo esc_url(interworld_content_section_url('about')); ?>"><span>О проекте</span></a>
 </nav>
  
 <div class="sidebar-banners">

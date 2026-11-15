@@ -1,0 +1,12 @@
+<?php
+/** Search results across encyclopedia entries, books, pages and articles. */
+if (!defined('ABSPATH')) exit;
+get_header();
+$search_term = get_search_query();
+?>
+<main class="iw-editorial-page iw-search-page"><header class="iw-editorial-archive-header"><nav class="iw-editorial-breadcrumbs" aria-label="Хлебные крошки"><a href="<?php echo esc_url(home_url('/')); ?>">Главная</a><span aria-hidden="true">›</span><span>Поиск</span></nav><div class="iw-editorial-eyebrow">ПОИСК ПО ЭНЦИКЛОПЕДИИ</div><h1>Результаты поиска</h1><p class="iw-editorial-lead">Запрос: «<?php echo esc_html($search_term); ?>»</p><form class="iw-catalog-tools" role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>"><label><span class="screen-reader-text">Изменить поисковый запрос</span><input type="search" name="s" value="<?php echo esc_attr($search_term); ?>" placeholder="Введите название или термин"></label><button type="submit">Искать</button></form></header>
+  <section class="iw-editorial-catalog" aria-label="Результаты">
+    <?php if (have_posts()) : ?><div class="iw-editorial-grid"><?php while (have_posts()) : the_post(); $id=get_the_ID(); $type=get_post_type_object(get_post_type()); $excerpt=get_the_excerpt(); if (!$excerpt) $excerpt=interworld_content_value('iw_lead',$id) ?: interworld_content_value('object_short_definition',$id); ?><article class="iw-editorial-card"><a class="iw-editorial-card-image" href="<?php the_permalink(); ?>"><?php if (has_post_thumbnail()) the_post_thumbnail('medium_large',array('loading'=>'lazy','alt'=>'')); else : ?><span aria-hidden="true">INTERWORLD</span><?php endif; ?></a><div class="iw-editorial-card-copy"><div class="iw-editorial-eyebrow"><?php echo esc_html($type ? $type->labels->singular_name : 'Материал'); ?></div><h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2><?php if ($excerpt) : ?><p><?php echo esc_html(wp_trim_words(wp_strip_all_tags($excerpt),28)); ?></p><?php endif; ?><a class="iw-editorial-more" href="<?php the_permalink(); ?>">Открыть материал →</a></div></article><?php endwhile; ?></div><nav class="iw-editorial-pagination" aria-label="Страницы поиска"><?php echo wp_kses_post(get_the_posts_pagination()); ?></nav><?php else : ?><div class="iw-editorial-empty"><h2>Ничего не найдено</h2><p>Попробуйте другое слово или откройте разделы энциклопедии.</p><a href="<?php echo esc_url(home_url('/')); ?>">На главную</a></div><?php endif; ?>
+  </section>
+</main>
+<?php get_footer(); ?>

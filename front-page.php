@@ -1,515 +1,57 @@
-<?php get_header(); ?>
-<main class="content-area">
-<section class="hero-banner">
-
-    <img
-        src="https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/banner-hero.webp"
-        alt="Миры за границами определённости — География Межмирья"
-        class="hero-banner-image"
-    >
-
-    <div class="hero-overlay">
-
-        <div class="hero-left">
-
-            <div class="hero-eyebrow">
-                ЭНЦИКЛОПЕДИЯ МЕЖМИРЬЯ
-            </div>
-
-            <h1>
-                Миры<br>
-                за границами <br>
-                определенности
-            </h1>
-
-           <div class="hero-title-line"></div>
-
-           <p class="hero-description">
-    Исследуйте Эоны, Эфиры, пространства и существ Межмирья.
-    Открывайте знания, которые соединяют миры.
-</p>
-
-            <div class="hero-actions">
-
-                <a class="hero-button hero-button-primary" href="#explore">
-                    Начать путешествие <span>→</span>
-                </a>
-
-                <a class="hero-button hero-button-secondary" href="#map">
-                    О карте Межмирья
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="hero-quote">
-
-        <blockquote>
-    «Есть миры, которые мы называем реальностью. И есть Межмирье — пространство между ними, где рождаются все пути.»
-</blockquote>
-
-            <cite>— Энмеркар</cite>
-
-        </div>
-
-    </div>
-
-</section>
-<section class="section explore-section" id="explore"><div class="section-heading centered"><div class="eyebrow">Исследуйте Межмирье</div><h2>Миры, существа и пространства</h2><p>Предлагаем исследовать Эоны, Эфиры, пространства Межмирья и его обитателей, переходя от одной области к другой через связанные знания и источники.</p></div><div class="explore-grid">
-
-        <!-- Эоны и Эфиры -->
-
-        <article class="explore-card">
-    <a href="#" class="explore-card-link">
-            <div class="explore-card-image">
-
-                <img
-                    src="https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/%D0%AD%D0%BE%D0%BD%D1%8B-%D0%B8-%D0%AD%D1%84%D0%B8%D1%80%D1%8B-1.png"
-                    alt="Эоны и Эфиры Межмирья"
-                    loading="lazy"
-                >
-
-             </div>
-            <div class="explore-card-content">
-
-                <h3>
-                    Эоны и Эфиры
-                </h3>
-
-                <p>
-                    Структура Межмирья. Зоны, эфиры, уровни
-                    и их взаимосвязи.
-                </p>
-
-              
-
-            </div>
-			</a>
-        </article>
-
-
-        <!-- Существа -->
-
-        <article class="explore-card">
-    <a href="#" class="explore-card-link">
-           <div class="explore-card-image">
-                <img
-                    src="https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/%D0%A1%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B0-1.png"
-                    alt="Существа Межмирья"
-                    loading="lazy"
-                >
-
-           </div>
-
-            <div class="explore-card-content">
-
-                <h3>
-                    Существа
-                </h3>
-
-                <p>
-                    Обитатели иных миров. Архонты, феи,
-                    элементали и другие.
-                </p>
-
-                
-
-            </div>
-			</a>
-        </article>
-
-
-        <!-- Пространства -->
-
-        <article class="explore-card">
-    <a href="#" class="explore-card-link">
-            <div class="explore-card-image">
-
-                <img
-                    src="https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/%D0%9F%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%B0-1.png"
-                    alt="Пространства Межмирья"
-                    loading="lazy"
-                >
-
-              </div>
-
-            <div class="explore-card-content">
-
-                <h3>
-                    Пространства
-                </h3>
-
-                <p>
-                    Миры, грани, города и области Межмирья.
-                </p>
-
-               
-            </div>
-			</a>
-        </article>
-
-
-        <!-- Посмертие -->
-
-        <article class="explore-card">
-    <a href="#" class="explore-card-link">
-         <div class="explore-card-image">
-
-                <img
-                    src="https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/%D0%9F%D0%BE%D1%81%D0%BC%D0%B5%D1%80%D1%82%D0%B8%D0%B5-1.png"
-                    alt="Посмертие в Межмирье"
-                    loading="lazy"
-                >
-
-               </div>
-
-            <div class="explore-card-content">
-
-                <h3>
-                    Посмертие
-                </h3>
-
-                <p>
-                    Пути душ и переходы между мирами.
-                </p>
-
-                
-
-            </div>
-			</a>
-        </article>
-
-    </div>
-
-</section>
-<section class="map-section" id="map">
-
-    <div class="map-copy">
-
-        <div class="eyebrow">
-         ИССЛЕДОВАНИЕ МЕЖМИРЬЯ
-        </div>
-
-        <h2>
-            Карта Межмирья
-        </h2>
-
-        <p>
-    Исследуйте пространства Межмирья как связанную систему:
-    Эоны, Эфиры, пространства и переходы между ними.
-    Карта помогает увидеть структуру Промежутка
-    и связи между его областями.
-</p>
-
-<div class="map-tags">
-    <span>Эоны</span>
-    <span>Эфиры</span>
-    <span>Пространства</span>
-    <span>Переходы</span>
-</div>
-
-<div class="map-links">
-
-            <a class="map-button map-button-primary" href="#">
-                Открыть карту
-            </a>
-
-            <a
-                class="map-button map-button-secondary"
-                href="#"
-                target="_blank"
-                rel="noopener"
-            >
-                <span class="map-play">▶</span>
-                Смотреть визуализацию
-            </a>
-
-        </div>
-
-    </div>
-
-    <div class="map-art">
-
-        <img
-            src="https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/karta-meszmiria.webp"
-            alt="Карта Межмирья — визуализация Эонов, Эфиров и пространств Межмирья"
-            loading="lazy"
-        >
-
-    </div>
-
-</section>
-<section class="section library-section" id="library">
-
-    <div class="section-heading library-heading">
-
-        <div>
-            <div class="eyebrow">
-                МАТЕРИАЛЫ ПО МЕЖМИРЬЮ
-            </div>
-
-            <h2>
-                Книги и источники
-            </h2>
-
-            <p class="library-intro">
-                Библиотека Межмирья объединяет труды Энмеркара
-                и другие источники, связанные с исследованием
-                Промежутка, его пространств, обитателей и традиций.
-            </p>
-        </div>
-
-        <a href="#" class="library-all-link">
-            Вся библиотека
-        </a>
-
-    </div>
-
-
-    <div class="books-grid">
-
-
-        <!-- =================================================
-             ГЕОГРАФИЯ МЕЖМИРЬЯ. ТОМ 1
-             ================================================= -->
-
-        <article class="book-feature">
-
-            <a href="https://masters-heart.org/geografiya_mezhmirya" class="book-feature-link">
-
-                <div class="book-feature-cover">
-
-                    <img
-                        src="https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/geografia-mezhmiria-1-2.webp"
-                        alt="География Межмирья. Том 1. Эоны и Эфиры — Энмеркар"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-                <div class="book-feature-info">
-
-                    <div class="book-eyebrow">
-                        ЭНМЕРКАР
-                    </div>
-
-                    <h3>
-                        География Межмирья. Том 1. Эоны и Эфиры
-                    </h3>
-
-                    <p>
-                        Исследование структуры Промежутка:
-                        Эонов, Эфиров и принципов организации
-                        межмирных пространств.
-                    </p>
-
-                    <span class="book-more">
-                        О книге
-                        <span class="book-arrow"></span>
-                    </span>
-
-                </div>
-
-            </a>
-
-        </article>
-
-
-        <!-- =================================================
-             ТОМ 2
-             ================================================= -->
-
-        <article class="book-card">
-
-            <a href="https://masters-heart.org/geografiya_mezhmirya" class="book-card-link">
-
-                <div class="book-cover-small">
-
-                    <img
-                        src="https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/geografia-mezhmiria-2.webp"
-                        alt="География Межмирья. Том 2. Существа и Пространства — Энмеркар"
-                        loading="lazy"
-                    >
-
-                </div>
-
-                <div class="book-eyebrow">
-                    ЭНМЕРКАР
-                </div>
-
-                <h3>
-                    Существа и Пространства
-                </h3>
-
-                <p>
-                    Обитатели Промежутка, формы сознания
-                    и пространства их проявления.
-                </p>
-
-                <span class="book-card-arrow"></span>
-
-            </a>
-
-        </article>
-
-
-        <!-- =================================================
-             ТОМ 3
-             ================================================= -->
-
-        <article class="book-card">
-
-            <a href="https://masters-heart.org/geografiya_mezhmirya" class="book-card-link">
-
-                <div class="book-cover-small">
-
-                    <img
-                        src="https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/geografia-mezhmiria-3.webp"
-                        alt="География Межмирья. Том 3. Лабиринты фей — Энмеркар"
-                        loading="lazy"
-                    >
-
-                </div>
-
-                <div class="book-eyebrow">
-                    ЭНМЕРКАР
-                </div>
-
-                <h3>
-                    Лабиринты фей
-                </h3>
-
-                <p>
-                    Космология Волшебного Народа,
-                    его пространства, народы и формы сознания.
-                </p>
-
-                <span class="book-card-arrow"></span>
-
-            </a>
-
-        </article>
-
-
-        <!-- =================================================
-             КНИГА ДУАТА
-             ================================================= -->
-
-        <article class="book-card">
-
-            <a href="https://masters-heart.org/kniga_duata" class="book-card-link">
-
-                <div class="book-cover-small">
-
-                    <img
-                        src="https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0-%D0%B4%D1%83%D0%B0%D1%82%D0%B0-_1_.webp"
-                        alt="Книга Дуата. Посмертие в Промежутке — Энмеркар"
-                        loading="lazy"
-                    >
-
-                </div>
-
-                <div class="book-eyebrow">
-                    ЭНМЕРКАР
-                </div>
-
-                <h3>
-                    Посмертие в Промежутке
-                </h3>
-
-                <p>
-                    Путь сознания после смерти,
-                    пространства Дуата и Промежутка.
-                </p>
-
-                <span class="book-card-arrow"></span>
-
-            </a>
-
-        </article>
-
-    </div>
-
-</section>
-<section class="section" id="creatures"><div class="section-heading inline-heading"><div><div class="eyebrow">Обитатели Межмирья</div><h2>Существа Промежутка</h2></div><a href="#">Все существа</a></div><div class="creature-row">
-
-    <?php foreach(array('София','Архонты','Элементали','Феи','Драконы','Рефаимы') as $creature): ?>
-
-        <a class="creature" href="#">
-
-            <div class="creature-art">
-                <img src="https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/%D0%A1%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B0-1.png" alt="">
-            </div>
-
-            <strong><?php echo esc_html($creature); ?></strong>
-
-            <span>Существа</span>
-
-        </a>
-
+<?php
+/** Dynamic landing page for INTERWORLD. */
+if (!defined('ABSPATH')) exit;
+get_header();
+$home_id = get_queried_object_id();
+$hero_title = interworld_content_value('iw_home_title', $home_id) ?: 'География Межмирья';
+$hero_lead = interworld_content_value('iw_home_lead', $home_id) ?: 'Энциклопедия миров, пространств и существ, собранных в связанную систему знаний.';
+$hero_eyebrow = interworld_content_value('iw_home_eyebrow', $home_id) ?: 'ЭНЦИКЛОПЕДИЯ МЕЖМИРЬЯ';
+$hero_image = interworld_content_image_url(interworld_content_value('iw_home_hero_image', $home_id)) ?: 'https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/banner-hero.webp';
+$map_image = interworld_content_image_url(interworld_content_value('iw_home_map_image', $home_id)) ?: 'https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/karta-meszmiria.webp';
+$map_text = interworld_content_value('iw_home_map_text', $home_id) ?: 'Карта и указатель помогают находить объекты и переходить к проверенным описаниям.';
+$about = interworld_content_value('iw_home_about', $home_id) ?: 'INTERWORLD — энциклопедия Межмирья. Материалы связываются с объектами, книгами и источниками, чтобы их было удобно читать и проверять.';
+$sections = array(
+    array('key'=>'zones','title'=>'Зоны и Эфиры','term_slugs'=>array('eony','zony','zones','efiry'),'image'=>'https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/%D0%AD%D0%BE%D0%BD%D1%8B-%D0%B8-%D0%AD%D1%84%D0%B8%D1%80%D1%8B-1.png'),
+    array('key'=>'creatures','title'=>'Существа','term_slugs'=>array('sushchestva-promezhutka','sushchestva','creatures'),'image'=>'https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/%D0%A1%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B0-1.png'),
+    array('key'=>'spaces','title'=>'Пространства','term_slugs'=>array('prostranstva-mezhmirya','prostranstva','spaces'),'image'=>'https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/%D0%9F%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%B0-1.png'),
+    array('key'=>'afterlife','title'=>'Посмертие','term_slugs'=>array('posmertie','duat','afterlife'),'image'=>'https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/%D0%9F%D0%BE%D1%81%D0%BC%D0%B5%D1%80%D1%82%D0%B8%D0%B5-1.png'),
+    array('key'=>'fairies','title'=>'Фейри','term_slugs'=>array('feyri','fey','fairies'),'image'=>'https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/%D0%A1%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B0-1.png'),
+    array('key'=>'archons','title'=>'Архонты','term_slugs'=>array('arkhonty','archons'),'image'=>'https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/%D0%A1%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B0-1.png'),
+);
+$featured_ids = function_exists('interworld_knowledge_ids') ? interworld_knowledge_ids('iw_home_featured_objects', $home_id) : array();
+$object_args = array('post_type'=>'interworld_object','post_status'=>'publish','posts_per_page'=>6,'orderby'=>$featured_ids ? 'post__in' : 'date','order'=>'DESC','no_found_rows'=>true);
+if ($featured_ids) $object_args['post__in'] = $featured_ids;
+$object_query = new WP_Query($object_args);
+$books = new WP_Query(array('post_type'=>'library_book','post_status'=>'publish','posts_per_page'=>4,'orderby'=>'title','order'=>'ASC','no_found_rows'=>true));
+$recent_materials = new WP_Query(array('post_type'=>array('iw_article','iw_source'),'post_status'=>'publish','posts_per_page'=>3,'orderby'=>'date','order'=>'DESC','no_found_rows'=>true));
+?>
+<main class="content-area iw-homepage">
+  <section class="hero-banner" id="top">
+    <img src="<?php echo esc_url($hero_image); ?>" alt="Иллюстрация к энциклопедии Межмирья" class="hero-banner-image" fetchpriority="high">
+    <div class="hero-overlay"><div class="hero-left"><div class="hero-eyebrow"><?php echo esc_html($hero_eyebrow); ?></div><h1><?php echo esc_html($hero_title); ?></h1><div class="hero-title-line"></div><p class="hero-description"><?php echo esc_html($hero_lead); ?></p><div class="hero-actions"><a class="hero-button hero-button-primary" href="#explore">Начать путешествие <span>→</span></a><a class="hero-button hero-button-secondary" href="<?php echo esc_url(interworld_content_section_url('map')); ?>">Открыть карту Межмирья</a></div></div></div>
+  </section>
+
+  <section class="section explore-section" id="explore"><div class="section-heading centered"><div class="eyebrow">Исследуйте Межмирье</div><h2>Разделы энциклопедии</h2><p>Переходите от общих разделов к отдельным карточкам, связанным материалам и источникам.</p></div><div class="explore-grid">
+    <?php foreach ($sections as $section) : $term = null; foreach ($section['term_slugs'] as $term_slug) { $term=get_term_by('slug',$term_slug,'object_type'); if (!$term) $term=get_term_by('slug',$term_slug,'object_group'); if ($term) break; } $image = $term ? interworld_content_image_url(interworld_term_field('iw_tpl03_hero_image',$term)) : ''; $description = $term ? (interworld_term_field('iw_tpl03_hero_description',$term) ?: $term->description) : ''; $url = $term ? get_term_link($term) : interworld_content_section_url($section['key']); if (is_wp_error($url)) $url=interworld_content_section_url($section['key']); ?>
+      <article class="explore-card"><a href="<?php echo esc_url($url); ?>" class="explore-card-link"><div class="explore-card-image"><img src="<?php echo esc_url($image ?: $section['image']); ?>" alt="<?php echo esc_attr($section['title']); ?>" loading="lazy"></div><div class="explore-card-content"><h3><?php echo esc_html($section['title']); ?></h3><p><?php echo esc_html($description ? wp_trim_words(wp_strip_all_tags($description), 22) : 'Материалы раздела будут добавлены после подготовки и проверки.'); ?></p><span class="round-arrow" aria-hidden="true">→</span></div></a></article>
     <?php endforeach; ?>
+  </div></section>
 
-</div></section>
-<section class="section faq-section">
+  <section class="map-section" id="map"><div class="map-copy"><div class="eyebrow">ВИЗУАЛЬНЫЙ ПУТЕВОДИТЕЛЬ</div><h2>Карта Межмирья</h2><p><?php echo esc_html($map_text); ?></p><div class="map-tags"><span>Объекты</span><span>Связи</span><span>Источники</span></div><div class="map-links"><a class="map-button map-button-primary" href="<?php echo esc_url(interworld_content_section_url('map')); ?>">Открыть карту</a></div></div><a class="map-art" href="<?php echo esc_url(interworld_content_section_url('map')); ?>" aria-label="Открыть карту Межмирья"><img src="<?php echo esc_url($map_image); ?>" alt="Карта Межмирья" loading="lazy"></a></section>
 
-    <div class="section-heading">
+  <section class="section library-section" id="library"><div class="section-heading inline-heading"><div><div class="eyebrow">КНИГИ И МАТЕРИАЛЫ</div><h2>Библиотека Межмирья</h2><p class="library-intro">Записи о книгах хранятся в каталоге сайта и могут ссылаться на страницу книги у автора или издателя.</p></div><a href="<?php echo esc_url(home_url('/biblioteka/')); ?>" class="library-all-link">Вся библиотека →</a></div>
+    <?php if ($books->have_posts()) : ?><div class="iw-book-grid"><?php require_once get_template_directory() . '/library-functions.php'; while ($books->have_posts()) : $books->the_post(); echo interworld_library_book_card(get_the_ID()); endwhile; ?></div><?php else : ?><div class="iw-editorial-empty"><h3>Книжные страницы готовятся</h3><p>Добавьте записи о книгах в разделе «Библиотека», чтобы они появились здесь.</p><a href="<?php echo esc_url(home_url('/biblioteka/')); ?>">Перейти в библиотеку</a></div><?php endif; wp_reset_postdata(); ?>
+  </section>
 
-        <div>
-            <div class="eyebrow">Межмирье в вопросах и ответах</div>
-            <h2>Часто спрашивают</h2>
-        </div>
+  <section class="section" id="creatures"><div class="section-heading inline-heading"><div><div class="eyebrow">ОБИТАТЕЛИ МЕЖМИРЬЯ</div><h2>Карточки объектов</h2></div><a href="<?php echo esc_url(interworld_content_section_url('creatures')); ?>">Перейти к разделу →</a></div>
+    <?php if ($object_query->have_posts()) : ?><div class="creature-row iw-home-object-row"><?php while ($object_query->have_posts()) : $object_query->the_post(); ?><a class="creature" href="<?php the_permalink(); ?>"><div class="creature-art"><?php if (has_post_thumbnail()) the_post_thumbnail('medium',array('loading'=>'lazy','alt'=>'')); else : ?><span aria-hidden="true">✦</span><?php endif; ?></div><strong><?php the_title(); ?></strong><?php $lead=interworld_content_value('object_short_definition',get_the_ID()) ?: get_the_excerpt(); if ($lead) : ?><span><?php echo esc_html(wp_trim_words(wp_strip_all_tags($lead), 12)); ?></span><?php endif; ?></a><?php endwhile; ?></div><?php else : ?><div class="iw-editorial-empty"><p>Карточки объектов появятся здесь после публикации проверенных материалов.</p><a href="<?php echo esc_url(interworld_content_section_url('creatures')); ?>">Открыть каталог объектов</a></div><?php endif; wp_reset_postdata(); ?>
+  </section>
 
-        <a href="https://t.me/magia_enmerkara"
-           class="faq-cta-link"
-           target="_blank"
-           rel="noopener">
-            Задать вопрос в группе «Магия Энмеркара»
-        </a>
+  <?php if ($recent_materials->have_posts()) : ?><section class="section iw-home-recent"><div class="section-heading inline-heading"><div><div class="eyebrow">НОВЫЕ ПУБЛИКАЦИИ</div><h2>Статьи и источники</h2></div><a href="<?php echo esc_url(interworld_content_section_url('articles')); ?>">Все статьи →</a></div><div class="iw-editorial-grid"><?php while ($recent_materials->have_posts()) : $recent_materials->the_post(); $lead=interworld_content_value('iw_lead',get_the_ID()); ?><article class="iw-editorial-card"><div class="iw-editorial-card-copy"><div class="iw-editorial-eyebrow"><?php echo esc_html(get_post_type()==='iw_source' ? 'ИСТОЧНИК' : 'СТАТЬЯ'); ?></div><h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2><?php if ($lead || has_excerpt()) : ?><p><?php echo esc_html(wp_trim_words(wp_strip_all_tags($lead ?: get_the_excerpt()),24)); ?></p><?php endif; ?><a class="iw-editorial-more" href="<?php the_permalink(); ?>">Открыть материал →</a></div></article><?php endwhile; ?></div></section><?php endif; wp_reset_postdata(); ?>
 
-    </div>
+  <?php $has_faq = false; for ($faq_i=1; $faq_i<=4; $faq_i++) if (trim((string)interworld_content_value('iw_home_faq_q_'.$faq_i,$home_id)) !== '' && trim((string)interworld_content_value('iw_home_faq_a_'.$faq_i,$home_id)) !== '') $has_faq=true; if ($has_faq) : ?><section class="section faq-section"><div class="section-heading"><div><div class="eyebrow">ВОПРОСЫ И ОТВЕТЫ</div><h2>Часто спрашивают</h2></div></div><?php for ($faq_i=1; $faq_i<=4; $faq_i++) : $question=trim((string)interworld_content_value('iw_home_faq_q_'.$faq_i,$home_id)); $answer=trim((string)interworld_content_value('iw_home_faq_a_'.$faq_i,$home_id)); if ($question==='' || $answer==='') continue; ?><details><summary><?php echo esc_html($question); ?></summary><p><?php echo esc_html($answer); ?></p></details><?php endfor; ?></section><?php endif; ?>
 
-    <details>
-        <summary>Что такое Межмирье?</summary>
-        <p>Здесь появится авторское определение Межмирья и ссылки на связанные сущности.</p>
-    </details>
-
-    <details>
-        <summary>Чем отличаются Эоны и эфиры?</summary>
-        <p>Ответ будет собран на основе канона Энмеркара.</p>
-    </details>
-
-    <details>
-        <summary>Кто обитает в Межмирье?</summary>
-        <p>Существа и силы будут связаны с соответствующими страницами энциклопедии.</p>
-    </details>
-
-    <details>
-        <summary>Как устроена энциклопедия?</summary>
-        <p>Через категории, карточки сущностей, источники и взаимные ссылки.</p>
-    </details>
-
-</section>
-<section class="about-section" id="about">
-
-    <div class="about-content">
-
-        <div class="eyebrow">О проекте</div>
-
-        <h2>Межмирье начинается в нас...</h2>
-
-        <p>
-            INTERWORLD — энциклопедия Межмирья, созданная на основе книг
-            и исследований Энмеркара. Здесь мы собираем связанные знания
-            о мирах, эонах, эфирах, существах и пространствах и систематизируем для ознакомления и поиска.
-        </p>
-
-        <a class="button button-light" href="#">
-            Подробнее о проекте
-        </a>
-
-    </div>
-
-</section>
-</main><?php get_footer(); ?>
+  <section class="about-section" id="about"><div class="about-content"><div class="eyebrow">О ПРОЕКТЕ</div><h2>География Межмирья</h2><p><?php echo esc_html($about); ?></p><a class="button button-light" href="<?php echo esc_url(interworld_content_section_url('about')); ?>">Подробнее о проекте →</a></div></section>
+  <?php $featured_person = absint(interworld_content_value('iw_home_featured_person', $home_id)); if ($featured_person && get_post_type($featured_person)==='person' && get_post_status($featured_person)==='publish') : $person_lead=interworld_knowledge_value('iw_person_lead',$featured_person) ?: get_the_excerpt($featured_person); ?><section class="section iw-home-author"><div class="iw-home-author-card"><div class="iw-home-author-image"><?php if (has_post_thumbnail($featured_person)) echo get_the_post_thumbnail($featured_person,'large',array('loading'=>'lazy','alt'=>'')); else : ?><span aria-hidden="true">✦</span><?php endif; ?></div><div><div class="eyebrow">ОБ АВТОРЕ</div><h2><?php echo esc_html(get_the_title($featured_person)); ?></h2><?php if ($person_lead) : ?><p><?php echo esc_html(wp_trim_words(wp_strip_all_tags($person_lead),42)); ?></p><?php endif; ?><a class="iw-editorial-more" href="<?php echo esc_url(get_permalink($featured_person)); ?>">Читать биографию →</a></div></div></section><?php endif; ?>
+</main>
+<?php get_footer(); ?>

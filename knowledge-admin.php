@@ -18,6 +18,11 @@ add_action('acf/init', function() {
     acf_add_local_field_group(array('key' => 'group_iw_knowledge_links',
         'title' => 'INTERWORLD: взаимосвязи', 'fields' => $fields,
         'location' => array(
+            array(array('param' => 'post_type', 'operator' => '==', 'value' => 'interworld_object')),
+            array(array('param' => 'post_type', 'operator' => '==', 'value' => 'iw_article')),
+            array(array('param' => 'post_type', 'operator' => '==', 'value' => 'iw_tradition')),
+            array(array('param' => 'post_type', 'operator' => '==', 'value' => 'iw_glossary')),
+            array(array('param' => 'post_type', 'operator' => '==', 'value' => 'iw_source')),
             array(array('param' => 'post_type', 'operator' => '==', 'value' => 'library_book')),
             array(array('param' => 'post_type', 'operator' => '==', 'value' => 'person')),
             array(array('param' => 'taxonomy', 'operator' => '==', 'value' => 'library_category')),
@@ -84,7 +89,7 @@ function interworld_knowledge_source_row($row = array()) {
 }
 
 add_action('add_meta_boxes', function() {
-    foreach (array('library_book', 'person', 'page') as $type) {
+    foreach (array('interworld_object', 'library_book', 'person', 'page', 'iw_article', 'iw_tradition', 'iw_glossary', 'iw_source') as $type) {
         add_meta_box('iw_knowledge_sources', 'INTERWORLD: источники', function($post) {
             wp_nonce_field('iw_knowledge_sources_save', 'iw_knowledge_sources_nonce');
             interworld_knowledge_source_fields(interworld_knowledge_source_rows($post->ID));
@@ -113,7 +118,7 @@ function interworld_knowledge_sanitize_sources() {
 }
 
 add_action('save_post', function($post_id) {
-    if (!in_array(get_post_type($post_id), array('library_book','person','page'), true)) return;
+    if (!in_array(get_post_type($post_id), array('interworld_object','library_book','person','page','iw_article','iw_tradition','iw_glossary','iw_source'), true)) return;
     if (!isset($_POST['iw_knowledge_sources_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['iw_knowledge_sources_nonce'])), 'iw_knowledge_sources_save')) return;
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
     if (!current_user_can('edit_post', $post_id)) return;
