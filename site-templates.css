@@ -207,21 +207,12 @@
   min-height: 100vh;
   overflow: visible;
 }
-@media (min-width: 761px) {
-  body.home .interworld-layout {
-    grid-template-columns: minmax(0, 1fr) !important;
-  }
-  body.home .interworld-layout > .sidebar {
-    display: none !important;
-  }
-  body.home .interworld-layout > .interworld-main {
-    grid-column: 1;
-  }
-  body.home .site-footer {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-left: 0 !important;
-  }
+.interworld-layout > .site-footer {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
 }
 @media (max-width: 1100px) and (min-width: 761px) {
   .site-footer .iw-footer-grid {

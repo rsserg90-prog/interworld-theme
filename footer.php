@@ -1,3 +1,4 @@
+</div><!-- /.interworld-main -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="iw-footer-grid">
@@ -44,7 +45,7 @@
     <div class="footer-bottom"><p class="footer-copyright">© <?php echo esc_html(wp_date('Y')); ?> INTERWORLD</p><p class="footer-rights">Содержание сайта подготовлено для ознакомления. Публикации проходят редакторскую проверку.</p></div>
   </div>
 </footer>
-</div><!-- /.interworld-main -->
+
 </div><!-- /.interworld-layout -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
