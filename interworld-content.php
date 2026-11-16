@@ -21,12 +21,39 @@ function interworld_content_register_types() {
             'rewrite' => array('slug' => $data[2], 'with_front' => false),
             'query_var' => true,
             'exclude_from_search' => false,
-            'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'author', 'revisions'),
+            'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'author', 'revisions', 'custom-fields'),
             'menu_icon' => $data[3],
         ));
     }
 }
 add_action('init', 'interworld_content_register_types', 8);
+
+/** Expose only the editorial fields needed by the local import/review tool. */
+function interworld_content_register_import_meta() {
+    $field_types = array(
+        'iw_source_id' => array('context' => array('edit'), 'sanitize' => 'sanitize_key'),
+        'iw_lead' => array('context' => array('view', 'edit'), 'sanitize' => 'sanitize_textarea_field'),
+        'iw_source_reference_name' => array('context' => array('view', 'edit'), 'sanitize' => 'sanitize_text_field'),
+        'iw_source_reference_url' => array('context' => array('view', 'edit'), 'sanitize' => 'esc_url_raw'),
+        'iw_source_reference_location' => array('context' => array('view', 'edit'), 'sanitize' => 'sanitize_text_field'),
+        'iw_editorial_notes' => array('context' => array('edit'), 'sanitize' => 'sanitize_textarea_field'),
+    );
+    foreach (array('iw_article') as $post_type) {
+        if (!post_type_exists($post_type)) continue;
+        foreach ($field_types as $meta_key => $field) {
+            register_post_meta($post_type, $meta_key, array(
+                'type' => 'string',
+                'single' => true,
+                'show_in_rest' => array('schema' => array('type' => 'string', 'context' => $field['context'])),
+                'sanitize_callback' => $field['sanitize'],
+                'auth_callback' => function($allowed, $key, $post_id) {
+                    return current_user_can('edit_post', (int)$post_id);
+                },
+            ));
+        }
+    }
+}
+add_action('init', 'interworld_content_register_import_meta', 99);
 
 add_action('init', function() {
     $types = array('interworld_object', 'person', 'iw_article', 'iw_tradition', 'iw_glossary', 'iw_source');

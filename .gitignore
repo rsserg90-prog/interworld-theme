@@ -35,6 +35,12 @@ wp-config.php
 # htaccess
 /.htaccess
 
+# Local secrets and content-pipeline working data
+.env
+**/.env
+/tools/content-pipeline/data/
+*.secrets.json
+
 # All plugins
 #
 # Note: If you wish to whitelist plugins,

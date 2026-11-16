@@ -88,6 +88,7 @@ function interworld_register_objects() {
             'editor',
             'thumbnail',
             'excerpt',
+            'custom-fields',
         ),
 
         'menu_icon' => 'dashicons-admin-site-alt3',
