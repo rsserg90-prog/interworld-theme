@@ -1,0 +1,1 @@
+<?php get_header(); ?><div class="site-shell"><main class="content-area"><?php while(have_posts()):the_post(); ?><article class="section"><div class="eyebrow">Interworld</div><h1><?php the_title(); ?></h1><?php the_content(); ?></article><?php endwhile; ?></main><?php get_sidebar(); ?></div><?php get_footer(); ?>

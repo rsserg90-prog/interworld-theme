@@ -1,0 +1,6928 @@
+/*
+Theme Name: Interworld — География Межмирья
+Author: Interworld
+Description: Бесплатная авторская тема-энциклопедия Межмирья.
+Version: 0.2.0
+Text Domain: interworld
+*/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap');
+:root{--ink:#172b3a;--muted:#6d7b83;--paper:#f7f5ef;--white:#fff;--line:#d9d8d1;--gold:#a88a61;--deep:#0d2635;--deep2:#17384b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.55}a{color:inherit;text-decoration:none}a:hover{color:var(--gold)}img{max-width:100%;height:auto}.screen-reader-text{position:absolute;left:-9999px}.interworld-layout{display:grid;grid-template-columns:180px minmax(0,1fr);min-height:100vh}.sidebar{background:var(--deep);color:#fff;padding:24px 16px;min-width:0}.sidebar-brand{text-align:center;margin-bottom:20px}.brand-name{display:block;font-size:18px;letter-spacing:.05em}.brand-tagline{font-size:9px;color:#b9c8cf;letter-spacing:.04em}.sidebar-cta{display:block;border:1px solid #c5a77c;border-radius:7px;padding:11px 12px;font-size:12px;line-height:1.4;margin-bottom:22px}.sidebar-cta span{float:right;color:#d4b487}.side-nav,.side-secondary{display:grid;gap:14px}.side-nav a,.side-secondary a{display:flex;gap:10px;align-items:center;font-size:12px;color:#e1e7e9}.side-nav a:first-letter,.side-secondary a:first-letter{color:#c5a77c}.side-divider{height:1px;background:#48606d;margin:22px 0}.sidebar-quote{font-size:12px;font-style:italic;color:#cbd5d9;line-height:1.6;margin:28px 0}.sidebar-quote cite{display:block;margin-top:8px}.sidebar-banners{display:grid;gap:10px}.sidebar-banner{min-height:145px;border:1px solid #61727a;border-radius:6px;overflow:hidden;position:relative;background:linear-gradient(145deg,#223f51,#0b1c28)}.sidebar-banner>div{position:relative;z-index:1;padding:14px}.sidebar-banner h3{font-size:13px;letter-spacing:.03em;margin:0 0 7px;line-height:1.2}.sidebar-banner p,.sidebar-banner small{display:block;font-size:10px;line-height:1.5;color:#d7e0e3}.sidebar-banner a{display:inline-block;border:1px solid #aab9bf;padding:7px 8px;font-size:9px;margin-top:12px;color:#fff}.banner-heart{background:linear-gradient(145deg,#243d42,#101e24)}.banner-path{background:linear-gradient(145deg,#1b3546,#091722)}.banner-magic{background:linear-gradient(145deg,#243c55,#0b1d2b)}.interworld-main{min-width:0}.site-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}.header-inner{min-height:62px;padding:0 30px;display:flex;align-items:center;gap:22px}.mobile-brand{display:none}.main-nav{flex:1}.main-nav ul{display:flex;justify-content:center;gap:26px;list-style:none;margin:0;padding:0;font-size:12px;flex-wrap:wrap}.hero-orbit{font-size:100px;color:#f9e9c6;text-shadow:0 0 30px #fff;z-index:1}.hero-gate{position:absolute;font-size:180px;color:rgba(255,255,255,.2)}.hero-copy{padding:55px 7%;display:flex;flex-direction:column;justify-content:center}.eyebrow{font-size:11px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}.hero-copy h1{font-size:clamp(40px,5vw,76px);line-height:.98;letter-spacing:-.04em;font-weight:500;margin:18px 0 24px}.hero-copy p{max-width:420px;font-size:15px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.button{display:inline-block;border:1px solid var(--gold);border-radius:24px;padding:11px 20px;font-size:12px}.button-dark{background:#a88a61;color:#fff;border-color:#a88a61}.button-light{background:transparent}.section{padding:54px 5%;}.section-heading{margin-bottom:30px}.section-heading h2,.map-copy h2,.about-section h2{font-size:clamp(30px,3.4vw,48px);line-height:1.1;font-weight:500;margin:12px 0 14px}.section-heading p{color:var(--muted);max-width:620px}.centered{text-align:center}.centered p{margin-left:auto;margin-right:auto}.explore-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.explore-card{background:#fff;border:1px solid var(--line);padding-bottom:18px;position:relative}.card-art{height:130px;background:radial-gradient(circle at 65% 35%,#f4e7c7,#aebfca 24%,#4a6579 55%,#1d3447 100%)}.explore-card:nth-child(2) .card-art{background:radial-gradient(circle at 50% 35%,#f4ead5,#c5c5b9 25%,#7f9b9f 55%,#354c5a)}.explore-card:nth-child(3) .card-art{background:linear-gradient(145deg,#d8e1e4,#8ca2b0 40%,#405b70)}.explore-card:nth-child(4) .card-art{background:radial-gradient(circle at 40% 40%,#d9e3e4,#9bb1b5 35%,#344f5e)}.explore-card h3,.explore-card p{padding:0 18px}.explore-card h3{font-size:20px;font-weight:500;margin:18px 0 7px}.explore-card p{font-size:13px;color:var(--muted);min-height:62px}.round-arrow{display:flex;width:28px;height:28px;border:1px solid #cbbca6;border-radius:50%;align-items:center;justify-content:center;margin:12px 18px 0;font-size:14px}.map-section{display:grid;grid-template-columns:1fr 1.4fr;background:#dce4e7;min-height:270px}.map-copy{padding:48px 7%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}.map-art{background:radial-gradient(circle at 50% 50%,#f7f3e7,#b6c9d3 35%,#718da1 60%,#304c60);display:flex;align-items:center;justify-content:space-around;font-size:65px;color:#f9e8c6}.inline-heading{display:flex;align-items:end;justify-content:space-between;gap:20px}.inline-heading>a{font-size:12px}
+@media(max-width:1100px){.interworld-layout{grid-template-columns:160px minmax(0,1fr)}.main-nav ul{gap:13px}.explore-grid{grid-template-columns:repeat(2,1fr)}.books-grid{grid-template-columns:1fr 1fr}.book-feature{grid-column:1/-1}}
+@media(max-width:760px){.interworld-layout{display:block}.sidebar{display:none}.mobile-brand{display:block;font-size:18px;letter-spacing:.04em}.header-inner{padding:12px 18px;gap:12px;flex-wrap:wrap}.main-nav{order:3;flex-basis:100%;overflow:auto}.main-nav ul{justify-content:flex-start;flex-wrap:nowrap;white-space:nowrap}.book-feature{grid-column:auto;grid-template-columns:100px 1fr;gap:14px}.book-cover{min-height:145px;font-size:13px}.map-section,.about-section{grid-template-columns:1fr}.map-art{min-height:180px}.inline-heading{align-items:flex-start;flex-direction:column;gap:4px}.footer-inner{display:block}.footer-links{margin-top:20px}}
+
+/* =========================================
+   INTERWORLD — исправление ширины сайта
+   ========================================= */
+
+/* Базовый сброс ограничений WordPress */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Главная сетка сайта */
+.interworld-layout {
+    display: grid !important;
+    grid-template-columns: 180px minmax(0, 1fr) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: 100vh;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Левый сайдбар */
+.interworld-layout > .sidebar {
+    grid-column: 1;
+    grid-row: 1;
+    width: 180px !important;
+    min-width: 180px !important;
+    max-width: 180px !important;
+    min-height: 100vh;
+}
+
+/* Правая часть сайта */
+.interworld-layout > .interworld-main {
+    grid-column: 2;
+    grid-row: 1;
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+/* Шапка */
+.interworld-main .site-header,
+.interworld-main .header-inner {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+}
+
+/* Основное содержимое */
+.interworld-main .content-area {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Все секции главной страницы */
+.content-area > section,
+.hero-section,
+.map-section,
+.about-section,
+.section {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+}
+
+/* Сетки внутри страницы */
+.explore-grid,
+.books-grid,
+.creature-row {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+/* Карточки не должны сжимать родительский контейнер */
+.explore-card,
+.book-feature,
+.book-card,
+.creature {
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* Футер */
+
+
+/* =========================================
+   Адаптация под планшет
+   ========================================= */
+
+@media (max-width: 1100px) and (min-width: 761px) {
+    .interworld-layout {
+        grid-template-columns: 160px minmax(0, 1fr) !important;
+    }
+
+    .interworld-layout > .sidebar {
+        width: 160px !important;
+        min-width: 160px !important;
+        max-width: 160px !important;
+    }
+
+    .interworld-layout > .interworld-main {
+        width: 100% !important;
+    }
+}
+
+/* =========================================
+   Мобильная версия
+   ========================================= */
+
+@media (max-width: 760px) {
+    .interworld-layout {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .interworld-layout > .sidebar {
+        display: none !important;
+    }
+
+    .interworld-layout > .interworld-main {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .content-area,
+    .site-header,
+    .site-footer {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+/* =========================================
+   INTERWORLD — типографика
+   ========================================= */
+
+/* Основной текст */
+body {
+    font-family: 'Manrope', Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Заголовки */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.hero-copy h1,
+.section-heading h2,
+.map-copy h2,
+.about-section h2,
+.brand-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+}
+
+/* Главный заголовок */
+.hero-copy h1 {
+    font-size: clamp(48px, 5vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+}
+
+/* Заголовки секций */
+.section-heading h2,
+.map-copy h2,
+.about-section h2 {
+    font-size: clamp(34px, 3.4vw, 52px);
+    line-height: 1.05;
+}
+
+/* Названия карточек */
+.explore-card h3,
+.book-feature h3,
+.book-card h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+}
+
+/* Меню, кнопки и служебные элементы */
+.main-nav,
+.side-nav,
+.side-secondary,
+.sidebar-cta,
+.sidebar-banner,
+.language,
+.button,
+.eyebrow,
+.round-arrow,
+.footer-links {
+    font-family: 'Manrope', Arial, sans-serif;
+}
+
+/* Маленькие заголовки над секциями */
+.eyebrow {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+}
+
+/* Текст карточек */
+.explore-card p,
+.book-feature p,
+.book-card p,
+.hero-copy p,
+.section-heading p,
+.about-section p {
+    font-family: 'Manrope', Arial, sans-serif;
+    font-weight: 400;
+}
+
+/* Текст в левом сайдбаре */
+.sidebar {
+    font-family: 'Manrope', Arial, sans-serif;
+}
+
+.sidebar .brand-name,
+.sidebar .brand-tagline {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.sidebar .brand-name {
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+}
+
+/* Названия баннеров в сайдбаре */
+.sidebar-banner h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+/* Подписи и обычный текст */
+.sidebar-banner p,
+.sidebar-banner small,
+.sidebar-quote,
+.sidebar-cta,
+.side-nav a,
+.side-secondary a {
+    font-family: 'Manrope', Arial, sans-serif;
+}
+
+/* Футер */
+.site-footer {
+    font-family: 'Manrope', Arial, sans-serif;
+}
+
+.site-footer strong {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+}
+/* =========================================
+   INTERWORLD — футер внутри основной области
+   ========================================= */
+
+.interworld-main {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    width: 100%;
+}
+
+.interworld-main > .content-area {
+    flex: 1 0 auto;
+}
+
+.interworld-main > .site-footer {
+    margin-top: auto;
+    width: 100%;
+}
+
+.footer-brand {
+    min-width: 0;
+}
+
+.footer-brand strong {
+    display: block;
+    line-height: 1.3;
+}
+
+.footer-brand p {
+    margin: 10px 0 0;
+}
+
+.footer-links a {
+    white-space: nowrap;
+}
+
+/* =========================================
+   МОБИЛЬНАЯ НАВИГАЦИЯ
+   ========================================= */
+
+.mobile-menu-toggle {
+    display: none;
+}
+
+@media (max-width: 767px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .interworld-layout {
+        display: block !important;
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .interworld-main {
+        width: 100% !important;
+        min-width: 0 !important;
+        overflow: hidden;
+    }
+
+    .site-header {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .header-inner {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        width: 100%;
+        min-width: 0;
+        padding: 10px 14px;
+        box-sizing: border-box;
+    }
+
+    .mobile-brand {
+        display: block;
+        min-width: 0;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .main-nav {
+        display: none !important;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        width: 100%;
+        max-width: 100%;
+        padding: 14px;
+        box-sizing: border-box;
+        background: #ffffff;
+        border-top: 1px solid #e7e1d7;
+        border-bottom: 1px solid #e7e1d7;
+        overflow: hidden;
+    }
+
+    .main-nav ul {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px !important;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .main-nav li {
+        width: 100%;
+    }
+
+    .main-nav a {
+        display: block;
+        width: 100%;
+        padding: 8px 0;
+        white-space: normal !important;
+    }
+
+    
+    .language {
+        display: none !important;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        width: 38px;
+        height: 34px;
+        padding: 7px;
+        border: 1px solid rgba(255,255,255,.35);
+        border-radius: 4px;
+        background: #0d2938;
+        cursor: pointer;
+    }
+
+    .mobile-menu-toggle span:not(.screen-reader-text) {
+        display: block;
+        width: 18px;
+        height: 1px;
+        background: #ffffff;
+    }
+
+    .sidebar {
+        display: none !important;
+        position: fixed;
+        z-index: 2000;
+        top: 0;
+        left: 0;
+        width: 280px !important;
+        max-width: 86vw !important;
+        height: 100vh;
+        min-height: 100vh;
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+
+    body.mobile-sidebar-open .sidebar {
+        display: block !important;
+    }
+
+    body.mobile-sidebar-open::before {
+        content: "";
+        position: fixed;
+        z-index: 1500;
+        inset: 0;
+        background: rgba(5, 20, 29, .48);
+    }
+
+    .hero-section,
+    .section,
+    .content-area,
+    .footer-inner {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+}
+@media (max-width: 767px) {
+
+    .mobile-menu-toggle {
+        position: relative;
+        z-index: 2200;
+    }
+
+    body.mobile-sidebar-open .mobile-menu-toggle {
+        position: fixed;
+        top: 8px;
+        right: 12px;
+        z-index: 2200;
+    }
+
+    body.mobile-sidebar-open .sidebar {
+        z-index: 2100;
+    }
+
+    body.mobile-sidebar-open::before {
+        z-index: 2000;
+        pointer-events: auto;
+    }
+}
+
+/* =========================================
+   SIDEBAR BANNERS
+========================================= */
+
+.sidebar-banners {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.sidebar-banner {
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+  border: 1px solid rgba(232, 193, 123, 0.65);
+  border-radius: 7px;
+  background: #071a28;
+  isolation: isolate;
+}
+
+.sidebar-banner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.sidebar-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(3, 15, 25, 0.08) 0%,
+      rgba(3, 15, 25, 0.28) 35%,
+      rgba(3, 15, 25, 0.94) 100%
+    );
+  pointer-events: none;
+}
+
+.sidebar-banner-content {
+  position: absolute;
+  z-index: 2;
+  inset: auto 12px 12px;
+  color: #fff8e9;
+}
+
+.sidebar-banner h3 {
+  margin: 0 0 5px;
+  color: #fff5df;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.sidebar-banner p {
+  margin: 7px 0 0;
+  color: rgba(255, 248, 233, 0.88);
+  font-family: "Manrope", sans-serif;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.sidebar-banner .banner-subtitle {
+  margin-top: 0;
+  color: #e9b66b;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 17px;
+  font-style: italic;
+}
+
+.sidebar-banner a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 8px 10px;
+  border: 1px solid rgba(244, 205, 137, 0.8);
+  border-radius: 4px;
+  color: #fff4dc;
+  font-family: "Manrope", sans-serif;
+  font-size: 9px;
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.sidebar-banner a span {
+  color: #e9b66b;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.sidebar-banner a:hover {
+  background: #e9b66b;
+  border-color: #e9b66b;
+  color: #071a28;
+}
+
+.sidebar-banner a:hover span {
+  color: #071a28;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sidebar-banner:hover img {
+    transform: scale(1.04);
+  }
+}
+
+/* Немного уменьшаем баннеры на узких экранах */
+@media (max-width: 900px) {
+  .sidebar-banner {
+    min-height: 190px;
+  }
+
+  .sidebar-banner img {
+    min-height: 190px;
+  }
+
+  .sidebar-banner h3 {
+    font-size: 20px;
+  }
+}
+/* =========================================
+   БАННЕРЫ В ЛЕВОМ САЙДБАРЕ
+   ========================================= */
+
+.sidebar-banners {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar-banner {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: 205px;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    border: 1px solid rgba(232, 190, 111, 0.8);
+    border-radius: 7px;
+    background-color: #071d2a;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Затемнение снизу, чтобы текст читался */
+.sidebar-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        to top,
+        rgba(4, 17, 27, 0.96) 0%,
+        rgba(4, 17, 27, 0.68) 42%,
+        rgba(4, 17, 27, 0.05) 82%
+    );
+    pointer-events: none;
+}
+
+/* Текст поверх изображения */
+.sidebar-banner > div {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 18px 12px 12px;
+    color: #fff8e9;
+}
+
+/* Заголовок баннера */
+.sidebar-banner h3 {
+    margin: 0 0 8px;
+    color: #fff3d5;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.02em;
+}
+
+/* Описание */
+.sidebar-banner small {
+    display: block;
+    margin: 0 0 12px;
+    color: rgba(255, 248, 233, 0.88);
+    font-family: "Manrope", sans-serif;
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+/* Ссылка-кнопка */
+.sidebar-banner a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 29px;
+    padding: 7px 10px;
+    border: 1px solid rgba(239, 197, 120, 0.85);
+    border-radius: 4px;
+    color: #fff3d5;
+    background: rgba(5, 20, 30, 0.58);
+    font-family: "Manrope", sans-serif;
+    font-size: 9px;
+    line-height: 1.2;
+    text-decoration: none;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.sidebar-banner a:hover {
+    color: #071d2a;
+    background: #e8c27b;
+}
+
+/* Фоновые изображения баннеров */
+.banner-blog {
+    background-image: url("https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/banner-enmerkar.webp");
+}
+
+.banner-heart {
+    background-image: url("https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/banner-serdce-mastera.webp");
+}
+
+.banner-path {
+    background-image: url("https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/banner-put-s-magom.webp");
+}
+
+.banner-magic {
+    background-image: url("https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/banner-magia-enmerkara.webp");
+}
+/* =========================================
+   ВОЗВРАЩАЕМ ТЕКСТ НА БАННЕРЫ
+   ========================================= */
+
+.sidebar-banner > div {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute !important;
+    z-index: 5 !important;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto !important;
+    padding: 55px 12px 12px !important;
+    color: #fff8e9 !important;
+    background: linear-gradient(
+        to top,
+        rgba(3, 15, 24, 0.98) 0%,
+        rgba(3, 15, 24, 0.82) 55%,
+        rgba(3, 15, 24, 0) 100%
+    ) !important;
+}
+
+.sidebar-banner h3,
+.sidebar-banner p,
+.sidebar-banner small,
+.sidebar-banner a {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.sidebar-banner h3 {
+    margin: 0 0 7px !important;
+    color: #fff1d0 !important;
+    font-family: "Cormorant Garamond", serif !important;
+    font-size: 20px !important;
+    line-height: 1 !important;
+}
+
+.sidebar-banner p,
+.sidebar-banner small {
+    margin: 0 0 10px !important;
+    color: rgba(255, 248, 233, 0.9) !important;
+    font-family: "Manrope", sans-serif !important;
+    font-size: 10px !important;
+    line-height: 1.4 !important;
+}
+
+.sidebar-banner a {
+    display: inline-flex !important;
+    width: fit-content !important;
+    align-items: center;
+    padding: 7px 9px !important;
+    border: 1px solid #dcb77b !important;
+    border-radius: 4px !important;
+    color: #fff1d0 !important;
+    background: rgba(4, 18, 29, 0.75) !important;
+    font-size: 9px !important;
+    line-height: 1.2 !important;
+    text-decoration: none !important;
+}
+/* =========================================
+   HOVER КНОПОК В БАННЕРАХ САЙДБАРА
+   ========================================= */
+
+.sidebar-banner a {
+    position: relative;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* Стрелка */
+.sidebar-banner a span {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: inherit !important;
+    font-size: 15px !important;
+    line-height: 1 !important;
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* Состояние при наведении */
+.sidebar-banner a:hover {
+    color: #071d2a !important;
+    background: #e8c27b !important;
+    border-color: #f5d99c !important;
+    transform: translateY(-1px);
+}
+
+/* Стрелка при наведении */
+.sidebar-banner a:hover span {
+    color: #071d2a !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateX(4px);
+}
+/* Логотип Межмирья в сайдбаре */
+
+.sidebar-brand {
+    text-align: center;
+}
+
+.sidebar-brand .brand-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 16px;
+}
+
+.sidebar-brand .brand-symbol img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.sidebar-brand .brand-name {
+    display: block;
+    text-align: center;
+}
+
+.sidebar-brand .brand-tagline {
+    text-align: center;
+}
+
+/* Название проекта в сайдбаре */
+.brand-name {
+    color: #d9ad68 !important;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1;
+}
+
+/* Подзаголовок под логотипом */
+.brand-tagline {
+    color: #e4c99c !important;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 15px;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    margin-top: 9px;
+    white-space: nowrap;
+}
+/* =========================================================
+   СТИЛИЗАЦИЯ МЕНЮ И ЦИТАТЫ САЙДБАРА
+   ========================================================= */
+
+/* Основное меню */
+.side-nav,
+.side-secondary {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Пункты меню */
+.side-nav a,
+.side-secondary a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    min-height: 38px;
+    padding: 8px 0;
+
+    color: #f4eee4;
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        padding-left 0.25s ease;
+}
+
+/* Символы слева */
+.side-nav a:first-letter,
+.side-secondary a:first-letter {
+    color: #d7ad72;
+}
+
+/* Наведение */
+.side-nav a:hover,
+.side-secondary a:hover {
+    color: #e8bd7c;
+    padding-left: 5px;
+}
+
+/* Тонкая золотая линия слева при наведении */
+.side-nav a::before,
+.side-secondary a::before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 50%;
+    width: 0;
+    height: 1px;
+
+    background: #d7ad72;
+
+    transform: translateY(-50%);
+    transition: width 0.25s ease;
+}
+
+.side-nav a:hover::before,
+.side-secondary a:hover::before {
+    width: 3px;
+}
+
+/* Разделитель между группами */
+.side-divider {
+    height: 1px;
+    margin: 20px 0;
+
+    background: rgba(215, 173, 114, 0.35);
+}
+
+/* Дополнительное меню чуть спокойнее */
+.side-secondary a {
+    color: rgba(244, 238, 228, 0.78);
+    font-size: 13px;
+}
+
+.side-secondary a:hover {
+    color: #e8bd7c;
+}
+
+/* =========================================================
+   ЦИТАТА
+   ========================================================= */
+
+.sidebar-quote {
+    position: relative;
+
+    margin: 28px 0 34px;
+    padding: 0 0 0 12px;
+
+    border-left: 1px solid #c79b5f;
+
+    color: #eee4d5;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.45;
+}
+
+/* Небольшой декоративный знак над цитатой */
+.sidebar-quote::before {
+    content: "✦";
+
+    position: absolute;
+    left: -5px;
+    top: -22px;
+
+    color: #d7ad72;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 12px;
+    font-style: normal;
+}
+
+/* Автор цитаты */
+.sidebar-quote cite {
+    display: block;
+    margin-top: 10px;
+
+    color: #d7ad72;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 16px;
+    font-style: italic;
+}
+
+/* Ссылки в баннерах */
+.sidebar-banner a {
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.sidebar-banner a:hover {
+    color: #f4d19b;
+    border-color: #d7ad72;
+}
+/* =========================================================
+   ЧИСТОЕ МЕНЮ САЙДБАРА
+   ========================================================= */
+
+.side-nav,
+.side-secondary {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Пункты меню без иконок */
+.side-nav a,
+.side-secondary a {
+    position: relative;
+
+    display: block;
+    min-height: 38px;
+    padding: 8px 0;
+
+    color: #f4eee4;
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        padding-left 0.25s ease;
+}
+
+/* Убираем старые декоративные элементы */
+.side-nav a::before,
+.side-secondary a::before {
+    display: none !important;
+    content: none !important;
+}
+
+/* Убираем возможные символы/псевдооформление */
+.side-nav a:first-letter,
+.side-secondary a:first-letter {
+    color: inherit;
+}
+
+/* Наведение */
+.side-nav a:hover,
+.side-secondary a:hover {
+    padding-left: 4px;
+    color: #e5b873;
+}
+
+/* Вторичное меню */
+.side-secondary a {
+    color: rgba(244, 238, 228, 0.78);
+    font-size: 13px;
+}
+
+.side-secondary a:hover {
+    color: #e5b873;
+}
+
+/* Разделитель */
+.side-divider {
+    height: 1px;
+    margin: 20px 0;
+
+    background: rgba(215, 173, 114, 0.35);
+}
+/* =========================================================
+   INTERWORLD — НОВЫЙ ФУТЕР
+   ========================================================= */
+
+:root {
+    --sidebar-width: 180px;
+}
+
+
+/* ---------------------------------------------------------
+   ФУТЕР НА ВСЮ ШИРИНУ ЭКРАНА
+   --------------------------------------------------------- */
+
+.site-footer {
+    position: relative;
+
+    width: 100vw !important;
+    max-width: 100vw !important;
+
+    margin-left: calc(-1 * var(--sidebar-width)) !important;
+    margin-right: 0 !important;
+
+    min-height: 250px;
+
+    box-sizing: border-box;
+
+    color: #f5eee2;
+
+    background-color: #071c29;
+
+    background-image:
+        linear-gradient(
+            rgba(4, 20, 31, 0.58),
+            rgba(4, 20, 31, 0.76)
+        ),
+        url("https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/footer-geografia-meshmiria.webp");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+
+    font-family: "Manrope", Arial, sans-serif;
+}
+
+
+/*
+ * .interworld-main раньше имел overflow:hidden.
+ * Из-за этого футер физически не мог выйти
+ * за пределы правой колонки.
+ */
+
+.interworld-main {
+    overflow: visible !important;
+}
+
+
+/* ---------------------------------------------------------
+   ВНУТРЕННИЙ КОНТЕЙНЕР
+   --------------------------------------------------------- */
+
+.site-footer .footer-inner {
+    width: 100%;
+
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    padding: 34px 52px 18px;
+
+    box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------------------
+   ВЕРХНЯЯ СТРОКА
+
+   ЛОГО | МЕНЮ | СОЦСЕТИ
+   --------------------------------------------------------- */
+
+.site-footer .footer-top {
+
+    display: grid;
+
+    grid-template-columns:
+        300px
+        minmax(0, 1fr)
+        280px;
+
+    align-items: center;
+
+    gap: 40px;
+
+    width: 100%;
+
+    min-height: 120px;
+}
+
+
+/* ---------------------------------------------------------
+   ЛОГОТИП
+   --------------------------------------------------------- */
+
+.site-footer .footer-logo-block {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    justify-self: start;
+
+    min-width: 0;
+}
+
+
+.site-footer .footer-logo-link {
+
+    display: block;
+
+    width: 64px;
+    height: 64px;
+
+    flex: 0 0 64px;
+}
+
+
+.site-footer .footer-logo {
+
+    display: block;
+
+    width: 64px;
+    height: 64px;
+
+    object-fit: contain;
+}
+
+
+.site-footer .footer-logo-name {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    min-width: 0;
+}
+
+
+.site-footer .footer-logo-name a {
+
+    display: block;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 27px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    letter-spacing: 0.02em;
+
+    color: #f5eee2;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+}
+
+
+.site-footer .footer-logo-name a:hover {
+
+    color: #e1bd7d;
+}
+
+
+.site-footer .footer-logo-name span {
+
+    display: block;
+
+    font-family:
+        "Manrope",
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    line-height: 1.2;
+
+    letter-spacing: 0.14em;
+
+    color: #d8b77c;
+
+    white-space: nowrap;
+}
+
+
+/* ---------------------------------------------------------
+   МЕНЮ
+   --------------------------------------------------------- */
+
+.site-footer .footer-navigation {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    gap: 24px;
+
+    min-width: 0;
+}
+
+
+.site-footer .footer-navigation a {
+
+    display: inline-block;
+
+    font-family:
+        "Manrope",
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 400;
+
+    line-height: 1.4;
+
+    color: #f3eee5;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+.site-footer .footer-navigation a:hover {
+
+    color: #e1bd7d;
+}
+
+
+/* ---------------------------------------------------------
+   СОЦСЕТИ
+   --------------------------------------------------------- */
+
+.site-footer .footer-social {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    justify-self: end;
+
+    gap: 10px;
+
+    min-width: 0;
+}
+
+
+.site-footer .footer-social-links {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 18px;
+
+    white-space: nowrap;
+}
+
+
+.site-footer .footer-social-links a {
+
+    font-family:
+        "Manrope",
+        Arial,
+        sans-serif;
+
+    font-size: 11px;
+
+    color: #f3eee5;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+.site-footer .footer-social-links a:hover {
+
+    color: #e1bd7d;
+}
+
+
+.site-footer .footer-slogan {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 16px;
+
+    font-style: italic;
+
+    line-height: 1.25;
+
+    color: #e4c895;
+
+    text-align: right;
+
+    white-space: nowrap;
+}
+
+
+/* ---------------------------------------------------------
+   НИЖНЯЯ СТРОКА
+   --------------------------------------------------------- */
+
+.site-footer .footer-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding-top: 14px;
+
+    border-top:
+        1px solid
+        rgba(239, 220, 184, 0.42);
+
+    gap: 30px;
+}
+
+
+.site-footer .footer-copyright,
+.site-footer .footer-rights {
+
+    margin: 0;
+
+    font-family:
+        "Manrope",
+        Arial,
+        sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+
+    color:
+        rgba(245, 238, 226, 0.78);
+}
+
+
+.site-footer .footer-rights {
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   ПЛАНШЕТ
+   ========================================================= */
+
+@media (max-width: 1100px) and (min-width: 761px) {
+
+    :root {
+        --sidebar-width: 160px;
+    }
+
+
+    .site-footer .footer-top {
+
+        grid-template-columns:
+            250px
+            minmax(0, 1fr)
+            220px;
+
+        gap: 24px;
+    }
+
+
+    .site-footer .footer-navigation {
+
+        gap: 16px;
+    }
+
+
+    .site-footer .footer-navigation a {
+
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    :root {
+        --sidebar-width: 0px;
+    }
+
+
+    .site-footer {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        margin-left: 0 !important;
+
+        min-height: 0;
+    }
+
+
+    .site-footer .footer-inner {
+
+        width: 100%;
+
+        max-width: none;
+
+        padding:
+            34px 20px 20px;
+    }
+
+
+    .site-footer .footer-top {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 28px;
+
+        min-height: 0;
+    }
+
+
+    .site-footer .footer-logo-block {
+
+        width: 100%;
+    }
+
+
+    .site-footer .footer-navigation {
+
+        width: 100%;
+
+        justify-content: flex-start;
+
+        flex-wrap: wrap;
+
+        gap: 14px 22px;
+    }
+
+
+    .site-footer .footer-social {
+
+        align-items: flex-start;
+
+        justify-self: start;
+
+        width: 100%;
+    }
+
+
+    .site-footer .footer-social-links {
+
+        justify-content: flex-start;
+
+        flex-wrap: wrap;
+    }
+
+
+    .site-footer .footer-slogan {
+
+        text-align: left;
+
+        white-space: normal;
+    }
+
+
+    .site-footer .footer-bottom {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 7px;
+    }
+
+
+    .site-footer .footer-rights {
+
+        text-align: left;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   МАЛЕНЬКИЙ ТЕЛЕФОН
+   --------------------------------------------------------- */
+
+@media (max-width: 480px) {
+
+    .site-footer .footer-logo {
+
+        width: 56px;
+        height: 56px;
+    }
+
+
+    .site-footer .footer-logo-link {
+
+        width: 56px;
+        height: 56px;
+
+        flex-basis: 56px;
+    }
+
+
+    .site-footer .footer-logo-name a {
+
+        font-size: 23px;
+    }
+
+
+    .site-footer .footer-navigation {
+
+        gap: 12px 18px;
+    }
+
+
+    .site-footer .footer-navigation a {
+
+        font-size: 12px;
+    }
+
+}
+/* =========================================================
+   INTERWORLD — ФИНАЛЬНЫЙ ФУТЕР
+   ========================================================= */
+
+.site-footer {
+    position: relative;
+
+    width: 100vw !important;
+    max-width: 100vw !important;
+
+    margin-left: -180px !important;
+
+    box-sizing: border-box;
+
+    background-color: #071c29;
+
+    background-image:
+        linear-gradient(
+            rgba(4, 20, 31, 0.62),
+            rgba(4, 20, 31, 0.82)
+        ),
+        url("https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/footer-geografia-meshmiria.webp");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    color: #f5eee2;
+
+    font-family: "Manrope", Arial, sans-serif;
+
+    overflow: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   ВНУТРЕННИЙ КОНТЕЙНЕР
+   --------------------------------------------------------- */
+
+.site-footer .footer-inner {
+    width: 100%;
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    padding: 34px 52px 18px;
+
+    box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------------------
+   ВЕРХНЯЯ СТРОКА
+   --------------------------------------------------------- */
+
+.site-footer .footer-top {
+    display: grid;
+
+    grid-template-columns:
+        300px
+        minmax(0, 1fr)
+        280px;
+
+    align-items: center;
+
+    column-gap: 45px;
+
+    min-height: 125px;
+}
+
+
+/* ---------------------------------------------------------
+   ЛОГО
+   --------------------------------------------------------- */
+
+.site-footer .footer-logo-block {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    justify-self: start;
+
+    min-width: 0;
+}
+
+
+.site-footer .footer-logo-link {
+    display: block;
+
+    width: 64px;
+    height: 64px;
+
+    flex: 0 0 64px;
+}
+
+
+.site-footer .footer-logo {
+    display: block;
+
+    width: 64px;
+    height: 64px;
+
+    object-fit: contain;
+}
+
+
+.site-footer .footer-logo-name {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    min-width: 0;
+}
+
+
+.site-footer .footer-logo-name a {
+    display: block;
+
+    color: #f5eee2;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 28px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    letter-spacing: 0.025em;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+}
+
+
+.site-footer .footer-logo-name a:hover {
+    color: #e0bd7c;
+}
+
+
+.site-footer .footer-logo-name span {
+    display: block;
+
+    color: #d8b77c;
+
+    font-family:
+        "Manrope",
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    line-height: 1.2;
+
+    letter-spacing: 0.14em;
+
+    white-space: nowrap;
+}
+
+
+/* ---------------------------------------------------------
+   МЕНЮ
+   --------------------------------------------------------- */
+
+.site-footer .footer-navigation {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    gap: 20px;
+
+    min-width: 0;
+}
+
+
+.site-footer .footer-navigation a {
+    position: relative;
+
+    display: inline-block;
+
+    padding: 4px 0;
+
+    color: #f3eee5;
+
+    font-family:
+        "Manrope",
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 400;
+
+    line-height: 1.4;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+.site-footer .footer-navigation a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 1px;
+
+    background: #d8b77c;
+
+    transition:
+        width 0.25s ease;
+}
+
+
+.site-footer .footer-navigation a:hover {
+    color: #e0bd7c;
+}
+
+
+.site-footer .footer-navigation a:hover::after {
+    width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   СОЦИАЛЬНЫЙ БЛОК
+   --------------------------------------------------------- */
+
+.site-footer .footer-social {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    justify-self: end;
+
+    gap: 10px;
+
+    min-width: 0;
+}
+
+
+.site-footer .footer-social-links {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 18px;
+}
+
+
+.site-footer .footer-social-links a {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 24px;
+    height: 24px;
+
+    color: #f5eee2;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.site-footer .footer-social-links a:hover {
+    color: #e0bd7c;
+
+    transform: translateY(-2px);
+}
+
+
+.site-footer .footer-social-links svg {
+    display: block;
+
+    width: 20px;
+    height: 20px;
+
+    fill: currentColor;
+}
+
+
+.site-footer .footer-social-links a[aria-label="Instagram"] svg {
+    fill: none;
+}
+
+
+/* ---------------------------------------------------------
+   СЛОГАН
+   --------------------------------------------------------- */
+
+.site-footer .footer-slogan {
+    color: #d8b77c;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 16px;
+
+    font-style: italic;
+
+    line-height: 1.2;
+
+    text-align: right;
+
+    white-space: nowrap;
+}
+
+
+/* ---------------------------------------------------------
+   НИЖНЯЯ ЛИНИЯ
+   --------------------------------------------------------- */
+
+.site-footer .footer-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding-top: 14px;
+
+    border-top:
+        1px solid
+        rgba(224, 189, 124, 0.45);
+
+    gap: 30px;
+}
+
+
+.site-footer .footer-copyright,
+.site-footer .footer-rights {
+    margin: 0;
+
+    color:
+        rgba(245, 238, 226, 0.76);
+
+    font-family:
+        "Manrope",
+        Arial,
+        sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+
+.site-footer .footer-rights {
+    text-align: right;
+}
+
+
+/* =========================================================
+   ПЛАНШЕТ
+   ========================================================= */
+
+@media (max-width: 1100px) and (min-width: 761px) {
+
+    .site-footer {
+        margin-left: -160px !important;
+    }
+
+    .site-footer .footer-inner {
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+
+    .site-footer .footer-top {
+        grid-template-columns:
+            260px
+            minmax(0, 1fr)
+            220px;
+
+        column-gap: 25px;
+    }
+
+    .site-footer .footer-navigation {
+        gap: 14px;
+    }
+
+    .site-footer .footer-navigation a {
+        font-size: 12px;
+    }
+
+}
+
+
+
+/* =========================================================
+   ФИНАЛЬНАЯ НАСТРОЙКА СОЦСЕТЕЙ В ФУТЕРЕ
+   ========================================================= */
+
+.site-footer .footer-social {
+    align-self: center;
+    justify-self: end;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 6px;
+
+    padding-top: 2px;
+}
+
+
+/* Единая линия для всех иконок */
+
+.site-footer .footer-social-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 16px;
+
+    height: 24px;
+}
+
+
+/* Одинаковая область каждой иконки */
+
+.site-footer .footer-social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 22px;
+    height: 22px;
+
+    padding: 0;
+    margin: 0;
+
+    color: #f5eee2;
+
+    line-height: 0;
+}
+
+
+/* Все SVG визуально одного размера */
+
+.site-footer .footer-social-links svg {
+    display: block;
+
+    width: 18px;
+    height: 18px;
+
+    margin: 0;
+}
+
+
+/* Telegram чуть более крупный визуально */
+
+.site-footer .footer-social-links a[aria-label="Telegram"] svg {
+    width: 19px;
+    height: 19px;
+}
+
+
+/* VK у исходного SVG визуально меньше — немного увеличиваем */
+
+.site-footer .footer-social-links a[aria-label="VK"] svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* Instagram оставляем чуть тоньше */
+
+.site-footer .footer-social-links a[aria-label="Instagram"] svg {
+    width: 19px;
+    height: 19px;
+}
+
+
+/* Слоган сразу под иконками */
+
+.site-footer .footer-slogan {
+    margin: 0;
+
+    color: #d8b77c;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 16px;
+    font-style: italic;
+
+    line-height: 1.05;
+
+    text-align: right;
+
+    white-space: nowrap;
+}
+
+
+/* Небольшой эффект при наведении */
+
+.site-footer .footer-social-links a:hover {
+    color: #e0bd7c;
+
+    transform: translateY(-1px);
+}
+/* =========================================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .site-footer {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin-left: 0 !important;
+    }
+
+
+    .site-footer .footer-inner {
+        max-width: none;
+
+        padding:
+            32px 20px 20px;
+    }
+
+
+    .site-footer .footer-top {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 28px;
+
+        min-height: 0;
+    }
+
+
+    .site-footer .footer-logo-block {
+        width: 100%;
+    }
+
+
+    .site-footer .footer-navigation {
+        width: 100%;
+
+        justify-content: flex-start;
+
+        flex-wrap: wrap;
+
+        gap: 13px 24px;
+    }
+
+
+   
+
+
+    .site-footer .footer-social {
+        align-items: flex-start;!important;
+    }
+
+
+    .site-footer .footer-slogan {
+        text-align: left;
+
+        white-space: normal;
+    }
+
+
+    .site-footer .footer-bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 7px;
+    }
+
+
+    .site-footer .footer-rights {
+        text-align: left;
+    }
+
+}
+
+/* =========================================================
+   INTERWORLD — ПЕРВЫЙ ЭКРАН
+   ========================================================= */
+
+.hero-banner {
+    position: relative;
+    width: 100%;
+    height: clamp(560px, 44vw, 650px);
+    overflow: hidden;
+    background: #e9e5dc;
+}
+
+
+/* =========================================================
+   ФОНОВАЯ КАРТИНКА
+   ========================================================= */
+
+.hero-banner-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center center;
+}
+
+
+/* =========================================================
+   СЛОЙ КОНТЕНТА
+   ========================================================= */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero-left,
+.hero-quote {
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   ЛЕВЫЙ ТЕКСТОВЫЙ БЛОК
+   ========================================================= */
+
+.hero-left {
+    position: absolute;
+
+    left: 4.8%;
+    top: 15%;
+
+    width: 39%;
+    max-width: 500px;
+
+    box-sizing: border-box;
+}
+.hero-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(249, 246, 238, 0.94) 0%,
+            rgba(249, 246, 238, 0.82) 16%,
+            rgba(249, 246, 238, 0.58) 30%,
+            rgba(249, 246, 238, 0.30) 42%,
+            rgba(249, 246, 238, 0.10) 53%,
+            rgba(249, 246, 238, 0) 67%
+        );
+}
+
+/* =========================================================
+   ЭЙЕБРОУ
+   ========================================================= */
+
+.hero-eyebrow {
+    margin: 0 0 17px;
+
+    color: #a88a61;
+
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.3;
+
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   ЗАГОЛОВОК
+   ========================================================= */
+
+.hero-left h1 {
+    margin: 0;
+
+    color: #102c3e;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    /*
+     * Чуть меньше нынешнего.
+     * Так заголовок выглядит как в референсе
+     * и не захватывает центральный портал.
+     */
+    font-size: clamp(50px, 4.2vw, 68px);
+
+    font-weight: 500;
+
+    line-height: 0.91;
+
+    letter-spacing: -0.035em;
+
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.55);
+}
+
+
+/* =========================================================
+   ЛИНИЯ ПОД ЗАГОЛОВКОМ
+   ========================================================= */
+
+.hero-title-line {
+    display: block;
+
+    width: 64px;
+    height: 2px;
+
+    margin-top: 23px;
+    margin-bottom: 22px;
+
+    background: #a88a61;
+}
+
+
+/* =========================================================
+   ОПИСАНИЕ
+   ========================================================= */
+
+.hero-description {
+    max-width: 440px;
+
+    margin: 0;
+
+    color: #102f43;
+
+    /*
+     * Здесь оставляем более простой шрифт,
+     * чтобы описание читалось легче заголовка.
+     */
+    font-family: "Manrope", Arial, sans-serif;
+
+    font-size: clamp(15px, 1.05vw, 18px);
+
+    font-weight: 500;
+
+    line-height: 1.48;
+
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.65);
+}
+
+
+/* =========================================================
+   КНОПКИ
+   ========================================================= */
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 40px;
+
+    flex-wrap: wrap;
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 0 24px;
+
+    border-radius: 28px;
+
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* Основная кнопка */
+
+.hero-button-primary {
+    background: #ad8c61;
+    border: 1px solid #ad8c61;
+
+    color: #fff;
+}
+
+.hero-button-primary span {
+    margin-left: 10px;
+
+    font-size: 17px;
+    line-height: 1;
+}
+
+.hero-button-primary:hover {
+    background: #94754f;
+    border-color: #94754f;
+
+    color: #fff;
+
+    transform: translateY(-1px);
+}
+
+
+/* Вторая кнопка */
+
+.hero-button-secondary {
+    background: rgba(255,255,255,0.65);
+
+    border: 1px solid #ad8c61;
+
+    color: #17364a;
+
+    backdrop-filter: blur(3px);
+}
+
+.hero-button-secondary:hover {
+    background: rgba(255,255,255,0.9);
+
+    border-color: #94754f;
+
+    color: #17364a;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   ЦИТАТА СПРАВА
+   ========================================================= */
+
+.hero-quote {
+    position: absolute;
+
+    /*
+     * Чуть дальше вправо,
+     * чтобы не спорила с центральным порталом.
+     */
+    right: 1%;
+
+    /*
+     * Опускаем относительно текущего варианта.
+     */
+    top: 37%;
+
+    width: 22%;
+    max-width: 290px;
+
+    box-sizing: border-box;
+
+    color: #17364a;
+}
+
+
+/* Текст цитаты */
+
+.hero-quote blockquote {
+    margin: 0;
+    padding: 0;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: clamp(17px, 1.3vw, 21px);
+
+    font-weight: 800;
+    font-style: italic;
+
+    line-height: 1.28;
+
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.65),
+        0 2px 8px rgba(255,255,255,0.25);
+}
+
+
+/* Автор */
+
+.hero-quote cite {
+    display: block;
+
+    margin-top: 18px;
+
+    color: #17364a;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 18px;
+
+    font-style: italic;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   ПЛАНШЕТ
+   ========================================================= */
+
+@media (max-width: 1100px) and (min-width: 761px) {
+
+    .hero-banner {
+        height: 570px;
+    }
+
+    .hero-left {
+        left: 4.5%;
+        top: 9%;
+
+        width: 38%;
+        max-width: 430px;
+
+        padding: 20px 23px 24px;
+    }
+
+    .hero-left h1 {
+        font-size: 54px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-quote {
+        right: 4%;
+        top: 24%;
+        width: 21%;
+    }
+
+    .hero-quote blockquote {
+        font-size: 17px;
+    }
+}
+
+
+/* =========================================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .hero-banner {
+        height: 560px;
+    }
+
+    .hero-banner-image {
+        height: 700px;
+
+        object-fit: cover;
+        object-position: 57% center;
+    }
+
+    .hero-left {
+        left: 5%;
+        top: 6%;
+
+        width: 90%;
+        max-width: none;
+
+        padding: 20px 20px 24px;
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(248,245,237,0.9),
+                rgba(248,245,237,0.65)
+            );
+    }
+
+    .hero-eyebrow {
+        font-size: 10px;
+        margin-bottom: 15px;
+    }
+
+    .hero-left h1 {
+        font-size: clamp(43px, 11vw, 58px);
+        line-height: 0.92;
+    }
+
+    .hero-title-line {
+        width: 52px;
+
+        margin-top: 18px;
+        margin-bottom: 18px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .hero-actions {
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .hero-button {
+        min-height: 44px;
+        padding: 0 18px;
+        font-size: 11px;
+    }
+
+    .hero-quote {
+        display: none;
+    }
+}
+/* =========================================================
+   INTERWORLD — БЛОК «ИССЛЕДУЙТЕ МЕЖМИРЬЕ»
+   ========================================================= */
+
+.explore-section {
+    position: relative;
+}
+
+
+/* ---------------------------------------------------------
+   СЕТКА КАРТОЧЕК
+   --------------------------------------------------------- */
+
+.explore-section .explore-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(16px, 1.5vw, 24px);
+
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/* ---------------------------------------------------------
+   КАРТОЧКА
+   --------------------------------------------------------- */
+
+.explore-section .explore-card {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    height: 100%;
+
+    background: #fff;
+
+    border: 1px solid rgba(16, 44, 62, 0.14);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.explore-section .explore-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(168, 138, 97, 0.45);
+
+    box-shadow:
+        0 12px 30px rgba(16, 44, 62, 0.08);
+}
+
+
+/* ---------------------------------------------------------
+   ИЗОБРАЖЕНИЕ
+   --------------------------------------------------------- */
+
+.explore-section .explore-card-image {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+
+    /*
+     * Все изображения получают одинаковую высоту
+     * независимо от исходного размера файла.
+     */
+    aspect-ratio: 1.48 / 1;
+
+    overflow: hidden;
+
+    background: #dce4e7;
+}
+
+
+/* Само изображение */
+
+.explore-section .explore-card-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    object-fit: cover;
+    object-position: center center;
+
+    transition: transform 0.5s ease;
+}
+
+
+/* Небольшое движение изображения при наведении */
+
+.explore-section .explore-card:hover
+.explore-card-image img {
+    transform: scale(1.035);
+}
+
+
+/* ---------------------------------------------------------
+   ТЕКСТОВАЯ ЧАСТЬ
+   --------------------------------------------------------- */
+
+.explore-section .explore-card-content {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+
+    min-height: 190px;
+
+    padding:
+        clamp(24px, 2vw, 32px)
+        clamp(20px, 2vw, 30px)
+        clamp(18px, 1.7vw, 26px);
+}
+
+
+/* Заголовок карточки */
+
+.explore-section .explore-card-content h3 {
+    margin: 0 0 18px;
+
+    color: #102c3e;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: clamp(24px, 1.7vw, 29px);
+    font-weight: 500;
+
+    line-height: 1.05;
+}
+
+
+/* Описание */
+
+.explore-section .explore-card-content p {
+    margin: 0;
+
+    max-width: 300px;
+
+    color: #6f8795;
+
+    font-family: "Manrope", Arial, sans-serif;
+
+    font-size: clamp(13px, 0.9vw, 15px);
+    font-weight: 400;
+
+    line-height: 1.65;
+}
+
+
+/* ---------------------------------------------------------
+   КНОПКА-СТРЕЛКА
+   --------------------------------------------------------- */
+
+.explore-section .round-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    margin-top: auto;
+
+    border: 1px solid #cdb48d;
+    border-radius: 50%;
+
+    background: #fff;
+
+    color: #17364a;
+
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+
+    line-height: 1;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.explore-section .round-arrow:hover {
+    background: #ad8c61;
+    border-color: #ad8c61;
+
+    color: #fff;
+
+    transform: translateX(2px);
+}
+
+
+/* ---------------------------------------------------------
+   ЗАГОЛОВОК БЛОКА
+   --------------------------------------------------------- */
+
+.explore-section .section-heading.centered {
+    max-width: 850px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: clamp(42px, 4vw, 58px);
+
+    text-align: center;
+}
+
+.explore-section .section-heading.centered .eyebrow {
+    margin-bottom: 12px;
+}
+
+.explore-section .section-heading.centered h2 {
+    margin-bottom: 14px;
+}
+
+.explore-section .section-heading.centered p {
+    max-width: 760px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   ПЛАНШЕТ
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .explore-section .explore-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .explore-section .explore-card-image {
+        aspect-ratio: 1.55 / 1;
+    }
+
+    .explore-section .explore-card-content {
+        min-height: 175px;
+    }
+}
+
+
+/* =========================================================
+   МОБИЛЬНЫЙ
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .explore-section .explore-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .explore-section .explore-card-image {
+        /*
+         * На телефоне картинка становится чуть более
+         * компактной, но остаётся одинаковой у всех карточек.
+         */
+        aspect-ratio: 1.65 / 1;
+    }
+
+    .explore-section .explore-card-content {
+        min-height: 0;
+
+        padding:
+            22px
+            22px
+            22px;
+    }
+
+    .explore-section .explore-card-content h3 {
+        margin-bottom: 12px;
+
+        font-size: 27px;
+    }
+
+    .explore-section .explore-card-content p {
+        max-width: none;
+
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .explore-section .round-arrow {
+        width: 36px;
+        height: 36px;
+
+        margin-top: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   МАЛЕНЬКИЕ ТЕЛЕФОНЫ
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .explore-section .explore-card-image {
+        aspect-ratio: 1.55 / 1;
+    }
+
+    .explore-section .explore-card-content {
+        padding: 20px;
+    }
+
+}
+/* =========================================================
+   EXPLORE — ФИНАЛЬНАЯ КОМПОЗИЦИЯ
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   СЕТКА
+   --------------------------------------------------------- */
+
+.explore-section .explore-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(16px, 1.5vw, 24px);
+
+    align-items: stretch;
+}
+
+
+/* ---------------------------------------------------------
+   КАРТОЧКА
+   --------------------------------------------------------- */
+
+.explore-section .explore-card {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    height: auto;
+
+    background: #fff;
+
+    border: 1px solid rgba(16, 44, 62, 0.14);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.explore-section .explore-card:hover {
+    transform: translateY(-2px);
+
+    border-color: rgba(168, 138, 97, 0.4);
+
+    box-shadow: 0 10px 24px rgba(16, 44, 62, 0.07);
+}
+
+
+/* ---------------------------------------------------------
+   КАРТИНКА
+   --------------------------------------------------------- */
+
+/*
+ * ВАЖНО:
+ * 1.45 / 1 = картинка выше, чем была.
+ */
+
+.explore-section .explore-card-image {
+    display: block;
+
+    position: relative;
+
+    width: 100%;
+    height: clamp(220px, 17vw, 270px);
+
+    overflow: hidden;
+
+    background: #dce4e7;
+
+    flex-shrink: 0;
+}
+
+.explore-section .explore-card-image img {
+    display: block;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+
+    object-fit: cover !important;
+    object-position: center center;
+
+    transition: transform 0.5s ease;
+}
+
+.explore-section .explore-card:hover
+.explore-card-image img {
+    transform: scale(1.025);
+}
+
+
+/* ---------------------------------------------------------
+   БЕЛАЯ ЧАСТЬ КАРТОЧКИ
+   --------------------------------------------------------- */
+
+.explore-section .explore-card-content {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+
+    min-height: 155px;
+
+    padding:
+        24px
+        24px
+        20px;
+
+    background: #fff;
+}
+
+
+/* ---------------------------------------------------------
+   ЗАГОЛОВОК
+   --------------------------------------------------------- */
+
+.explore-section .explore-card-content h3 {
+    margin: 0 0 12px;
+
+    color: #102c3e;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: clamp(25px, 1.65vw, 29px);
+    font-weight: 500;
+
+    line-height: 1.05;
+}
+
+
+/* ---------------------------------------------------------
+   ОПИСАНИЕ
+   --------------------------------------------------------- */
+
+.explore-section .explore-card-content p {
+    margin: 0;
+
+    max-width: 300px;
+
+    color: #6f8795;
+
+    font-family: "Manrope", Arial, sans-serif;
+
+    font-size: clamp(13px, 0.88vw, 15px);
+    font-weight: 400;
+
+    line-height: 1.5;
+}
+
+
+
+
+/* ---------------------------------------------------------
+   ПЛАНШЕТ
+   --------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+
+    .explore-section .explore-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .explore-section .explore-card-image {
+        height: clamp(210px, 25vw, 250px);
+    }
+
+    .explore-section .explore-card-content {
+        min-height: 150px;
+
+        padding: 22px;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   МОБИЛЬНЫЙ
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .explore-section .explore-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .explore-section .explore-card-image {
+        height: auto;
+        aspect-ratio: 1.45 / 1;
+    }
+
+    .explore-section .explore-card-content {
+        min-height: 0;
+
+        padding: 20px;
+    }
+
+    .explore-section .explore-card-content h3 {
+        margin-bottom: 10px;
+
+        font-size: 27px;
+    }
+
+    .explore-section .explore-card-content p {
+        max-width: none;
+
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .explore-section .explore-card-content .round-arrow {
+        margin-top: 14px !important;
+    }
+}
+/* =========================================================
+   СТРЕЛКА В КАРТОЧКАХ EXPLORE
+   ========================================================= */
+
+.explore-section .explore-card-link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.explore-section .explore-card-link::after {
+    content: "";
+    position: absolute;
+    right: 5%;
+    bottom: 25%;
+
+    width: 20px;
+    height: 20px;
+
+    border-top: 1.5px solid #b49367;
+    border-right: 1.5px solid #b49367;
+
+    transform: rotate(45deg);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+/* Наведение */
+
+.explore-section .explore-card:hover .explore-card-link::after {
+    border-color: #8f7048;
+    transform: translateX(4px) rotate(45deg);
+}
+/* =========================================================
+   КАРТА МЕЖМИРЬЯ — ФИНАЛЬНАЯ КОМПОЗИЦИЯ
+   ========================================================= */
+
+.map-section {
+    position: relative;
+    display: flex;
+    min-height: 600px;
+    margin: 0;
+    overflow: hidden;
+
+    background-image: url("https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/karta-meszmiria.webp");
+    background-size: cover;
+    background-position: center center;
+}
+
+/* Текстовая область */
+.map-copy {
+    position: relative;
+    z-index: 2;
+
+    width: 48%;
+    max-width: 680px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 58px 46px;
+    box-sizing: border-box;
+}
+
+/* Убираем отдельный слой картинки */
+.map-art {
+    display: none;
+}
+
+
+/* =========================================================
+   ТИПОГРАФИКА
+   ========================================================= */
+
+.map-copy .eyebrow {
+    margin: 0 0 18px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+
+    color: #b49367;
+}
+
+.map-copy h2 {
+    margin: 0 0 26px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(48px, 4vw, 64px);
+    line-height: 0.98;
+    font-weight: 500;
+
+    color: #183348;
+}
+
+.map-copy p {
+    max-width: 460px;
+    margin: 0 0 40px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    font-weight: 400;
+
+    color: #183348;
+}
+
+.map-tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+
+    margin: 0;
+padding-bottom: 10%;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #7d6a4f;
+}
+
+.map-tags span:not(:last-child)::after {
+    content: "·";
+    margin: 0 9px;
+    color: #b49367;
+}
+
+
+
+/* =========================================================
+   КНОПКИ
+   ========================================================= */
+
+.map-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.map-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+    padding: 0 22px;
+
+    border-radius: 26px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* Главная кнопка */
+.map-button-primary {
+    background: #b49367;
+    border: 1px solid #b49367;
+    color: #fff;
+}
+
+.map-button-primary:hover {
+    background: #9f7d50;
+    border-color: #9f7d50;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+
+/* YouTube */
+.map-button-secondary {
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(180, 147, 103, 0.65);
+    color: #183348;
+
+    backdrop-filter: blur(4px);
+}
+
+.map-button-secondary:hover {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: #b49367;
+    color: #183348;
+    transform: translateY(-2px);
+}
+
+.map-play {
+    margin-right: 8px;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   АДАПТИВ
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .map-section {
+        min-height: 480px;
+
+        background-position: 60% center;
+    }
+
+    .map-copy {
+        width: 65%;
+        padding: 48px 32px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .map-section {
+        min-height: 560px;
+
+        background-position: 65% center;
+    }
+
+    .map-copy {
+        width: 100%;
+        max-width: none;
+        padding: 42px 24px;
+        justify-content: flex-start;
+        background: linear-gradient(90deg, rgba(248, 245, 237, 0.9), rgba(248, 245, 237, 0.65));
+    }
+
+    .map-copy h2 {
+        font-size: 44px;
+    }
+
+    .map-copy p {
+        font-size: 15px;
+    }
+
+    .map-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .map-button {
+        min-height: 46px;
+    }
+.explore-section .explore-card-link::after {
+   
+    bottom: 13%;
+}
+}
+/* =========================================================
+   БИБЛИОТЕКА — КНИГИ И ИСТОЧНИКИ
+   ========================================================= */
+
+.library-section {
+    position: relative;
+}
+
+
+/* =========================================================
+   ЗАГОЛОВОК БЛОКА
+   ========================================================= */
+
+.library-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 40px;
+    width: 100%;
+    margin-bottom: 42px;
+}
+
+.library-heading > div {
+    max-width: 780px;
+}
+
+.library-intro {
+    max-width: 760px;
+    margin: 18px 0 0;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+
+    color: #6e8495;
+}
+
+
+/* Вся библиотека — справа */
+
+.library-all-link {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    padding-right: 24px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+
+    color: #183348;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.library-all-link::after {
+    content: "";
+
+    position: absolute;
+    right: 1px;
+    top: 50%;
+
+    width: 9px;
+    height: 9px;
+
+    border-top: 1px solid #b49367;
+    border-right: 1px solid #b49367;
+
+    transform: translateY(-50%) rotate(45deg);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.library-all-link:hover::after {
+    border-color: #8f7048;
+    transform: translate(4px, -50%) rotate(45deg);
+}
+
+
+/* =========================================================
+   СЕТКА КНИГ
+   ========================================================= */
+
+.books-grid {
+    display: grid;
+
+    grid-template-columns:
+        2fr
+        1fr
+        1fr
+        1fr;
+
+    gap: 14px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   БОЛЬШАЯ КАРТОЧКА — ТОМ 1
+   ========================================================= */
+
+.book-feature {
+    position: relative;
+
+    min-width: 0;
+    min-height: 470px;
+
+    background: #ffffff;
+
+    border: 1px solid #c99e61;
+
+    overflow: hidden;
+}
+
+
+/* Ссылка занимает всю карточку */
+
+.book-feature-link {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: 46% 54%;
+
+    width: 100%;
+    min-height: 510px;
+
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   ОБЛОЖКА ТОМ 1
+   ========================================================= */
+
+.book-feature-cover {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+    min-height: 470px;
+
+    padding: 34px;
+
+    box-sizing: border-box;
+
+   
+
+    overflow: hidden;
+}
+
+
+/*
+   ВАЖНО:
+   Никаких width:100%, height:100% у картинки.
+   Книга должна сохранять свои реальные пропорции.
+*/
+
+.book-feature-cover img {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 82%;
+    max-height: 430px;
+
+    margin: 0 auto;
+
+    object-fit: contain;
+
+    transition: transform 0.35s ease;
+}
+
+.book-feature:hover .book-feature-cover img {
+    transform: translateY(-5px) scale(1.015);
+}
+
+
+/* =========================================================
+   ТЕКСТ ТОМ 1
+   ========================================================= */
+
+.book-feature-info {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-width: 0;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* Автор */
+
+.book-feature-info .book-eyebrow {
+    margin: 0 0 10px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 500;
+
+    letter-spacing: 0.12em;
+
+    color: #183348;
+}
+
+
+/* Заголовок */
+
+.book-feature-info h3 {
+    margin: 0;
+
+    max-width: 420px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    line-height: 1.08;
+    font-weight: 500;
+
+    color: #183348;
+}
+
+
+/* Описание */
+
+.book-feature-info p {
+    max-width: 390px;
+
+    margin: 22px 0 0;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+
+    color: #71889a;
+}
+
+
+/* О книге */
+
+.book-more {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    width: fit-content;
+
+    margin-top: 30px;
+    padding-right: 26px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+
+    color: #183348;
+}
+
+.book-arrow {
+    position: absolute;
+
+    right: 1px;
+    top: 50%;
+
+    width: 9px;
+    height: 9px;
+
+    border-top: 1px solid #b49367;
+    border-right: 1px solid #b49367;
+
+    transform: translateY(-50%) rotate(45deg);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.book-feature:hover .book-arrow {
+    border-color: #8f7048;
+    transform: translate(4px, -50%) rotate(45deg);
+}
+
+
+/* =========================================================
+   ДЕКОРАТИВНЫЙ СИМВОЛ ПЕРВОЙ КАРТОЧКИ
+   ========================================================= */
+
+
+
+/* =========================================================
+   МАЛЕНЬКИЕ КАРТОЧКИ
+   ========================================================= */
+
+.book-card {
+    position: relative;
+
+    min-width: 0;
+
+    background: #ffffff;
+
+    border: 1px solid #d8d9d6;
+
+    overflow: hidden;
+}
+
+
+.book-card-link {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 510px;
+    height: 100%;
+
+    padding-bottom: 28px;
+
+    box-sizing: border-box;
+
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* Область обложки */
+
+.book-cover-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 270px;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+.book-cover-small img {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 100%;
+    max-height: 235px;
+
+    object-fit: contain;
+
+    transition: transform 0.35s ease;
+}
+
+.book-card:hover .book-cover-small img {
+    transform: translateY(-5px) scale(1.015);
+}
+
+
+/* Автор */
+
+.book-card .book-eyebrow {
+    margin: 20px 24px 20px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 500;
+
+    letter-spacing: 0.12em;
+
+    color: #183348;
+}
+
+
+/* Название */
+
+.book-card h3 {
+    margin: 0 24px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    line-height: 1.1;
+    font-weight: 500;
+
+    color: #183348;
+}
+
+
+/* Описание */
+
+.book-card p {
+    margin: 18px 24px 0;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+
+    color: #71889a;
+}
+
+
+/* Стрелка */
+
+.book-card-arrow {
+    position: absolute;
+
+    right: 24px;
+    bottom: 24px;
+
+    width: 12px;
+    height: 12px;
+
+    border-top: 1px solid #b49367;
+    border-right: 1px solid #b49367;
+
+    transform: rotate(45deg);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.book-card:hover .book-card-arrow {
+    border-color: #8f7048;
+
+    transform:
+        translateX(4px)
+        rotate(45deg);
+}
+
+
+/* =========================================================
+   АДАПТИВ
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .books-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .book-feature {
+        grid-column: 1 / -1;
+    }
+
+    .book-feature-link {
+        grid-template-columns: 45% 55%;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .library-heading {
+        display: block;
+    }
+
+    .library-all-link {
+        margin-top: 24px;
+    }
+
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .book-feature {
+        grid-column: auto;
+    }
+
+    .book-feature-link {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+    }
+
+    .book-feature-cover {
+        min-height: 360px;
+    }
+
+  
+
+    .book-feature-info {
+        padding: 38px 28px 36px;
+    }
+
+    .book-feature-info h3 {
+        font-size: 30px;
+    }
+
+    .book-card-link {
+        min-height: 460px;
+    }
+
+    .book-cover-small {
+        height: 300px;
+    }
+}
+/* =========================================================
+   ТОМ 1 — УВЕЛИЧИВАЕМ ОБЛОЖКУ ВНУТРИ ЕЁ ФАЙЛА
+   ========================================================= */
+
+.library-section .book-feature-cover img {
+    transform: scale(2.3);
+    transform-origin: center center;
+}
+
+.library-section .book-feature:hover .book-feature-cover img {
+    transform: scale(2.3) translateY(-3px);
+}
+.book-feature::before {
+    opacity: 0.65;
+}
+.book-feature {
+    background-image: url("https://geografiya-mezhmirya.ru/wp-content/uploads/2026/09/fon.webp");
+    background-size: auto 50%;
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-color: #f8f5ed;
+}
+/* =========================================================
+   СУЩЕСТВА И СИЛЫ
+   ========================================================= */
+
+#creatures {
+    position: relative;
+}
+
+
+/* ---------------------------------------------------------
+   Заголовок
+   --------------------------------------------------------- */
+
+#creatures .section-heading {
+    margin-bottom: 46px;
+}
+
+#creatures .section-heading h2 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(48px, 4.2vw, 68px);
+    line-height: 0.98;
+    font-weight: 500;
+
+    color: #183348;
+}
+
+
+/* Ссылка "Все существа" */
+
+#creatures .section-heading > a {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    padding-right: 24px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    line-height: 1;
+
+    color: #183348;
+    text-decoration: none;
+
+    white-space: nowrap;
+}
+
+#creatures .section-heading > a::after {
+    content: "";
+
+    position: absolute;
+
+    right: 2px;
+    top: 50%;
+
+    width: 8px;
+    height: 8px;
+
+    border-top: 1px solid #b49367;
+    border-right: 1px solid #b49367;
+
+    transform: translateY(-50%) rotate(45deg);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+#creatures .section-heading > a:hover::after {
+    border-color: #8f7048;
+
+    transform:
+        translate(4px, -50%)
+        rotate(45deg);
+}
+
+
+/* ---------------------------------------------------------
+   Сетка существ
+   --------------------------------------------------------- */
+
+#creatures .creature-row {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, minmax(0, 1fr));
+
+    gap: 22px;
+
+    width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   Карточка существа
+   --------------------------------------------------------- */
+
+#creatures .creature {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-width: 0;
+
+    padding: 0 8px 18px;
+
+    color: inherit;
+    text-decoration: none;
+
+    text-align: center;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+/* Тонкая линия снизу появляется при наведении */
+
+#creatures .creature::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: 1px;
+
+    background: #b49367;
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+}
+
+#creatures .creature:hover::after {
+    width: 38px;
+}
+
+
+/* ---------------------------------------------------------
+   Картинка существа
+   --------------------------------------------------------- */
+
+#creatures .creature-art {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 106px;
+    height: 106px;
+
+    margin-bottom: 18px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 35% 28%,
+            #f5f0df 0%,
+            #c8d0cf 25%,
+            #91a4ad 58%,
+            #627987 100%
+        );
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.45);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* Декоративный знак — пока вместо реальной картинки */
+
+#creatures .creature-art {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+
+    color: #f5e6bb;
+}
+
+#creatures .creature-art::before {
+    content: "";
+
+    position: absolute;
+
+    width: 30px;
+    height: 30px;
+
+    border: 1px solid rgba(245,230,187,0.75);
+
+    transform: rotate(45deg);
+
+    opacity: 0.8;
+}
+
+
+
+
+/* Когда появится настоящая картинка */
+
+#creatures .creature-art img {
+    position: relative;
+    z-index: 3;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    transition:
+        transform 0.45s ease;
+}
+
+
+/* Hover */
+
+#creatures .creature:hover {
+    transform: translateY(-3px);
+}
+
+#creatures .creature:hover .creature-art {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 24px rgba(24,51,72,0.10),
+        inset 0 0 0 1px rgba(180,147,103,0.35);
+}
+
+#creatures .creature:hover .creature-art img {
+    transform: scale(1.06);
+}
+
+
+/* ---------------------------------------------------------
+   Название
+   --------------------------------------------------------- */
+
+#creatures .creature strong {
+    display: block;
+
+    margin: 0;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    line-height: 1.3;
+    font-weight: 500;
+
+    color: #183348;
+}
+
+
+/* ---------------------------------------------------------
+   Тип существа
+   --------------------------------------------------------- */
+
+#creatures .creature span {
+    display: block;
+
+    margin-top: 5px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 11px;
+    line-height: 1.4;
+
+    color: #9aa5aa;
+}
+
+
+/* =========================================================
+   АДАПТИВ
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    #creatures .creature-row {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        row-gap: 36px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    #creatures .section-heading {
+        display: block;
+    }
+
+    #creatures .section-heading > a {
+        margin-top: 24px;
+    }
+
+    #creatures .creature-row {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 28px 14px;
+    }
+
+    #creatures .creature-art {
+        width: 94px;
+        height: 94px;
+    }
+	  .book-feature-cover img {
+        max-height: 320px;
+     transform: scale(1.4)!important;
+    }
+}
+#creatures .creature-art img {
+    position: relative;
+    z-index: 3;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    transition:
+        transform 0.45s ease;
+}
+/* =========================================================
+   FAQ — ЧАСТО СПРАШИВАЮТ
+   ========================================================= */
+
+.faq-section {
+    position: relative;
+
+    padding-top: 72px;
+    padding-bottom: 84px;
+}
+
+
+/* =========================================================
+   ЗАГОЛОВОК
+   ========================================================= */
+
+.faq-section .section-heading {
+    margin-bottom: 42px;
+}
+
+.faq-section .section-heading h2 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(48px, 4.2vw, 68px);
+    line-height: 0.98;
+    font-weight: 500;
+
+    color: #183348;
+}
+
+
+/* =========================================================
+   ВОПРОС
+   ========================================================= */
+
+.faq-section details {
+    position: relative;
+
+    margin: 0;
+
+    border-top: 1px solid #d9d9d4;
+}
+
+.faq-section details:last-of-type {
+    border-bottom: 1px solid #d9d9d4;
+}
+
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.faq-section summary {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 66px;
+
+    padding: 18px 58px 18px 0;
+
+    box-sizing: border-box;
+
+    cursor: pointer;
+
+    list-style: none;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color: #183348;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+/* Убираем стандартный треугольник */
+
+.faq-section summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-section summary::marker {
+    display: none;
+    content: "";
+}
+
+
+/* =========================================================
+   ГРАФИЧЕСКАЯ СТРЕЛКА
+   ========================================================= */
+
+.faq-section summary::after {
+    content: "";
+
+    position: absolute;
+
+    right: 7px;
+    top: 50%;
+
+    width: 9px;
+    height: 9px;
+
+    border-top: 1px solid #b49367;
+    border-right: 1px solid #b49367;
+
+    transform:
+        translateY(-65%)
+        rotate(45deg);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* При открытии стрелка поворачивается вниз */
+
+.faq-section details[open] summary::after {
+    transform:
+        translateY(-35%)
+        rotate(135deg);
+
+    border-color: #8f7048;
+}
+
+
+/* Hover */
+
+.faq-section summary:hover {
+    color: #8f7048;
+}
+
+
+/* =========================================================
+   ОТВЕТ
+   ========================================================= */
+
+.faq-section details p {
+    max-width: 820px;
+
+    margin: 0;
+
+    padding: 0 70px 28px 0;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+
+    color: #71889a;
+}
+
+
+/* =========================================================
+   АНИМАЦИОННОЕ ОЩУЩЕНИЕ ОТКРЫТОГО БЛОКА
+   ========================================================= */
+
+.faq-section details[open] summary {
+    color: #183348;
+}
+
+
+/* =========================================================
+   АДАПТИВ
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .faq-section {
+        padding-top: 56px;
+        padding-bottom: 64px;
+    }
+
+    .faq-section .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .faq-section summary {
+        min-height: 60px;
+
+        padding: 16px 48px 16px 0;
+
+        font-size: 14px;
+    }
+
+    .faq-section details p {
+        padding-right: 20px;
+        padding-bottom: 24px;
+
+        font-size: 13px;
+    }
+}
+.library-section .section-heading .eyebrow,
+#creatures .section-heading .eyebrow,
+.faq-section .section-heading .eyebrow {
+    margin-bottom: 16px;
+}
+
+.library-section .section-heading h2,
+#creatures .section-heading h2,
+.faq-section .section-heading h2 {
+    margin-top: 0;
+}
+/* =========================================================
+   FAQ — ОТДЕЛЬНАЯ ВИЗУАЛЬНАЯ ЗОНА
+   ========================================================= */
+
+.faq-section {
+    position: relative;
+
+    margin-top: 0;
+    padding-top: 78px;
+    padding-bottom: 72px;
+
+    background: #eef1f0;
+}
+/* Линии FAQ */
+
+.faq-section details {
+    border-top: 1px solid rgba(24, 51, 72, 0.14);
+}
+
+.faq-section details:last-of-type {
+    border-bottom: 1px solid rgba(24, 51, 72, 0.14);
+}
+.faq-section summary {
+    color: #183348;
+}
+
+.faq-section summary:hover {
+    color: #8f7048;
+}
+/* =========================================================
+   FAQ — КНОПКА ЗАДАТЬ ВОПРОС
+   ========================================================= */
+
+.faq-cta {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 42px;
+}
+
+
+
+
+/* Графическая стрелка */
+
+.faq-cta-link::after {
+    content: "";
+
+    position: absolute;
+
+    right: 17px;
+    top: 50%;
+
+    width: 8px;
+    height: 8px;
+
+    border-top: 1px solid #b49367;
+    border-right: 1px solid #b49367;
+
+    transform:
+        translateY(-50%)
+        rotate(45deg);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+
+
+
+.faq-cta-link:hover::after {
+    border-color: #fff;
+
+    transform:
+        translate(3px, -50%)
+        rotate(45deg);
+}
+/* =========================================================
+   ABOUT — О ПРОЕКТЕ
+   ========================================================= */
+
+.about-section {
+    position: relative;
+    width: 100%;
+    min-height: 340px;
+
+    margin: 0 !important;
+    padding: 72px 6% 78px !important;
+
+    box-sizing: border-box;
+
+    background: #f3f2ed;
+
+    overflow: hidden;
+}
+
+
+/* Основная сетка */
+
+.about-content {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+    grid-template-columns: minmax(360px, 0.9fr) minmax(0, 1.1fr);
+
+    column-gap: 150px;
+
+    width: 100%;
+    max-width: 1320px;
+
+    margin: 0 auto;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* Надзаголовок */
+
+.about-content .eyebrow {
+    grid-column: 1;
+    grid-row: 1;
+
+    margin: 0 0 18px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 500;
+
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+
+    color: #b49367;
+}
+
+
+/* Заголовок */
+
+.about-content h2 {
+    grid-column: 1;
+    grid-row: 2;
+
+    max-width: 560px;
+
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(40px, 3vw, 40px);
+    line-height: 0.98;
+    font-weight: 500;
+
+    color: #183348;
+}
+
+
+/* Вертикальная линия */
+
+.about-content::before {
+    content: "";
+
+    position: absolute;
+
+    left: calc(45% + 55px);
+
+    top: 0;
+    bottom: 0;
+
+    width: 1px;
+
+    background: rgba(180, 147, 103, 0.24);
+}
+
+
+/* Правая колонка */
+
+.about-content p {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+
+    align-self: start;
+
+    max-width: 680px;
+
+    margin: 55px 0 0;
+
+    padding-left: 0;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+
+    color: #6e8495;
+}
+
+
+/* Небольшой декоративный акцент */
+
+.about-content p::before {
+    content: "✦";
+
+    display: block;
+
+    margin-bottom: 16px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    line-height: 1;
+
+    color: #b49367;
+}
+
+
+/* Кнопка */
+
+.about-content .button,
+.about-content a.button {
+    grid-column: 2;
+    grid-row: 3;
+
+    justify-self: start;
+    align-self: start;
+
+    margin-top: 28px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+
+    padding: 0 48px 0 24px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #b49367;
+    border-radius: 0;
+
+    background: transparent;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+
+    color: #183348;
+
+    text-decoration: none;
+
+    position: relative;
+
+    transition:
+        background-color .25s ease,
+        color .25s ease,
+        border-color .25s ease;
+}
+
+
+/* Стрелка в едином стиле с FAQ */
+
+.about-content .button::after,
+.about-content a.button::after {
+    content: "";
+
+    position: absolute;
+
+    right: 20px;
+    top: 50%;
+
+    width: 8px;
+    height: 8px;
+
+    border-top: 1px solid #b49367;
+    border-right: 1px solid #b49367;
+
+    transform: translateY(-50%) rotate(45deg);
+
+    transition: transform .25s ease;
+}
+
+
+/* Hover */
+
+.about-content .button:hover,
+.about-content a.button:hover {
+    background: rgba(180, 147, 103, 0.07);
+    border-color: #a78350;
+    color: #183348;
+}
+
+.about-content .button:hover::after,
+.about-content a.button:hover::after {
+    transform: translate(4px, -50%) rotate(45deg);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .about-section {
+        padding: 65px 6% 70px !important;
+    }
+
+    .about-content {
+        grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.1fr);
+        column-gap: 100px;
+    }
+
+    .about-content::before {
+        left: calc(45% + 30px);
+    }
+
+    .about-content p {
+        margin-top: 45px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .about-section {
+        min-height: auto;
+        padding: 60px 24px 65px !important;
+    }
+
+    .about-content {
+        display: block;
+    }
+
+    .about-content::before {
+        display: none;
+    }
+
+    .about-content .eyebrow {
+        margin-bottom: 18px;
+    }
+
+    .about-content h2 {
+        max-width: 600px;
+
+        margin-bottom: 32px;
+
+        font-size: 48px;
+        line-height: 1;
+    }
+
+    .about-content p {
+        max-width: 650px;
+
+        margin: 0;
+    }
+
+    .about-content .button,
+    .about-content a.button {
+        margin-top: 28px;
+    }
+}
+/* =========================================================
+   FAQ — кнопка "Задать вопрос"
+   ========================================================= */
+
+.faq-section {
+    position: relative;
+}
+
+
+/* Заголовок FAQ + кнопка в одной строке */
+
+.faq-section .section-heading {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+
+/* Кнопка в стиле "Вся библиотека" / "Все существа" */
+
+.faq-section .faq-question-link {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    margin-bottom: 8px;
+    padding-right: 25px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+    font-weight: 400;
+
+    color: #183348;
+    text-decoration: none;
+
+    white-space: nowrap;
+}
+
+
+/* Тонкая стрелка */
+
+.faq-section .faq-question-link::after {
+    content: "";
+
+    position: absolute;
+
+    right: 3px;
+    top: 50%;
+
+    width: 8px;
+    height: 8px;
+
+    border-top: 1px solid #b49367;
+    border-right: 1px solid #b49367;
+
+    transform: translateY(-50%) rotate(45deg);
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease;
+}
+
+
+/* Hover */
+
+.faq-section .faq-question-link:hover {
+    color: #183348;
+}
+
+.faq-section .faq-question-link:hover::after {
+    border-color: #8f7048;
+    transform: translate(4px, -50%) rotate(45deg);
+}
+
+
+/* На мобильном */
+
+@media (max-width: 700px) {
+
+    .faq-section .section-heading {
+        display: block;
+    }
+
+    .faq-section .faq-question-link {
+        margin-top: 22px;
+    }
+}
+/* =========================================================
+   FAQ — ссылка "Задать вопрос"
+   ========================================================= */
+
+.faq-section .section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.faq-section .faq-cta-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    margin-bottom: 8px;
+    padding-right: 25px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+    font-weight: 400;
+
+    color: #183348;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.faq-section .faq-cta-link::after {
+    content: "";
+
+    position: absolute;
+    right: 3px;
+    top: 50%;
+
+    width: 8px;
+    height: 8px;
+
+    border-top: 1px solid #b49367;
+    border-right: 1px solid #b49367;
+
+    transform: translateY(-50%) rotate(45deg);
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease;
+}
+
+.faq-section .faq-cta-link:hover::after {
+    border-color: #8f7048;
+    transform: translate(4px, -50%) rotate(45deg);
+}
+
+@media (max-width: 700px) {
+
+    .faq-section .section-heading {
+        display: block;
+    }
+
+    .faq-section .faq-cta-link {
+        margin-top: 22px;
+    }
+}
+/* Скрываем основной хедер темы.
+   Навигация сайта находится в Sidebar,
+   а на страницах объектов используется
+   отдельная sticky-навигация по странице. */
+
+.site-header {
+    display: none !important;
+}
+@media (max-width: 700px) {
+
+    /* Мобильная шапка */
+
+    .home .site-header {
+        display: block !important;
+    }
+   .home .site-header {
+        display: block !important;
+    }
+    .site-header {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .site-header .header-inner {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+
+        height: 56px;
+
+        padding: 0 14px;
+
+        box-sizing: border-box;
+    }
+
+    /* Название сайта */
+
+    .site-header .mobile-brand {
+        display: block !important;
+
+        margin: 0;
+
+        font-family: "Manrope", sans-serif;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+
+        color: #183348;
+
+        text-decoration: none;
+    }
+
+    /* Поиск из верхнего хедера на мобильном убираем */
+
+    .site-header .site-search {
+        display: none !important;
+    }
+
+    /* Основное десктопное меню тоже не нужно */
+
+    .site-header .main-nav {
+        display: none !important;
+    }
+
+    /* RU тоже убираем */
+
+    .site-header .language {
+        display: none !important;
+    }
+
+    /* Кнопка открытия Sidebar */
+
+    .site-header .mobile-menu-toggle {
+        display: flex !important;
+
+        align-items: center;
+        justify-content: center;
+
+        flex: 0 0 30px;
+
+        width: 30px;
+        height: 30px;
+
+        margin: 0 0 0 auto;
+        padding: 0;
+
+        border: 0;
+        border-radius: 3px;
+
+        background: #183348;
+
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 700px) {
+    .home .site-header {
+        display: block !important;
+    }
+
+    .home .mobile-menu-toggle {
+        display: flex !important;
+    }
+}
+
+/* =========================================
+   SIDEBAR SEARCH
+   ========================================= */
+
+.sidebar-search-block {
+    display: block;
+    width: auto;
+
+    margin: 24px 0px 20px;
+    padding: 10px 0;
+
+    border-top: 1px solid rgba(212, 190, 151, 0.30);
+    border-bottom: 1px solid rgba(212, 190, 151, 0.30);
+
+    box-sizing: border-box;
+}
+
+.sidebar-search {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 28px;
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* Иконка поиска */
+
+.sidebar-search-icon {
+    position: relative;
+
+    display: block;
+    flex: 0 0 16px;
+
+    width: 16px;
+    height: 16px;
+
+    margin: 0 10px 0 0;
+    padding: 0;
+
+    font-size: 0;
+    line-height: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* Рисуем лупу CSS-ом,
+   чтобы не зависеть от символа ⌕ */
+
+.sidebar-search-icon::before {
+    content: "";
+
+    position: absolute;
+    left: 1px;
+    top: 1px;
+
+    width: 8px;
+    height: 8px;
+
+    border: 1px solid #b49367;
+    border-radius: 50%;
+
+    box-sizing: border-box;
+}
+
+.sidebar-search-icon::after {
+    content: "";
+
+    position: absolute;
+    left: 9px;
+    top: 10px;
+
+    width: 5px;
+    height: 1px;
+
+    background: #b49367;
+
+    transform: rotate(45deg);
+    transform-origin: left center;
+}
+
+
+/* Поле */
+
+.sidebar-search input {
+    display: block;
+
+    flex: 1 1 auto;
+
+    width: auto;
+    min-width: 0;
+    height: 28px;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    border-radius: 0;
+
+    outline: none;
+    box-shadow: none;
+
+    background: transparent;
+
+    color: #f4efe6;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 28px;
+
+    box-sizing: border-box;
+}
+
+.sidebar-search input::placeholder {
+    color: rgba(244, 239, 230, 0.62);
+    opacity: 1;
+}
+
+.sidebar-search input:focus {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+
+/* Убираем стандартный крестик браузера */
+
+.sidebar-search input::-webkit-search-cancel-button {
+    opacity: 0.4;
+}
+
+
+/* После поиска дополнительная линия не нужна */
+
+.sidebar-search-block + .side-divider {
+    display: none;
+}
+/* =========================================================
+   INTERWORLD — OBJECT PAGE
+   БАЗОВАЯ ВЕРСИЯ DESKTOP
+   ========================================================= */
+
+.object-page,
+.interworld-object-page {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------
+   ОСНОВНАЯ ОБЛАСТЬ
+   --------------------------------------------------------- */
+
+.interworld-object-page {
+    position: relative;
+
+    width: 100%;
+    max-width: 1180px;
+
+    margin: 0 auto;
+    padding: 0 52px 100px;
+
+    box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------------------
+   ЯКОРНАЯ НАВИГАЦИЯ
+   --------------------------------------------------------- */
+
+.object-anchor-nav {
+    position: sticky;
+
+    top: 0;
+    z-index: 50;
+
+    width: 100%;
+
+    margin: 0 0 34px;
+
+    background: rgba(247, 246, 241, 0.94);
+
+    border-bottom: 1px solid rgba(24, 51, 72, 0.12);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.object-anchor-nav-inner {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+.object-anchor-nav-inner::-webkit-scrollbar {
+    display: none;
+}
+
+.object-anchor-nav a {
+    position: relative;
+
+    flex: 0 0 auto;
+
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 48px;
+
+    padding: 0 18px;
+
+    color: #52616b;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition:
+        color .25s ease,
+        background .25s ease;
+}
+
+.object-anchor-nav a:first-child {
+    padding-left: 0;
+}
+
+.object-anchor-nav a:hover {
+    color: #183348;
+}
+
+.object-anchor-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 18px;
+    right: 18px;
+    bottom: 0;
+
+    height: 1px;
+
+    background: #b49367;
+
+    transform: scaleX(0);
+    transform-origin: center;
+
+    transition: transform .25s ease;
+}
+
+.object-anchor-nav a:first-child::after {
+    left: 0;
+}
+
+.object-anchor-nav a.is-active {
+    color: #183348;
+}
+
+.object-anchor-nav a.is-active::after {
+    transform: scaleX(1);
+}
+
+
+/* ---------------------------------------------------------
+   BREADCRUMBS
+   --------------------------------------------------------- */
+
+.object-breadcrumbs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    margin-bottom: 42px;
+
+    color: #8a8d89;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.object-breadcrumbs a {
+    color: #8a8d89;
+
+    text-decoration: none;
+
+    transition: color .2s ease;
+}
+
+.object-breadcrumbs a:hover {
+    color: #183348;
+}
+
+.object-breadcrumbs span {
+    color: #b49367;
+}
+
+.object-breadcrumbs .current {
+    color: #183348;
+}
+
+
+/* ---------------------------------------------------------
+   HERO
+   --------------------------------------------------------- */
+
+.object-hero {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 340px;
+
+    gap: 64px;
+
+    align-items: center;
+
+    margin-bottom: 78px;
+}
+
+.object-hero-content {
+    min-width: 0;
+}
+
+.object-hero .eyebrow {
+    margin-bottom: 14px;
+
+    color: #b49367;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.object-hero h1 {
+    margin: 0;
+
+    color: #183348;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(58px, 6vw, 82px);
+    font-weight: 400;
+    line-height: .88;
+    letter-spacing: -.025em;
+}
+
+.object-subtitle {
+    margin-top: 18px;
+
+    color: #7d6a4f;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    line-height: 1.15;
+}
+
+.object-definition {
+    max-width: 650px;
+
+    margin-top: 28px;
+}
+
+.object-definition p {
+    margin: 0;
+
+    color: #394c58;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.object-hero-image {
+    width: 100%;
+    min-height: 380px;
+
+    overflow: hidden;
+
+    background: #ece9e1;
+}
+
+.object-hero-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 380px;
+
+    object-fit: cover;
+}
+
+
+/* ---------------------------------------------------------
+   ВАЖНЫЕ ССЫЛКИ
+   --------------------------------------------------------- */
+
+.object-important-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 28px;
+}
+
+.source-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    min-height: 34px;
+
+    padding: 0 12px;
+
+    border: 1px solid rgba(24, 51, 72, .16);
+
+    color: #183348;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 10px;
+    line-height: 1;
+
+    text-decoration: none;
+
+    transition:
+        border-color .25s ease,
+        background .25s ease,
+        transform .25s ease;
+}
+
+.source-link:hover {
+    border-color: #b49367;
+
+    background: rgba(180, 147, 103, .07);
+
+    transform: translateY(-1px);
+}
+
+.source-link-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 15px;
+    height: 15px;
+
+    color: #b49367;
+
+    font-size: 9px;
+}
+
+
+/* ---------------------------------------------------------
+   ОБЩИЕ СЕКЦИИ
+   --------------------------------------------------------- */
+
+.object-section {
+    width: 100%;
+
+    margin: 0 0 92px;
+
+    scroll-margin-top: 72px;
+}
+
+.object-section-heading {
+    margin-bottom: 30px;
+}
+
+.object-section-heading .eyebrow {
+    margin-bottom: 8px;
+
+    color: #b49367;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.object-section-heading h2 {
+    margin: 0;
+
+    color: #183348;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: .95;
+}
+
+
+/* ---------------------------------------------------------
+   ХАРАКТЕРИСТИКИ
+   --------------------------------------------------------- */
+
+.characteristics-list {
+    width: 100%;
+
+    border-top: 1px solid rgba(24, 51, 72, .15);
+}
+
+.characteristic-row {
+    display: grid;
+
+    grid-template-columns: 220px minmax(0, 1fr);
+
+    gap: 30px;
+
+    min-height: 58px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid rgba(24, 51, 72, .10);
+
+    box-sizing: border-box;
+}
+
+.characteristic-name {
+    color: #7d6a4f;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.characteristic-value {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px 14px;
+
+    color: #394c58;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.characteristic-value a {
+    color: #183348;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid rgba(180, 147, 103, .5);
+}
+
+.characteristic-value a:hover {
+    border-color: #183348;
+}
+
+
+/* ---------------------------------------------------------
+   ГАЛЕРЕЯ
+   --------------------------------------------------------- */
+
+.object-gallery {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+.object-gallery-item {
+    display: block;
+
+    aspect-ratio: 1 / .78;
+
+    overflow: hidden;
+
+    background: #ece9e1;
+}
+
+.object-gallery-item img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .5s ease;
+}
+
+.object-gallery-item:hover img {
+    transform: scale(1.025);
+}
+
+.object-gallery-placeholder {
+    min-height: 260px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f1efe9;
+
+    color: #8a8d89;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 11px;
+}
+
+
+/* ---------------------------------------------------------
+   ОПИСАНИЕ
+   --------------------------------------------------------- */
+
+.object-description-content {
+    position: relative;
+
+    max-width: 820px;
+
+    max-height: 300px;
+
+    overflow: hidden;
+
+    transition: max-height .5s ease;
+}
+
+.object-description-content::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 100px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(247,246,241,0),
+        rgba(247,246,241,1)
+    );
+
+    pointer-events: none;
+
+    transition: opacity .3s ease;
+}
+
+.object-description-content.is-expanded {
+    max-height: 5000px;
+}
+
+.object-description-content.is-expanded::after {
+    opacity: 0;
+}
+
+.object-description-text {
+    color: #394c58;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.object-description-text p {
+    margin: 0 0 1.25em;
+}
+
+.object-description-text h2,
+.object-description-text h3 {
+    margin: 1.8em 0 .7em;
+
+    color: #183348;
+
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+}
+
+.object-description-text h2 {
+    font-size: 34px;
+}
+
+.object-description-text h3 {
+    font-size: 27px;
+}
+
+.object-description-text a {
+    color: #183348;
+
+    text-decoration-color: rgba(180,147,103,.7);
+}
+
+.object-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 22px;
+    padding: 0;
+
+    border: 0;
+
+    background: none;
+
+    color: #183348;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.object-read-more-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 22px;
+    height: 22px;
+
+    border: 1px solid #b49367;
+
+    color: #b49367;
+
+    font-size: 15px;
+    line-height: 1;
+
+    transition: transform .25s ease;
+}
+
+.object-read-more[aria-expanded="true"] .object-read-more-icon {
+    transform: rotate(45deg);
+}
+
+
+/* ---------------------------------------------------------
+   ОСОБЕННОСТИ
+   --------------------------------------------------------- */
+
+.features-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+.feature-card {
+    padding: 26px 24px 28px;
+
+    border: 1px solid rgba(24, 51, 72, .12);
+
+    background: rgba(255,255,255,.42);
+}
+
+.feature-icon {
+    margin-bottom: 22px;
+
+    color: #b49367;
+
+    font-size: 18px;
+}
+
+.feature-card h3 {
+    margin: 0 0 9px;
+
+    color: #183348;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.feature-card p {
+    margin: 0;
+
+    color: #64727a;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* ---------------------------------------------------------
+   ВЗАИМОСВЯЗИ
+   --------------------------------------------------------- */
+
+.relations-tabs {
+    display: flex;
+    align-items: center;
+
+    gap: 0;
+
+    margin-bottom: 22px;
+
+    border-bottom: 1px solid rgba(24, 51, 72, .14);
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+.relations-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.relation-tab {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    min-height: 46px;
+
+    padding: 0 18px;
+
+    border: 0;
+
+    background: none;
+
+    color: #7d858a;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 11px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+.relation-tab:first-child {
+    padding-left: 0;
+}
+
+.relation-tab::after {
+    content: "";
+
+    position: absolute;
+
+    left: 18px;
+    right: 18px;
+    bottom: -1px;
+
+    height: 1px;
+
+    background: #b49367;
+
+    transform: scaleX(0);
+
+    transition: transform .25s ease;
+}
+
+.relation-tab:first-child::after {
+    left: 0;
+}
+
+.relation-tab.is-active {
+    color: #183348;
+}
+
+.relation-tab.is-active::after {
+    transform: scaleX(1);
+}
+
+.relation-tab span {
+    color: #b49367;
+    font-size: 9px;
+}
+
+.relations-panel {
+    display: none;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+.relations-panel.is-active {
+    display: grid;
+}
+
+.relation-card {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 108px;
+
+    padding: 14px 42px 14px 14px;
+
+    border: 1px solid rgba(24, 51, 72, .12);
+
+    color: inherit;
+
+    text-decoration: none;
+
+    background: rgba(255,255,255,.42);
+}
+
+.relation-card-image {
+    flex: 0 0 78px;
+
+    width: 78px;
+    height: 78px;
+
+    margin-right: 17px;
+
+    background: #e9e6de;
+}
+
+.relation-card-content {
+    min-width: 0;
+}
+
+.relation-card-content strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #183348;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.relation-card-content span {
+    color: #7c878d;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.relation-card-arrow,
+.source-card-arrow {
+    position: absolute;
+
+    right: 18px;
+    top: 50%;
+
+    color: #b49367;
+
+    font-size: 22px;
+    line-height: 1;
+
+    transform: translateY(-50%);
+
+    transition: transform .25s ease;
+}
+
+.relation-card:hover .relation-card-arrow,
+.source-card:hover .source-card-arrow {
+    transform: translate(4px, -50%);
+}
+
+.relations-empty {
+    padding: 30px 0;
+
+    color: #8a8d89;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+}
+
+
+/* ---------------------------------------------------------
+   FAQ
+   --------------------------------------------------------- */
+
+.faq-list {
+    border-top: 1px solid rgba(24, 51, 72, .14);
+}
+
+.faq-list details {
+    border-bottom: 1px solid rgba(24, 51, 72, .10);
+}
+
+.faq-list summary {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 64px;
+
+    padding: 0 6px 0 0;
+
+    color: #183348;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-list summary span {
+    color: #b49367;
+
+    font-size: 19px;
+    font-weight: 300;
+
+    transition: transform .25s ease;
+}
+
+.faq-list details[open] summary span {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-width: 820px;
+
+    padding: 0 0 24px;
+
+    color: #64727a;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* ---------------------------------------------------------
+   ИСТОЧНИКИ
+   --------------------------------------------------------- */
+
+.sources-list {
+    display: flex;
+    flex-direction: column;
+
+    border-top: 1px solid rgba(24, 51, 72, .12);
+}
+
+.source-card {
+    position: relative;
+
+    display: flex;
+    align-items: stretch;
+
+    min-height: 145px;
+
+    padding: 14px 50px 14px 0;
+
+    border-bottom: 1px solid rgba(24, 51, 72, .10);
+
+    color: inherit;
+
+    text-decoration: none;
+}
+
+.source-card-image {
+    flex: 0 0 175px;
+
+    width: 175px;
+    min-height: 115px;
+
+    margin-right: 24px;
+
+    background: #e9e6de;
+}
+
+.source-card-content {
+    padding: 8px 0;
+}
+
+.source-card-type {
+    margin-bottom: 8px;
+
+    color: #b49367;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.source-card h3 {
+    margin: 0 0 8px;
+
+    color: #183348;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.source-card p {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: #77838a;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+
+/* ---------------------------------------------------------
+   КНИГИ
+   --------------------------------------------------------- */
+
+.deep-books-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+.deep-book-card {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 230px;
+
+    padding: 18px 44px 18px 18px;
+
+    border: 1px solid rgba(24, 51, 72, .12);
+
+    color: inherit;
+
+    text-decoration: none;
+
+    background: rgba(255,255,255,.42);
+}
+
+.deep-book-cover {
+    flex: 0 0 120px;
+
+    width: 120px;
+    height: 180px;
+
+    margin-right: 24px;
+
+    background: #e9e6de;
+}
+
+.deep-book-content {
+    min-width: 0;
+}
+
+.deep-book-content h3 {
+    margin: 0 0 12px;
+
+    color: #183348;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.deep-book-content p {
+    margin: 0;
+
+    color: #77838a;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .object-anchor-nav a,
+    .source-link,
+    .object-gallery-item img,
+    .relation-card-arrow,
+    .source-card-arrow,
+    .object-description-content,
+    .object-read-more-icon {
+        transition: none;
+    }
+}
+ /* =========================================================
+    OBJECT PAGE — ANCHOR NAVIGATION
+    ========================================================= */
+
+.object-anchor-nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+
+    width: 100%;
+    height: 48px;
+
+    margin: 0 0 34px;
+
+    background: rgba(247, 246, 241, 0.96);
+
+    border-bottom: 1px solid rgba(24, 51, 72, 0.14);
+
+    box-sizing: border-box;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.object-anchor-nav-inner {
+    display: flex;
+    align-items: stretch;
+
+    width: 100%;
+    height: 48px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+.object-anchor-nav-inner::-webkit-scrollbar {
+    display: none;
+}
+
+.object-anchor-nav a {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    flex: 0 0 auto;
+
+    height: 48px;
+
+    padding: 0 18px;
+
+    color: #7b817f;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.object-anchor-nav a:first-child {
+    padding-left: 0;
+}
+
+.object-anchor-nav a:hover {
+    color: #183348;
+}
+
+/* Подчёркивание активного раздела */
+
+.object-anchor-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 18px;
+    right: 18px;
+    bottom: -1px;
+
+    height: 2px;
+
+    background: #b49367;
+
+    transform: scaleX(0);
+    transform-origin: center;
+
+    transition: transform 0.25s ease;
+}
+
+.object-anchor-nav a:first-child::after {
+    left: 0;
+}
+
+.object-anchor-nav a.is-active {
+    color: #183348;
+}
+
+.object-anchor-nav a.is-active::after {
+    transform: scaleX(1);
+}
+/* =========================================================
+   DESKTOP — основной header не нужен
+   ========================================================= */
+
+@media (min-width: 701px) {
+    .site-header {
+        display: none !important;
+    }
+}
+
+ /* =========================================================
+    OBJECT PAGE — LAYOUT + STICKY FIX
+    ========================================================= */
+
+@media (min-width: 701px) {
+
+    /* Основной контент начинается ближе к Sidebar */
+    .interworld-object-page {
+        width: 100%;
+        max-width: none;
+
+        margin: 0;
+
+        padding: 0 48px 100px 48px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* Не даём родительскому контейнеру ломать sticky */
+    .interworld-main {
+        overflow: visible !important;
+    }
+
+
+    /* Sticky-навигация страницы */
+    .object-anchor-nav {
+        position: sticky !important;
+
+        top: 0;
+
+        z-index: 100;
+
+        width: 100%;
+
+        margin-top: 0;
+    }
+
+}
+.interworld-main {
+    overflow: visible !important;
+}
+
+.interworld-object-page {
+    overflow: visible !important;
+}
+
+.object-anchor-nav {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+}
+/* =========================================================
+   INTERWORLD OBJECT HERO — FINAL
+   ========================================================= */
+
+.interworld-object-page {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.interworld-object-page .object-entry {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Убираем расстояние между якорным меню и Hero */
+.interworld-object-page .object-anchor-nav {
+    margin-bottom: 0 !important;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.interworld-object-page .object-hero {
+    position: relative;
+
+    display: block;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    min-height: 590px;
+
+    margin: 0 !important;
+    padding: 118px 56px 70px;
+
+    box-sizing: border-box;
+    overflow: hidden;
+
+    background: #ece9e1;
+}
+
+
+/* =========================================================
+   ИЗОБРАЖЕНИЕ
+   ========================================================= */
+
+.interworld-object-page .object-hero-image {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+}
+
+.interworld-object-page .object-hero-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+
+    margin: 0;
+    padding: 0;
+
+    object-fit: cover;
+    object-position: center center;
+}
+
+
+/* =========================================================
+   МОЛОЧНАЯ ЗОНА ДЛЯ ТЕКСТА
+   ========================================================= */
+
+.interworld-object-page .object-hero::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(247,245,239,0.99) 0%,
+            rgba(247,245,239,0.97) 18%,
+            rgba(247,245,239,0.90) 30%,
+            rgba(247,245,239,0.72) 42%,
+            rgba(247,245,239,0.42) 54%,
+            rgba(247,245,239,0.12) 68%,
+            rgba(247,245,239,0) 100%
+        );
+}
+
+
+/* =========================================================
+   ХЛЕБНЫЕ КРОШКИ
+   ========================================================= */
+
+.interworld-object-page .object-hero .object-breadcrumbs {
+    position: absolute;
+
+    top: 28px;
+    left: 56px;
+
+    z-index: 4;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+
+    color: rgba(24,51,72,0.72);
+}
+
+.interworld-object-page .object-hero .object-breadcrumbs a {
+    color: rgba(24,51,72,0.72);
+    text-decoration: none;
+}
+
+.interworld-object-page .object-hero .object-breadcrumbs span {
+    color: rgba(180,147,103,0.85);
+}
+
+.interworld-object-page .object-hero .object-breadcrumbs .current {
+    color: #183348;
+}
+
+
+/* =========================================================
+   КОНТЕНТ
+   ========================================================= */
+
+.interworld-object-page .object-hero-content {
+    position: relative;
+
+    z-index: 3;
+
+    width: 52%;
+    max-width: 650px;
+    min-width: 0;
+
+    padding: 20px 0;
+}
+
+.interworld-object-page .object-hero h1 {
+    max-width: 650px;
+}
+
+.interworld-object-page .object-definition {
+    max-width: 590px;
+}
+
+.interworld-object-page .object-important-links {
+    position: relative;
+    z-index: 4;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .interworld-object-page .object-hero {
+        min-height: 560px;
+
+        padding: 105px 40px 55px;
+    }
+
+    .interworld-object-page .object-hero-content {
+        width: 65%;
+    }
+
+    .interworld-object-page .object-hero .object-breadcrumbs {
+        left: 40px;
+        right: 40px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+    .interworld-object-page .object-hero {
+        min-height: 620px;
+
+        padding: 100px 24px 42px;
+    }
+
+    .interworld-object-page .object-hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .interworld-object-page .object-hero .object-breadcrumbs {
+        top: 22px;
+        left: 24px;
+        right: 24px;
+
+        font-size: 11px;
+    }
+
+    .interworld-object-page .object-hero::before {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(247,245,239,0.99) 0%,
+                rgba(247,245,239,0.96) 36%,
+                rgba(247,245,239,0.78) 56%,
+                rgba(247,245,239,0.32) 76%,
+                rgba(247,245,239,0) 100%
+            );
+    }
+}
+/* =========================================================
+   ОТСТУП ОСНОВНОГО КОНТЕНТА ОТ SIDEBAR
+   ========================================================= */
+
+.interworld-object-page {
+    padding-left: 56px !important;
+    padding-right: 56px !important;
+    box-sizing: border-box;
+}
+
+.interworld-object-page .object-hero {
+    width: calc(100% + 112px) !important;
+    margin-left: -56px !important;
+}
+.relation-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

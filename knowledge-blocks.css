@@ -1,0 +1,20 @@
+.iw-knowledge-section{padding-top:48px;padding-bottom:18px;color:#183348}
+.iw-knowledge-section h2{font:400 clamp(32px,4vw,48px)/1.1 'Cormorant Garamond',Georgia,serif;margin:0 0 18px}
+.iw-knowledge-tabs{display:flex;gap:24px;overflow-x:auto;border-bottom:1px solid #dedbd3;margin-bottom:20px}
+.iw-knowledge-tabs button{flex:none;border:0;border-bottom:2px solid transparent;background:transparent;padding:12px 0;cursor:pointer;color:inherit;font:500 13px/1.4 Manrope,Arial,sans-serif}
+.iw-knowledge-tabs button[aria-selected="true"]{border-bottom-color:#b49367}
+.iw-knowledge-tabs button span{font-size:11px;color:#687780;margin-left:4px}
+.iw-knowledge-panel[hidden]{display:none!important}
+.iw-knowledge-viewport{overflow:hidden}
+.iw-knowledge-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px}
+.iw-knowledge-cards.is-scrollable{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#b49367 transparent}
+.iw-knowledge-cards.is-scrollable .iw-knowledge-card{flex:0 0 calc((100% - 42px)/4);scroll-snap-align:start}
+.iw-knowledge-card{min-width:0;display:flex;align-items:center;gap:12px;border:1px solid #e1ded7;padding:12px;background:rgba(255,255,255,.6);color:inherit;text-decoration:none}
+.iw-knowledge-card:hover,.iw-knowledge-card:focus-visible{border-color:#b49367}
+.iw-knowledge-image{flex:0 0 62px;width:62px;height:62px;display:flex;align-items:center;justify-content:center;background:#e9e6de;color:#b49367}
+.iw-knowledge-image img{width:100%;height:100%;object-fit:cover}
+.iw-knowledge-copy{min-width:0;flex:1}.iw-knowledge-copy strong{display:block;font:500 19px/1.1 'Cormorant Garamond',Georgia,serif}.iw-knowledge-copy small{display:block;margin-top:5px;font:11px/1.5 Manrope,Arial,sans-serif;color:#687780}
+.iw-knowledge-controls{display:flex;justify-content:flex-end;gap:8px;margin-top:14px}.iw-knowledge-controls button{border:1px solid #b49367;background:transparent;color:#183348;padding:7px 14px;cursor:pointer}.iw-knowledge-controls button:disabled{opacity:.35;cursor:default}
+.iw-knowledge-source{display:flex;gap:16px;align-items:start;padding:15px 0;border-bottom:1px solid #dedbd3}.iw-knowledge-source img{width:88px;height:66px;object-fit:cover;flex:none}.iw-knowledge-source h3{margin:0;font:500 21px/1.2 'Cormorant Garamond',Georgia,serif}.iw-knowledge-source small{font:10px/1.5 Manrope,Arial,sans-serif;color:#687780}.iw-knowledge-source p{margin:7px 0 0;font:12px/1.65 Manrope,Arial,sans-serif;color:#687780}
+@media(max-width:1050px){.iw-knowledge-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.iw-knowledge-cards.is-scrollable .iw-knowledge-card{flex-basis:calc((100% - 14px)/2)}}
+@media(max-width:620px){.iw-knowledge-cards{grid-template-columns:1fr}.iw-knowledge-cards.is-scrollable .iw-knowledge-card{flex-basis:85%}.iw-knowledge-tabs{gap:18px}}
